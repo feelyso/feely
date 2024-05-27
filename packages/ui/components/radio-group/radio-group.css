@@ -1,0 +1,20 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    .radio-group-component {
+        @apply grid gap-2;
+    }
+
+    .radio-group-item {
+        @apply aspect-square h-4 w-4 rounded-full border border-brand ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-disabled;
+    }
+
+    .radio-group-item-indicator {
+        @apply flex items-center justify-center [&>svg]:w-[10px] [&>svg]:h-[10px] [&>svg]:fill-icon-brand [&>svg]:stroke-icon-brand;
+    }
+
+}

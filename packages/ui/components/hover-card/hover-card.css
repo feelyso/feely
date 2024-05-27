@@ -1,0 +1,12 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    .hover-card-component {
+        @apply z-50 w-64 rounded border border-default bg-elevated p-4 text shadow-md outline-none;
+    }
+
+}

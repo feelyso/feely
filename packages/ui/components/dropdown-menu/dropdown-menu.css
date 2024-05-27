@@ -1,0 +1,64 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .dropdown-menu-subtrigger {
+    @apply flex cursor-default select-none items-center rounded-sm px-2 py-1 h-8 text-md outline-none focus:bg-item-hover [&>svg]:mr-2 [&>svg]:h-4 [&>svg]:w-4;
+  }
+
+  .dropdown-menu-subtrigger-icon {
+    @apply ml-auto pl-1 h-4 w-4;
+  }
+
+  .dropdown-menu-subcontent {
+    @apply z-50 min-w-[8rem] overflow-hidden rounded border border-default bg-elevated p-1 text shadow-lg;
+  }
+
+  .dropdown-menu-content {
+    @apply z-50 min-w-[8rem] overflow-hidden rounded border border-default bg-elevated p-1 text shadow-md;
+  }
+
+  .dropdown-menu-item {
+    @apply relative flex cursor-default select-none items-center rounded-sm px-2 py-1 h-8 text-md outline-none transition-colors focus:bg-item-hover data-[disabled]:pointer-events-none data-[disabled]:opacity-disabled [&>svg]:mr-2 [&>svg]:h-4 [&>svg]:w-4;
+  }
+
+  .dropdown-menu-checkbox-item {
+    @apply relative flex cursor-default select-none items-center rounded py-1 pl-8 pr-2 text-md outline-none transition-colors focus:bg-item-hover data-[disabled]:pointer-events-none data-[disabled]:opacity-disabled;
+  }
+
+  .dropdown-menu-checkbox-container {
+    @apply absolute left-2 flex h-4 w-4 items-center justify-center;
+  }
+
+  .dropdown-menu-checkbox-icon {
+    @apply h-4 w-4 stroke-icon-active;
+  }
+
+  .dropdown-menu-radio-item {
+    @apply relative flex cursor-default select-none items-center rounded-sm py-1 pl-8 pr-2 text-md outline-none transition-colors focus:bg-item-hover data-[disabled]:pointer-events-none data-[disabled]:opacity-disabled;
+  }
+
+  .dropdown-menu-radio-container {
+    @apply absolute left-2 flex h-4 w-4 items-center justify-center;
+  }
+
+  .dropdown-menu-radio-icon {
+    @apply h-2 w-2 stroke-icon-active;
+  }
+
+  .dropdown-menu-label {
+    @apply flex items-center px-2 py-1 h-8 text-heading-group text-description;
+  }
+
+  .dropdown-menu-separator {
+    @apply -mx-1 my-1 h-[1px] bg-border;
+  }
+
+  .dropdown-menu-shortcut {
+    @apply ml-auto pl-1 text-sm tracking-widest text-description;
+  }
+
+}

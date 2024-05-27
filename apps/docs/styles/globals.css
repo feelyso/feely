@@ -1,0 +1,41 @@
+/* Import css files */
+@import "../../../packages/config/theme/shared-globals.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nextra-primary-hue: 217deg;
+  --nextra-primary-saturation: 91%;
+}
+
+.link {
+  @apply text-brand underline-offset-1;
+}
+
+.code {
+  @apply font-mono;
+}
+
+.logo {
+  font-size: 1.4rem;
+  @apply font-semibold tracking-tight;
+}
+
+/* FIX NEXTRA */
+.nx-px-2 {
+  @apply px-4 !important;
+}
+
+.nx-rounded {
+  @apply rounded !important;
+}
+
+.nx-rounded-lg {
+  @apply rounded-lg !important;
+}
+
+input {
+  @apply bg-subtle border-default text-md block w-full appearance-none rounded-lg border px-3 py-2 leading-tight transition-colors focus:ring-1 focus:ring-offset-1 focus:ring-offset-transparent !important;
+}

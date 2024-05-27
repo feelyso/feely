@@ -1,0 +1,32 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .card-component {
+    @apply rounded-lg border border-default bg-card text shadow-sm;
+  }
+
+  .card-header {
+    @apply flex flex-col space-y-2 p-6 pb-0;
+  }
+
+  .card-title {
+    @apply text-heading-subsection tracking-tight;
+  }
+
+  .card-description {
+    @apply text-md text-description;
+  }
+
+  .card-content {
+    @apply p-6;
+  }
+
+  .card-footer {
+    @apply flex items-center gap-1 p-6 pt-0;
+  }
+
+}
