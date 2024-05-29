@@ -1,7 +1,7 @@
 // Import core
 // Import customs
 import Preview from "@components/preview/preview";
-import { Slider } from "@feely/ui";
+import { Slider } from "@feely/ui/components/slider";
 
 export const SliderPreview = () => (
   <Preview>

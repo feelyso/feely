@@ -2,7 +2,7 @@
 import { Activity, AlertTriangle, Info, XCircle } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Badge } from "@feely/ui";
+import { Badge } from "@feely/ui/components/badge";
 
 export const BadgePreview = () => (
   <Preview>

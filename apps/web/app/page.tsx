@@ -1,9 +1,11 @@
 "use client";
 
-import { ModeToggle } from "@components/mode-toggle";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Button, Input } from "@feely/ui";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@feely/ui/components/accordion";
+import { Button } from "@feely/ui/components/button";
+import { Input } from "@feely/ui/components/input";
+import { toast } from "@feely/ui/components/toast";
 import { PlusCircle } from "@feely/ui/components/icon";
-import { toast } from "@feely/ui";
+import { ModeToggle } from "@components/mode-toggle";
 
 export default function Home() {
   return (

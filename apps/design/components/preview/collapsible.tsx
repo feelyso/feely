@@ -3,8 +3,8 @@ import * as React from "react";
 import { ChevronsUpDown } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@feely/ui/components/collapsible";
 
 export const CollapsiblePreview = () => {
   const [isOpen, setIsOpen] = React.useState(false);

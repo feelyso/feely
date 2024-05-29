@@ -1,7 +1,7 @@
 // Import core
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
 import {
   Dialog,
   DialogContent,
@@ -11,9 +11,9 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from "@feely/ui";
-import { Input } from "@feely/ui";
-import { Label } from "@feely/ui";
+} from "@feely/ui/components/dialog";
+import { Input } from "@feely/ui/components/input";
+import { Label } from "@feely/ui/components/label";
 
 export const DialogPreview = () => (
   <Preview>

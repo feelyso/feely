@@ -15,10 +15,10 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@feely/ui";
-import { Button } from "@feely/ui";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui";
-import { toast } from "@feely/ui";
+} from "@feely/ui/components/select";
+import { Button } from "@feely/ui/components/button";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui/components/form";
+import { toast } from "@feely/ui/components/toast";
 
 const FormSchema = z.object({
   email: z

@@ -1,8 +1,8 @@
 // Import core
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
-import { toast } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
+import { toast } from "@feely/ui/components/toast";
 
 export const ToastPreview = () => {
   return (

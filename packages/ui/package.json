@@ -3,12 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "sideEffects": false,
-  "main": "./index.tsx",
-  "exports": {
-    ".": "./index.tsx",
-    "./components/icon": "./components/icon/index.ts"
-  },
-  "types": "./index.tsx",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

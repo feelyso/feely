@@ -2,7 +2,7 @@
 import { Bold } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Toggle } from "@feely/ui";
+import { Toggle } from "@feely/ui/components/toggle";
 
 export const TogglePreview = () => (
   <Preview>

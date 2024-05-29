@@ -2,8 +2,8 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 
+import { ToastProvider } from "@feely/ui/components/toast";
 import { ThemeProvider } from "@components/theme-provider";
-import { ToastProvider } from "@feely/ui";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {

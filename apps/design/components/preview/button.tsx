@@ -3,7 +3,7 @@ import { Download, Search } from "lucide-react";
 import Link from "next/link";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
 
 export const ButtonPreview = () => (
   <Preview>

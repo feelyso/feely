@@ -15,7 +15,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "@feely/ui";
+} from "@feely/ui/components/menubar";
 
 export const MenubarPreview = () => (
   <Preview>

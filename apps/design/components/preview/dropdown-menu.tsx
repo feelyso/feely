@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -38,7 +38,7 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-} from "@feely/ui";
+} from "@feely/ui/components/dropdown-menu";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 

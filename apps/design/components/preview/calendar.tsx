@@ -9,12 +9,12 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Calendar } from "@feely/ui";
+import { Calendar } from "@feely/ui/components/calendar";
 import { cn } from "@feely/lib/twMerge";
-import { Button } from "@feely/ui";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui";
-import { Popover, PopoverContent, PopoverTrigger } from "@feely/ui";
-import { toast } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui/components/form";
+import { Popover, PopoverContent, PopoverTrigger } from "@feely/ui/components/popover";
+import { toast } from "@feely/ui/components/toast";
 
 const FormSchema = z.object({
   dob: z.date({

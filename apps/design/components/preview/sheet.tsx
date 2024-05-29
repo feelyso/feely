@@ -1,9 +1,9 @@
 // Import core
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
-import { Input } from "@feely/ui";
-import { Label } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
+import { Input } from "@feely/ui/components/input";
+import { Label } from "@feely/ui/components/label";
 import {
   Sheet,
   SheetClose,
@@ -13,7 +13,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@feely/ui";
+} from "@feely/ui/components/sheet";
 
 export const SheetPreview = () => (
   <Preview>

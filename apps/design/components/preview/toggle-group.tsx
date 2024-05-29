@@ -2,7 +2,7 @@
 import { Bold, Italic, Underline } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { ToggleGroup, ToggleGroupItem } from "@feely/ui";
+import { ToggleGroup, ToggleGroupItem } from "@feely/ui/components/toggle-group";
 
 export const ToggleGroupPreview = () => (
   <Preview>

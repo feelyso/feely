@@ -2,8 +2,8 @@
 import { FilePlus } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@feely/ui/components/tooltip";
 
 export const TooltipPreview = () => (
   <Preview>

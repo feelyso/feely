@@ -2,7 +2,7 @@
 import { Grid, List } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Segmented, SegmentedContent, SegmentedList, SegmentedTrigger } from "@feely/ui";
+import { Segmented, SegmentedContent, SegmentedList, SegmentedTrigger } from "@feely/ui/components/segmented";
 
 export const SegmentedPreview = () => (
   <Preview>

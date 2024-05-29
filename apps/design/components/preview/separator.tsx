@@ -1,7 +1,7 @@
 // Import core
 // Import customs
 import Preview from "@components/preview/preview";
-import { Separator } from "@feely/ui";
+import { Separator } from "@feely/ui/components/separator";
 
 export const SeparatorPreview = () => (
   <Preview>

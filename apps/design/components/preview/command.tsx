@@ -15,7 +15,7 @@ import {
   CommandSeparator,
   CommandShortcut,
   CommandDialog,
-} from "@feely/ui";
+} from "@feely/ui/components/command";
 
 const CommandDialogDemo = () => {
   const [open, setOpen] = React.useState(false);

@@ -2,7 +2,7 @@
 import { TagIcon } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Tag } from "@feely/ui";
+import { Tag } from "@feely/ui/components/tag";
 
 export const TagPreview = () => (
   <Preview>

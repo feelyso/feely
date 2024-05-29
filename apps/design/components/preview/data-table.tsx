@@ -17,8 +17,8 @@ import {
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
-import { Checkbox } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
+import { Checkbox } from "@feely/ui/components/checkbox";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -27,9 +27,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@feely/ui";
-import { Input } from "@feely/ui";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@feely/ui";
+} from "@feely/ui/components/dropdown-menu";
+import { Input } from "@feely/ui/components/input";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@feely/ui/components/table";
 
 const data: Payment[] = [
   {

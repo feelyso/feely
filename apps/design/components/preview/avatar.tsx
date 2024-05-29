@@ -1,7 +1,7 @@
 // Import core
 // Import customs
 import Preview from "@components/preview/preview";
-import { Avatar, AvatarImage, AvatarFallback } from "@feely/ui";
+import { Avatar, AvatarImage, AvatarFallback } from "@feely/ui/components/avatar";
 
 export const AvatarPreview = () => (
   <Preview>

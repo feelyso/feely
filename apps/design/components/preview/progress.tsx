@@ -1,7 +1,7 @@
 // Import core
 // Import customs
 import Preview from "@components/preview/preview";
-import { Progress } from "@feely/ui";
+import { Progress } from "@feely/ui/components/progress";
 
 export const ProgressPreview = () => (
   <Preview>
