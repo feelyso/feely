@@ -4,9 +4,8 @@
 @tailwind utilities;
 
 @layer components {
-
   .card-component {
-    @apply rounded-lg border border-default bg-card text shadow-sm;
+    @apply border-default bg-card text rounded-lg border shadow-sm;
   }
 
   .card-header {
@@ -28,5 +27,4 @@
   .card-footer {
     @apply flex items-center gap-1 p-6 pt-0;
   }
-
 }

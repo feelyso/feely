@@ -4,13 +4,11 @@
 @tailwind utilities;
 
 @layer components {
-
   .checkbox-component {
-    @apply h-4 w-4 overflow-hidden bg-card shrink-0 rounded-sm border border-brand ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-disabled data-[state=checked]:bg-brand;
+    @apply bg-card border-brand ring-offset-background focus-visible:ring-brand disabled:opacity-disabled data-[state=checked]:bg-brand h-4 w-4 shrink-0 overflow-hidden rounded-sm border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed;
   }
 
   .checkbox-indicator {
-    @apply overflow-hidden flex items-center justify-center [&>svg]:h-4 [&>svg]:w-4 [&>svg]:stroke-2 [&>svg]:stroke-icon-brand-inverse;
+    @apply [&>svg]:stroke-icon-brand-inverse flex items-center justify-center overflow-hidden [&>svg]:h-4 [&>svg]:w-4 [&>svg]:stroke-2;
   }
-  
 }

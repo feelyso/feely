@@ -2,13 +2,13 @@
 
 // Import core
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
 import { cn } from "@feely/lib/twMerge";
 import { Button } from "@feely/ui/components/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@feely/ui/components/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@feely/ui/components/popover";
+import { Check, ChevronsUpDown } from "@feely/ui/components/icon";
 
 const frameworks = [
   {

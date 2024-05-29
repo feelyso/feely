@@ -1,8 +1,8 @@
 // Import core
-import { TagIcon } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
 import { Tag } from "@feely/ui/components/tag";
+import { TagIcon } from "@feely/ui/components/icon";
 
 export const TagPreview = () => (
   <Preview>

@@ -2,7 +2,6 @@
 
 // Import core
 import * as React from "react";
-import { Calculator, Calendar, CreditCard, Settings, Smile, User } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
 import {
@@ -16,6 +15,7 @@ import {
   CommandShortcut,
   CommandDialog,
 } from "@feely/ui/components/command";
+import { Calculator, Calendar, CreditCard, Settings, Smile, User } from "@feely/ui/components/icon";
 
 const CommandDialogDemo = () => {
   const [open, setOpen] = React.useState(false);

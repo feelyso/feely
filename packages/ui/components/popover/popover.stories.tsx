@@ -1,26 +1,27 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
-import { Popover, PopoverContent, PopoverTrigger } from './popover';
-import { Button } from '../button';
-import { Input } from '../input';
-import { Label } from '../label';
+import { Popover, PopoverContent, PopoverTrigger } from "./popover";
+import { Button } from "../button";
+import { Input } from "../input";
+import { Label } from "../label";
 
 const meta: Meta<typeof Popover> = {
-  title: 'Components/Popover',
+  title: "Components/Popover",
   component: Popover,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
-        component: 'Displays rich content in a portal, triggered by a button.',
+        component: "Displays rich content in a portal, triggered by a button.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8871&mode=design&t=h85Ey3chnxVlElkp-1',
+      type: "figma",
+      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8871&mode=design&t=h85Ey3chnxVlElkp-1",
     },
   },
 };
@@ -43,11 +44,7 @@ export const Default: Story = {
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
               <Label htmlFor="maxWidth">Max. width</Label>
-              <Input
-                id="maxWidth"
-                defaultValue="300px"
-                className="col-span-2"
-              />
+              <Input id="maxWidth" defaultValue="300px" className="col-span-2" />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
               <Label htmlFor="height">Height</Label>
@@ -55,11 +52,7 @@ export const Default: Story = {
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
               <Label htmlFor="maxHeight">Max. height</Label>
-              <Input
-                id="maxHeight"
-                defaultValue="none"
-                className="col-span-2"
-              />
+              <Input id="maxHeight" defaultValue="none" className="col-span-2" />
             </div>
           </div>
         </div>

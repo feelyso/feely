@@ -1,5 +1,6 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
 import {
   Dialog,
@@ -9,28 +10,27 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from './dialog';
-import { Button } from '../button';
-import { Input } from '../input';
-import { Label } from '../label';
-
+} from "./dialog";
+import { Button } from "../button";
+import { Input } from "../input";
+import { Label } from "../label";
 
 const meta: Meta<typeof Dialog> = {
-  title: 'Components/Dialog',
+  title: "Components/Dialog",
   component: Dialog,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
         component:
-          'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.',
+          "A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8863&mode=design&t=BNqih1pZMuav038B-1',
+      type: "figma",
+      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8863&mode=design&t=BNqih1pZMuav038B-1",
     },
   },
 };

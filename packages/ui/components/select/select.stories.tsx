@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
-import Link from 'next/link';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { useForm } from 'react-hook-form';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import Link from "next/link";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { useForm } from "react-hook-form";
 // Import customs
 import {
   Select,
@@ -16,23 +17,15 @@ import {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from './select';
-import { Button } from '../button';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '../form';
-import { ToastProvider, toast } from '../toast';
+} from "./select";
+import { Button } from "../button";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "../form";
+import { ToastProvider, toast } from "../toast";
 
 const FormSchema = z.object({
   email: z
     .string({
-      required_error: 'Please select an email to display.',
+      required_error: "Please select an email to display.",
     })
     .email(),
 });
@@ -43,13 +36,10 @@ const SelectForm = () => {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast(
-      'You submitted the following values:', {
+    toast("You submitted the following values:", {
       description: (
-        <pre className="mt-2 w-[340px] rounded bg-subtle border border-default p-4">
-          <code className="text">
-            {JSON.stringify(data, null, 2)}
-          </code>
+        <pre className="bg-subtle border-default mt-2 w-[340px] rounded border p-4">
+          <code className="text">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
     });
@@ -77,8 +67,7 @@ const SelectForm = () => {
                 </SelectContent>
               </Select>
               <FormDescription>
-                You can manage email addresses in your{' '}
-                <Link href="/examples/forms">email settings</Link>.
+                You can manage email addresses in your <Link href="/examples/forms">email settings</Link>.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -88,24 +77,23 @@ const SelectForm = () => {
       </form>
     </Form>
   );
-}
+};
 
 const meta: Meta<typeof Select> = {
-  title: 'Components/Select',
+  title: "Components/Select",
   component: Select,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
-        component:
-          'Displays a list of options for the user to pick from—triggered by a button.',
+        component: "Displays a list of options for the user to pick from—triggered by a button.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8875&mode=design&t=h85Ey3chnxVlElkp-1',
+      type: "figma",
+      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8875&mode=design&t=h85Ey3chnxVlElkp-1",
     },
   },
 };

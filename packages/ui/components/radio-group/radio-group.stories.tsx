@@ -1,27 +1,21 @@
-'use client';
+"use client";
 
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 // Import customs
-import { RadioGroup, RadioGroupItem } from './radio-group';
-import { Label } from '../label';
-import { Button } from '../button';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '../form';
-import { ToastProvider, toast } from '../toast';
+import { RadioGroup, RadioGroupItem } from "./radio-group";
+import { Label } from "../label";
+import { Button } from "../button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../form";
+import { ToastProvider, toast } from "../toast";
 
 const FormSchema = z.object({
-  type: z.enum(['all', 'mentions', 'none'], {
-    required_error: 'You need to select a notification type.',
+  type: z.enum(["all", "mentions", "none"], {
+    required_error: "You need to select a notification type.",
   }),
 });
 
@@ -31,10 +25,9 @@ const RadioGroupFormDemo = () => {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast(
-      'You submitted the following values:', {
+    toast("You submitted the following values:", {
       description: (
-        <pre className="mt-2 w-[340px] rounded bg-subtle border border-default p-4">
+        <pre className="bg-subtle border-default mt-2 w-[340px] rounded border p-4">
           <code className="text">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
@@ -54,23 +47,18 @@ const RadioGroupFormDemo = () => {
                 <RadioGroup
                   onValueChange={field.onChange}
                   defaultValue={field.value}
-                  className="flex flex-col space-y-1"
-                >
+                  className="flex flex-col space-y-1">
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
                       <RadioGroupItem value="all" />
                     </FormControl>
-                    <FormLabel className="font-normal">
-                      All new messages
-                    </FormLabel>
+                    <FormLabel className="font-normal">All new messages</FormLabel>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
                       <RadioGroupItem value="mentions" />
                     </FormControl>
-                    <FormLabel className="font-normal">
-                      Direct messages and mentions
-                    </FormLabel>
+                    <FormLabel className="font-normal">Direct messages and mentions</FormLabel>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
@@ -91,23 +79,22 @@ const RadioGroupFormDemo = () => {
 };
 
 const meta: Meta<typeof RadioGroup> = {
-  title: 'Components/RadioGroup',
+  title: "Components/RadioGroup",
   component: RadioGroup,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     defaultValue: {
-      control: 'select',
-      options: ['default', 'comfortable', 'compact'],
-      description:
-        'The value of the radio item that should be checked when initially rendered.',
+      control: "select",
+      options: ["default", "comfortable", "compact"],
+      description: "The value of the radio item that should be checked when initially rendered.",
       table: {
         type: { summary: null },
       },
     },
     asChild: {
-      control: 'boolean',
+      control: "boolean",
       description:
-        'Change the default rendered element for the one passed as a child, merging their props and behavior.',
+        "Change the default rendered element for the one passed as a child, merging their props and behavior.",
       table: {
         defaultValue: { summary: false },
         type: { summary: null },
@@ -115,16 +102,16 @@ const meta: Meta<typeof RadioGroup> = {
     },
   },
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
         component:
-          'A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.',
+          "A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8873&mode=design&t=BNqih1pZMuav038B-1',
+      type: "figma",
+      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8873&mode=design&t=BNqih1pZMuav038B-1",
     },
   },
 };
@@ -150,7 +137,7 @@ export const Default: Story = {
     </RadioGroup>
   ),
   args: {
-    defaultValue: 'comfortable',
+    defaultValue: "comfortable",
   },
 };
 

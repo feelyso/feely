@@ -9,19 +9,19 @@
   }
 
   .accordion-item {
-    @apply border-b border-b-default last:border-none;
+    @apply border-b-default border-b last:border-none;
   }
 
   .accordion-trigger {
-    @apply flex flex-1 items-center text-lg-medium text justify-between p-4 transition-all bg-item hover:bg-item-hover [&[data-state=open]>svg]:rotate-180 ring-offset-background focus-visible:outline-none focus-visible:z-50 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2;
+    @apply text-lg-medium text bg-item hover:bg-item-hover ring-offset-background focus-visible:ring-brand flex flex-1 items-center justify-between p-4 transition-all focus-visible:z-50 focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 [&[data-state=open]>svg]:rotate-180;
   }
 
   .accordion-content {
-    @apply overflow-hidden bg-subtle border-t border-t-default transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down;
+    @apply bg-subtle border-t-default data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden border-t transition-all;
   }
 
   .accordion-content-children {
-    @apply p-4 text-md text;
+    @apply text-md text p-4;
   }
 
   .accordion-header {
@@ -29,7 +29,6 @@
   }
 
   .accordion-icon {
-    @apply h-4 w-4 shrink-0 stroke-icon transition-transform duration-200;
+    @apply stroke-icon h-4 w-4 shrink-0 transition-transform duration-200;
   }
-
 }

@@ -1,59 +1,58 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
-import { ToggleGroup, ToggleGroupItem } from './toggle-group';
-import { Bold, Italic, Underline } from '../icon';
+import { ToggleGroup, ToggleGroupItem } from "./toggle-group";
+import { Bold, Italic, Underline } from "../icon";
 
 const meta: Meta<typeof ToggleGroup> = {
-  title: 'Components/Toggle Group',
+  title: "Components/Toggle Group",
   component: ToggleGroup,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     type: {
-      control: 'radio',
-      options: ['single', 'multiple'],
-      description:
-        'Define whether a `single` or `multiple` items can be pressed at a time',
+      control: "radio",
+      options: ["single", "multiple"],
+      description: "Define whether a `single` or `multiple` items can be pressed at a time",
       table: {
-        defaultValue: { summary: 'multiple' },
+        defaultValue: { summary: "multiple" },
         type: { summary: null },
       },
     },
     variant: {
-      control: 'radio',
-      options: ['default', 'outline'],
-      description: 'Define the look of the of the toggle',
+      control: "radio",
+      options: ["default", "outline"],
+      description: "Define the look of the of the toggle",
       table: {
-        defaultValue: { summary: 'default' },
+        defaultValue: { summary: "default" },
         type: { summary: null },
       },
     },
     disabled: {
-      control: 'boolean',
-      description:
-        'Prevent user actions when certain conditions are not met',
+      control: "boolean",
+      description: "Prevent user actions when certain conditions are not met",
       table: {
-        defaultValue: { summary: 'false' },
+        defaultValue: { summary: "false" },
         type: { summary: null },
       },
     },
     asChild: { table: { disable: true } },
   },
   args: {
-    type: 'multiple',
-    variant: 'default',
+    type: "multiple",
+    variant: "default",
     disabled: false,
   },
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
-        component: 'A set of two-state buttons that can be toggled on or off.',
+        component: "A set of two-state buttons that can be toggled on or off.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=1063%3A304&mode=design&t=Aq9znIDZ1U4lgvQV-1',
+      type: "figma",
+      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=1063%3A304&mode=design&t=Aq9znIDZ1U4lgvQV-1",
     },
   },
 };
@@ -76,7 +75,7 @@ export const Default: Story = {
     </ToggleGroup>
   ),
   args: {
-    type: 'multiple',
+    type: "multiple",
   },
 };
 
@@ -95,11 +94,10 @@ export const Outlined: Story = {
     </ToggleGroup>
   ),
   args: {
-    type: 'multiple',
-    variant: 'outline',
+    type: "multiple",
+    variant: "outline",
   },
 };
-
 
 export const Single: Story = {
   render: (args) => (
@@ -116,10 +114,9 @@ export const Single: Story = {
     </ToggleGroup>
   ),
   args: {
-    type: 'single',
+    type: "single",
   },
 };
-
 
 export const Disabled: Story = {
   render: (args) => (
@@ -136,7 +133,7 @@ export const Disabled: Story = {
     </ToggleGroup>
   ),
   args: {
-    type: 'single',
+    type: "single",
     disabled: true,
   },
 };

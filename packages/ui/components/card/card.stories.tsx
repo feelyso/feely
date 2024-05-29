@@ -1,6 +1,7 @@
 // Import core
+import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { BellRing, Check } from "lucide-react";
+import { BellRing, Check } from "@feely/ui/components/icon";
 // Import customs
 import { Button } from "../button";
 import { Input } from "../input";

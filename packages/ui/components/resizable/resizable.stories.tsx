@@ -1,18 +1,15 @@
-'use client';
+"use client";
 
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from './resizable';
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "./resizable";
 
 const meta: Meta<typeof ResizablePanelGroup> = {
-  title: 'Components/Resizable',
+  title: "Components/Resizable",
   component: ResizablePanelGroup,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     direction: { table: { disable: true } },
     autoSaveId: { table: { disable: true } },
@@ -28,13 +25,12 @@ const meta: Meta<typeof ResizablePanelGroup> = {
   parameters: {
     docs: {
       description: {
-        component:
-          'Accessible resizable panel groups and layouts with keyboard support.',
+        component: "Accessible resizable panel groups and layouts with keyboard support.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=2322%3A3479&mode=design&t=JvvQbEKMGlE3Vvt0-1',
+      type: "figma",
+      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=2322%3A3479&mode=design&t=JvvQbEKMGlE3Vvt0-1",
     },
   },
 };
@@ -44,10 +40,7 @@ type Story = StoryObj<typeof ResizablePanelGroup>;
 
 export const Default: Story = {
   render: (args) => (
-    <ResizablePanelGroup
-      className="w-full rounded-lg border border-default"
-      {...args}
-    >
+    <ResizablePanelGroup className="border-default w-full rounded-lg border" {...args}>
       <ResizablePanel defaultSize={50}>
         <div className="flex h-[200px] items-center justify-center p-6">
           <span className="font-semibold">One</span>
@@ -72,16 +65,13 @@ export const Default: Story = {
     </ResizablePanelGroup>
   ),
   args: {
-    direction: 'horizontal',
+    direction: "horizontal",
   },
 };
 
 export const Vertical: Story = {
   render: (args) => (
-    <ResizablePanelGroup
-      className="min-h-[200px] w-full rounded-lg border border-default"
-      {...args}
-    >
+    <ResizablePanelGroup className="border-default min-h-[200px] w-full rounded-lg border" {...args}>
       <ResizablePanel defaultSize={25}>
         <div className="flex h-full items-center justify-center p-6">
           <span className="font-semibold">Header</span>
@@ -95,15 +85,12 @@ export const Vertical: Story = {
       </ResizablePanel>
     </ResizablePanelGroup>
   ),
-  args: { direction: 'vertical' },
+  args: { direction: "vertical" },
 };
 
 export const Handle: Story = {
   render: (args) => (
-    <ResizablePanelGroup
-      className="min-h-[200px] w-full rounded-lg border border-default"
-      {...args}
-    >
+    <ResizablePanelGroup className="border-default min-h-[200px] w-full rounded-lg border" {...args}>
       <ResizablePanel defaultSize={25}>
         <div className="flex h-full items-center justify-center p-6">
           <span className="font-semibold">Sidebar</span>
@@ -117,5 +104,5 @@ export const Handle: Story = {
       </ResizablePanel>
     </ResizablePanelGroup>
   ),
-  args: { direction: 'horizontal' },
+  args: { direction: "horizontal" },
 };

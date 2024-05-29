@@ -4,41 +4,39 @@
 @tailwind utilities;
 
 @layer components {
+  .table-container {
+    @apply relative w-full overflow-auto;
+  }
 
-    .table-container {
-        @apply relative w-full overflow-auto;
-    }
+  .table-component {
+    @apply text-md w-full caption-bottom;
+  }
 
-    .table-component {
-        @apply w-full caption-bottom text-md;
-    }
+  .table-header {
+    @apply border-b-default [&_tr]:border-b;
+  }
 
-    .table-header {
-        @apply [&_tr]:border-b border-b-default;
-    }
+  .table-body {
+    @apply [&_tr:last-child]:border-0;
+  }
 
-    .table-body {
-        @apply [&_tr:last-child]:border-0;
-    }
+  .table-footer {
+    @apply bg-item-hover text font-medium;
+  }
 
-    .table-footer {
-        @apply bg-item-hover font-medium text;
-    }
+  .table-row {
+    @apply border-b-default hover:bg-item-hover data-[state=selected]:bg-item-selected border-b transition-colors;
+  }
 
-    .table-row {
-        @apply border-b border-b-default transition-colors hover:bg-item-hover data-[state=selected]:bg-item-selected;
-    }
+  .table-head {
+    @apply text-description h-12 px-4 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0;
+  }
 
-    .table-head {
-        @apply h-12 px-4 text-left align-middle font-medium text-description [&:has([role=checkbox])]:pr-0;
-    }
+  .table-cell {
+    @apply p-4 align-middle [&:has([role=checkbox])]:pr-0;
+  }
 
-    .table-cell {
-        @apply p-4 align-middle [&:has([role=checkbox])]:pr-0;
-    }
-
-    .table-caption {
-        @apply mt-4 text-md text-description;
-    }
-
+  .table-caption {
+    @apply text-md text-description mt-4;
+  }
 }

@@ -4,17 +4,15 @@
 @tailwind utilities;
 
 @layer components {
+  .radio-group-component {
+    @apply grid gap-2;
+  }
 
-    .radio-group-component {
-        @apply grid gap-2;
-    }
+  .radio-group-item {
+    @apply border-brand ring-offset-background focus-visible:ring-brand disabled:opacity-disabled aspect-square h-4 w-4 rounded-full border focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed;
+  }
 
-    .radio-group-item {
-        @apply aspect-square h-4 w-4 rounded-full border border-brand ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-disabled;
-    }
-
-    .radio-group-item-indicator {
-        @apply flex items-center justify-center [&>svg]:w-[10px] [&>svg]:h-[10px] [&>svg]:fill-icon-brand [&>svg]:stroke-icon-brand;
-    }
-
+  .radio-group-item-indicator {
+    @apply [&>svg]:fill-icon-brand [&>svg]:stroke-icon-brand flex items-center justify-center [&>svg]:h-[10px] [&>svg]:w-[10px];
+  }
 }

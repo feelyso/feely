@@ -1,21 +1,21 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
-import { Alert, AlertIcon, AlertDescription, AlertTitle } from './alert';
-import { AlertTriangle, Info, Megaphone, XCircle } from '../icon';
+import { Alert, AlertIcon, AlertDescription, AlertTitle } from "./alert";
+import { AlertTriangle, Info, Megaphone, XCircle } from "../icon";
 
 const meta: Meta<typeof Alert> = {
-  title: 'Components/Alert',
+  title: "Components/Alert",
   component: Alert,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     status: {
-      control: 'select',
-      options: ['default', 'brand', 'danger', 'warning'],
-      description:
-        'Define the type of message communicated by the alert',
+      control: "select",
+      options: ["default", "brand", "danger", "warning"],
+      description: "Define the type of message communicated by the alert",
       table: {
-        defaultValue: { summary: 'default' },
+        defaultValue: { summary: "default" },
         type: { summary: null },
       },
     },
@@ -23,12 +23,12 @@ const meta: Meta<typeof Alert> = {
   parameters: {
     docs: {
       description: {
-        component: 'Displays a callout for user attention.',
+        component: "Displays a callout for user attention.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=233%3A751&mode=design&t=F5zgbD2phu8xvUpj-1',
+      type: "figma",
+      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=233%3A751&mode=design&t=F5zgbD2phu8xvUpj-1",
     },
   },
 };
@@ -45,13 +45,13 @@ export const Default: Story = {
       </AlertIcon>
       <AlertTitle>Notice</AlertTitle>
       <AlertDescription>
-        This is a general notification for your attention. It provides neutral
-        information or basic reminders for everyday tasks.
+        This is a general notification for your attention. It provides neutral information or basic reminders
+        for everyday tasks.
       </AlertDescription>
     </Alert>
   ),
   args: {
-    status: 'default',
+    status: "default",
   },
 };
 
@@ -63,12 +63,13 @@ export const Brand: Story = {
       </AlertIcon>
       <AlertTitle>Did you know?</AlertTitle>
       <AlertDescription>
-        Here&apos;s some useful information or context about the current process or section that might be helpful to you.
+        Here&apos;s some useful information or context about the current process or section that might be
+        helpful to you.
       </AlertDescription>
     </Alert>
   ),
   args: {
-    status: 'brand',
+    status: "brand",
   },
 };
 
@@ -80,13 +81,13 @@ export const Danger: Story = {
       </AlertIcon>
       <AlertTitle>Error Detected!</AlertTitle>
       <AlertDescription>
-        Critical issue encountered! Please address this error immediately to
-        prevent system failure or data loss.
+        Critical issue encountered! Please address this error immediately to prevent system failure or data
+        loss.
       </AlertDescription>
     </Alert>
   ),
   args: {
-    status: 'danger',
+    status: "danger",
   },
 };
 
@@ -98,12 +99,11 @@ export const Warning: Story = {
       </AlertIcon>
       <AlertTitle>Caution Advised</AlertTitle>
       <AlertDescription>
-        Be cautious! There are certain risks associated with this action. Review
-        and proceed with care.
+        Be cautious! There are certain risks associated with this action. Review and proceed with care.
       </AlertDescription>
     </Alert>
   ),
   args: {
-    status: 'warning',
+    status: "warning",
   },
 };

@@ -4,9 +4,7 @@
 @tailwind utilities;
 
 @layer components {
-
   .toggle-group-component {
     @apply flex items-center justify-center gap-1;
   }
-
 }

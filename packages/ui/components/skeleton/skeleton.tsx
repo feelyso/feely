@@ -1,19 +1,19 @@
 // Import core
-import React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
+import React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 // Import customs
-import { cn } from '@feely/lib/twMerge';
-import './skeleton.css';
+import { cn } from "@feely/lib/twMerge";
+import "./skeleton.css";
 
-const skeletonVariants = cva('skeleton-component', {
+const skeletonVariants = cva("skeleton-component", {
   variants: {
     shape: {
-      line: 'skeleton-line',
-      circle: 'skeleton-circle',
+      line: "skeleton-line",
+      circle: "skeleton-circle",
     },
   },
   defaultVariants: {
-    shape: 'line',
+    shape: "line",
   },
 });
 
@@ -22,9 +22,7 @@ export interface SkeletonProps
     VariantProps<typeof skeletonVariants> {}
 
 function Skeleton({ className, shape, ...props }: SkeletonProps) {
-  return (
-    <div className={cn(skeletonVariants({ shape }), className)} {...props} />
-  );
+  return <div className={cn(skeletonVariants({ shape }), className)} {...props} />;
 }
 
 export { Skeleton, skeletonVariants };

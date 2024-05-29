@@ -4,17 +4,16 @@
 @tailwind utilities;
 
 @layer components {
-
   .dialog-overlay {
-    @apply fixed inset-0 z-50 bg-mask backdrop-blur-sm;
+    @apply bg-mask fixed inset-0 z-50 backdrop-blur-sm;
   }
 
   .dialog-content {
-    @apply fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-default bg-elevated p-6 shadow-lg duration-200 sm:rounded-lg md:w-full;
+    @apply border-default bg-elevated fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border p-6 shadow-lg duration-200 sm:rounded-lg md:w-full;
   }
 
   .dialog-close {
-    @apply absolute right-4 top-4 rounded-sm stroke-icon ring-offset-elevated transition-colors hover:stroke-icon-hover focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-item-hover data-[state=open]:text-description;
+    @apply stroke-icon ring-offset-elevated hover:stroke-icon-hover focus:ring-brand data-[state=open]:bg-item-hover data-[state=open]:text-description absolute right-4 top-4 rounded-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none;
   }
 
   .dialog-header {
@@ -32,5 +31,4 @@
   .dialog-description {
     @apply text-md text-description;
   }
-
 }

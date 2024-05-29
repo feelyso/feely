@@ -4,13 +4,12 @@
 @tailwind utilities;
 
 @layer components {
-
   .calendar-component {
     @apply p-3;
   }
 
   .calendar-months {
-    @apply flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0;
+    @apply flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0;
   }
 
   .calendar-month {
@@ -18,7 +17,7 @@
   }
 
   .calendar-caption {
-    @apply flex justify-center pt-1 relative items-center;
+    @apply relative flex items-center justify-center pt-1;
   }
 
   .calendar-caption-label {
@@ -26,11 +25,11 @@
   }
 
   .calendar-nav {
-    @apply space-x-1 flex items-center;
+    @apply flex items-center space-x-1;
   }
 
   .calendar-nav-button {
-    @apply h-8 w-8 p-0 opacity-disabled hover:opacity-visible;
+    @apply opacity-disabled hover:opacity-visible h-8 w-8 p-0;
   }
 
   .calendar-nav-button-previus {
@@ -50,23 +49,23 @@
   }
 
   .calendar-header-cell {
-    @apply text-description rounded w-9 text-md;
+    @apply text-description text-md w-9 rounded;
   }
-  
+
   .calendar-row {
-    @apply flex w-full mt-2;
+    @apply mt-2 flex w-full;
   }
 
   .calendar-cell {
-    @apply text-center text-sm p-0 relative [&:has([aria-selected])]:bg-item-hover [&:has([aria-selected])]:rounded first:[&:has([aria-selected])]:rounded-l last:[&:has([aria-selected])]:rounded-r focus-within:relative focus-within:z-20;
+    @apply [&:has([aria-selected])]:bg-item-hover relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:rounded first:[&:has([aria-selected])]:rounded-l last:[&:has([aria-selected])]:rounded-r;
   }
 
   .calendar-day {
-    @apply h-9 w-9 p-0 text-md aria-selected:opacity-visible;
+    @apply text-md aria-selected:opacity-visible h-9 w-9 p-0;
   }
 
   .calendar-day-selected {
-    @apply bg-brand text-brand-inverse hover:bg-brand-hover focus:bg-brand focus:text-brand-inverse
+    @apply bg-brand text-brand-inverse hover:bg-brand-hover focus:bg-brand focus:text-brand-inverse;
   }
 
   .calendar-day-today {
@@ -82,11 +81,10 @@
   }
 
   .calendar-day-range-middle {
-    @apply aria-selected:bg-item-hover aria-selected:rounded-none aria-selected:text;
+    @apply aria-selected:bg-item-hover aria-selected:text aria-selected:rounded-none;
   }
 
   .calendar-day-hidden {
     @apply invisible;
   }
-
 }

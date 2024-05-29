@@ -1,5 +1,4 @@
 // Import core
-import { User, Lock } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
 import { Button } from "@feely/ui/components/button";
@@ -7,6 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@feely/ui/components/input";
 import { Label } from "@feely/ui/components/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@feely/ui/components/tabs";
+import { User, Lock } from "@feely/ui/components/icon";
 
 export const TabsPreview = () => (
   <Preview>

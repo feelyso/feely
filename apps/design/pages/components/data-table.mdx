@@ -19,7 +19,7 @@ Powerful table and datagrids built using TanStack Table.
 
     import * as React from "react"
     import { ColumnDef, ColumnFiltersState, SortingState, VisibilityState, flexRender, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useReactTable } from "@tanstack/react-table"
-    import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
+    import { ArrowUpDown, ChevronDown, MoreHorizontal } from "@feely/ui/components/icon"
 
     import { Button } from "@/components/button"
     import { Checkbox } from "@/components/checkbox"
@@ -612,7 +612,7 @@ Update our columns definition to add a new `actions` column. The `actions` cell 
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal } from "lucide-react";
+import { MoreHorizontal } from "@feely/ui/components/icon";
 
 import { Button } from "@/components/button";
 import {
@@ -789,7 +789,7 @@ We can now update the `email` header cell to add sorting controls.
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal } from "@feely/ui/components/icon";
 
 export const columns: ColumnDef<Payment>[] = [
   {
@@ -1104,7 +1104,7 @@ import {
   ArrowUp,
   ChevronsUpDown,
   EyeOff,
-} from "lucide-react"
+} from "@feely/ui/components/icon"
 import { Column } from "@tanstack/react-table"
 
 import { cn } from "@/lib/twMerge"
@@ -1185,7 +1185,7 @@ export const columns = [
 Add pagination controls to your table including page size and selection count.
 
 ```js copy
-import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "@feely/ui/components/icon";
 import { Table } from "@tanstack/react-table";
 
 import { Button } from "@/components/button";
@@ -1279,7 +1279,7 @@ A component to toggle column visibility.
 "use client";
 
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { Settings2 } from "lucide-react";
+import { Settings2 } from "@feely/ui/components/icon";
 import { Table } from "@tanstack/react-table";
 
 import { Button } from "@/components/button";

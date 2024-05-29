@@ -1,5 +1,6 @@
 // Import core
-import type { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 // Import customs
 import {
   ContextMenu,
@@ -15,25 +16,24 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from './context-menu';
-
+} from "./context-menu";
 
 const meta: Meta<typeof ContextMenu> = {
-  title: 'Components/ContextMenu',
+  title: "Components/ContextMenu",
   component: ContextMenu,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
         component:
-          'Displays a menu to the user — such as a set of actions or functions — triggered by a button.',
+          "Displays a menu to the user — such as a set of actions or functions — triggered by a button.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=233%3A757&mode=design&t=BNqih1pZMuav038B-1',
+      type: "figma",
+      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=233%3A757&mode=design&t=BNqih1pZMuav038B-1",
     },
   },
 };
@@ -44,7 +44,7 @@ type Story = StoryObj<typeof ContextMenu>;
 export const Default: Story = {
   render: (args) => (
     <ContextMenu {...args}>
-      <ContextMenuTrigger className="flex h-[160px] w-[320px] items-center justify-center rounded border border-default border-dashed text-md">
+      <ContextMenuTrigger className="border-default text-md flex h-[160px] w-[320px] items-center justify-center rounded border border-dashed">
         Right click here
       </ContextMenuTrigger>
       <ContextMenuContent className="w-64">
@@ -82,9 +82,7 @@ export const Default: Story = {
         <ContextMenuSeparator />
         <ContextMenuRadioGroup value="michael">
           <ContextMenuLabel inset>People</ContextMenuLabel>
-          <ContextMenuRadioItem value="michael">
-            Michael Scott
-          </ContextMenuRadioItem>
+          <ContextMenuRadioItem value="michael">Michael Scott</ContextMenuRadioItem>
           <ContextMenuRadioItem value="dwight">Dwight Schrute</ContextMenuRadioItem>
         </ContextMenuRadioGroup>
       </ContextMenuContent>

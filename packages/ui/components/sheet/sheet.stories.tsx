@@ -1,5 +1,6 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
 import {
   Sheet,
@@ -10,34 +11,33 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from './sheet';
-import { Button } from '../button';
-import { Label } from '../label';
-import { Input } from '../input';
-
+} from "./sheet";
+import { Button } from "../button";
+import { Label } from "../label";
+import { Input } from "../input";
 
 const meta: Meta<typeof Sheet> = {
-  title: 'Components/Sheet',
+  title: "Components/Sheet",
   component: Sheet,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
         component:
-          'Extends the Dialog component to display content that complements the main content of the screen.',
+          "Extends the Dialog component to display content that complements the main content of the screen.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8877&mode=design&t=h85Ey3chnxVlElkp-1',
+      type: "figma",
+      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8877&mode=design&t=h85Ey3chnxVlElkp-1",
     },
   },
 };
 export default meta;
 
 type SheetCustomProps = {
-  side?: 'top' | 'bottom' | 'left' | 'right';
+  side?: "top" | "bottom" | "left" | "right";
 };
 
 type Story = StoryObj<SheetCustomProps>;
@@ -51,9 +51,7 @@ export const Default: Story = {
       <SheetContent side={args.side}>
         <SheetHeader>
           <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when youre done.
-          </SheetDescription>
+          <SheetDescription>Make changes to your profile here. Click save when youre done.</SheetDescription>
         </SheetHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
@@ -78,16 +76,15 @@ export const Default: Story = {
     </Sheet>
   ),
   args: {
-    side: 'right',
+    side: "right",
   },
   argTypes: {
     side: {
-      control: 'select',
-      options: ['top', 'bottom', 'left', 'right'],
-      description:
-        'Define the direction in which the sheet will open',
+      control: "select",
+      options: ["top", "bottom", "left", "right"],
+      description: "Define the direction in which the sheet will open",
       table: {
-        defaultValue: { summary: 'right' },
+        defaultValue: { summary: "right" },
         type: { summary: null },
       },
     },

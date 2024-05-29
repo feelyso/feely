@@ -1,5 +1,4 @@
 // Import core
-import { BellRing, Check } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
 import { cn } from "@feely/lib/twMerge";
@@ -9,6 +8,7 @@ import { Input } from "@feely/ui/components/input";
 import { Label } from "@feely/ui/components/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@feely/ui/components/select";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@feely/ui/components/card";
+import { BellRing, Check } from "@feely/ui/components/icon";
 
 const notifications = [
   {

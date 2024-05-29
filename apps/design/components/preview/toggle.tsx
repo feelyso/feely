@@ -1,8 +1,8 @@
 // Import core
-import { Bold } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
 import { Toggle } from "@feely/ui/components/toggle";
+import { Bold } from "@feely/ui/components/icon";
 
 export const TogglePreview = () => (
   <Preview>

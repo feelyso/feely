@@ -4,17 +4,15 @@
 @tailwind utilities;
 
 @layer components {
-
   .tooltip-content {
-    @apply z-50 overflow-hidden rounded px-3 py-[6px] text-md shadow-md;
+    @apply text-md z-50 overflow-hidden rounded px-3 py-[6px] shadow-md;
   }
 
   .tooltip-content-outline {
-    @apply border border-default bg-elevated text;
+    @apply border-default bg-elevated text border;
   }
 
   .tooltip-content-fill {
     @apply bg-inverse text-inverse;
   }
-
 }
