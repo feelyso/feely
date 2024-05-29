@@ -7,7 +7,7 @@ export const SeparatorPreview = () => (
   <Preview>
     <div>
       <div className="space-y-1">
-        <h4 className="text-lg-semibold leading-none">vampa</h4>
+        <h4 className="text-lg-semibold leading-none">Feely Design System</h4>
         <p className="text-md text-description">Crafting inclusive experiences for everyone</p>
       </div>
       <Separator className="my-4" />
@@ -25,7 +25,7 @@ export const SeparatorPreview = () => (
 export const SeparatorHorizontal = () => (
   <Preview>
     <div>
-      <h4 className="text-lg-semibold leading-none">vampa</h4>
+      <h4 className="text-lg-semibold leading-none">Feely Design System</h4>
       <Separator className="my-4" />
       <p className="text-md text-description">Crafting inclusive experiences for everyone</p>
     </div>

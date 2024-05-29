@@ -41,7 +41,7 @@ export const Default: Story = {
   render: (args) => (
     <div>
       <div className="space-y-1">
-        <h4 className="text-lg-semibold">When4meet</h4>
+        <h4 className="text-lg-semibold">Feely Design System</h4>
         <p className="text-md text-description">Crafting inclusive experiences for everyone</p>
       </div>
       <Separator {...args} orientation="horizontal" className="my-4" />
@@ -62,7 +62,7 @@ export const Default: Story = {
 export const Horizontal: Story = {
   render: (args) => (
     <div>
-      <h4 className="text-lg-semibold">When4meet</h4>
+      <h4 className="text-lg-semibold">Feely Design System</h4>
       <Separator {...args} className="my-4" />
       <p className="text-md text-description">Crafting inclusive experiences for everyone</p>
     </div>
