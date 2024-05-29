@@ -3,8 +3,8 @@ title: Alert Dialog
 ---
 
 import { Tabs, Cards, Card } from "nextra/components";
-import { AccessibilityTable } from "@components/accessibility/accessibilityTable.mdx";
-import { alertDialogAccessibilityData } from "@components/accessibility/alert-dialog.mdx";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { alertDialogAccessibilityData } from "@components/accessibility/alert-dialog.tsx";
 import { AlertDialogPreview } from "@components/preview/alert-dialog.tsx";
 
 # 💠 Alert Dialog
@@ -17,8 +17,8 @@ A modal dialog that interrupts the user with important content and expects a res
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="alert-dialog.tsx"
-    import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/alert-dialog"
-    import { Button } from "@/components/button"
+    import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@feely/ui/components/alert-dialog"
+    import { Button } from "@feely/ui/components/button"
 
     export function AlertDialogDemo() {
       return (
@@ -71,8 +71,8 @@ Remember to avoid using AlertDialogs for non-essential information that does not
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="alert-dialog.tsx"
-    import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/alert-dialog"
-    import { Button } from "@/components/button"
+    import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@feely/ui/components/alert-dialog"
+    import { Button } from "@feely/ui/components/button"
 
     export function AlertDialogDemo() {
       return (

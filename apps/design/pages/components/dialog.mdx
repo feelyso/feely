@@ -3,8 +3,8 @@ title: Dialog
 ---
 
 import { Tabs, Cards, Card } from "nextra/components";
-import { AccessibilityTable } from "@components/accessibility/accessibilityTable.mdx";
-import { dialogAccessibilityData } from "@components/accessibility/dialog.mdx";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { dialogAccessibilityData } from "@components/accessibility/dialog.tsx";
 import { DialogPreview, DialogCustomClose } from "@components/preview/dialog.tsx";
 
 # 💠 Dialog
@@ -17,10 +17,10 @@ A window overlaid on either the primary window or another dialog window, renderi
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="dialog.tsx"
-    import { Button } from "@/components/button"
-    import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/dialog"
-    import { Input } from "@/components/input"
-    import { Label } from "@/components/label"
+    import { Button } from "@feely/ui/components/button"
+    import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@feely/ui/components/dialog"
+    import { Input } from "@feely/ui/components/input"
+    import { Label } from "@feely/ui/components/label"
 
     export function DialogDemo() {
         return (
@@ -93,10 +93,10 @@ Avoid using Dialogs for non-critical information that could be presented less in
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="dialog.tsx"
-    import { Button } from "@/components/button"
-    import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/dialog"
-    import { Input } from "@/components/input"
-    import { Label } from "@/components/label"
+    import { Button } from "@feely/ui/components/button"
+    import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@feely/ui/components/dialog"
+    import { Input } from "@feely/ui/components/input"
+    import { Label } from "@feely/ui/components/label"
 
     export function DialogDemo() {
         return (
@@ -153,10 +153,10 @@ Avoid using Dialogs for non-critical information that could be presented less in
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {42-46} /DialogClose/ filename="dialog.tsx"
-    import { Button } from "@/components/button"
-    import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/dialog"
-    import { Input } from "@/components/input"
-    import { Label } from "@/components/label"
+    import { Button } from "@feely/ui/components/button"
+    import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@feely/ui/components/dialog"
+    import { Input } from "@feely/ui/components/input"
+    import { Label } from "@feely/ui/components/label"
 
     export function DialogDemo() {
         return (

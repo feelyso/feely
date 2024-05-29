@@ -1,4 +1,4 @@
-import scale from '@feely/config/tokens/foundations';
+import scale from "@feely/config/tokens/foundations";
 
 export const FoundationsScale = () => (
   <>
@@ -13,38 +13,30 @@ export const FoundationsScale = () => (
             <th className="hidden lg:table-cell" align="left">
               Token
             </th>
-            <th
-              className="hidden sm:table-cell md:hidden lg:table-cell"
-              align="left"
-            >
+            <th className="hidden sm:table-cell md:hidden lg:table-cell" align="left">
               Preview
             </th>
           </tr>
         </thead>
         <tbody>
-          {Object.entries(scale.foundations.scale).map(
-            ([tokenName, tokenInfo]) => (
-              <tr key={tokenName}>
-                <td className="cell-title">Scale-{tokenName}</td>
-                <td>
-                  <div className="cell-value-scale" align="right">
-                    {tokenInfo.value}
-                  </div>
-                </td>
-                <td className="hidden lg:table-cell">
-                  <div className="cell-token-scale">
-                    <code>scale-{tokenName}</code>
-                  </div>
-                </td>
-                <td className="hidden sm:table-cell md:hidden lg:table-cell">
-                  <div
-                    className="cell-preview-scale"
-                    style={{ width: tokenInfo.value }}
-                  ></div>
-                </td>
-              </tr>
-            )
-          )}
+          {Object.entries(scale.foundations.scale).map(([tokenName, tokenInfo]) => (
+            <tr key={tokenName}>
+              <td className="cell-title">Scale-{tokenName}</td>
+              <td>
+                <div className="cell-value-scale" align="right">
+                  {tokenInfo.value}
+                </div>
+              </td>
+              <td className="hidden lg:table-cell">
+                <div className="cell-token-scale">
+                  <code>scale-{tokenName}</code>
+                </div>
+              </td>
+              <td className="hidden sm:table-cell md:hidden lg:table-cell">
+                <div className="cell-preview-scale" style={{ width: tokenInfo.value }}></div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     }

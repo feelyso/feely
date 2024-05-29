@@ -1,4 +1,4 @@
-import breakpoints from '@feely/config/tokens/tokens';
+import breakpoints from "@feely/config/tokens/tokens";
 
 export const TokensBreakpoints = () => (
   <>
@@ -16,31 +16,26 @@ export const TokensBreakpoints = () => (
           </tr>
         </thead>
         <tbody>
-          {Object.entries(breakpoints.tokens.light.breakpoint).map(
-            ([tokenName, tokenInfo]) => (
-              <tr key={tokenName}>
-                <td className="w-full">
-                  <div className="cell-tokens-name">
-                    <code className="font-medium">breakpoint-{tokenName}</code>
-                    <div className="cell-description-tokens">
-                      {tokenInfo.description}
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className="cell-value-scale" align="right">
-                    {tokenInfo.value}
-                  </div>
-                </td>
-                <td className="hidden sm:table-cell">
-                  <div
-                    className="cell-preview-breakpoints"
-                    style={{ width: `${parseInt(tokenInfo.value) / 4}px` }}
-                  ></div>
-                </td>
-              </tr>
-            )
-          )}
+          {Object.entries(breakpoints.tokens.light.breakpoint).map(([tokenName, tokenInfo]) => (
+            <tr key={tokenName}>
+              <td className="w-full">
+                <div className="cell-tokens-name">
+                  <code className="font-medium">breakpoint-{tokenName}</code>
+                  <div className="cell-description-tokens">{tokenInfo.description}</div>
+                </div>
+              </td>
+              <td>
+                <div className="cell-value-scale" align="right">
+                  {tokenInfo.value}
+                </div>
+              </td>
+              <td className="hidden sm:table-cell">
+                <div
+                  className="cell-preview-breakpoints"
+                  style={{ width: `${parseInt(tokenInfo.value) / 4}px` }}></div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     }

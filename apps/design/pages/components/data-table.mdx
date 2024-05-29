@@ -21,11 +21,11 @@ Powerful table and datagrids built using TanStack Table.
     import { ColumnDef, ColumnFiltersState, SortingState, VisibilityState, flexRender, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useReactTable } from "@tanstack/react-table"
     import { ArrowUpDown, ChevronDown, MoreHorizontal } from "@feely/ui/components/icon"
 
-    import { Button } from "@/components/button"
-    import { Checkbox } from "@/components/checkbox"
-    import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/dropdown-menu"
-    import { Input } from "@/components/input"
-    import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/table"
+    import { Button } from "@feely/ui/components/button"
+    import { Checkbox } from "@feely/ui/components/checkbox"
+    import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@feely/ui/components/dropdown-menu"
+    import { Input } from "@feely/ui/components/input"
+    import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@feely/ui/components/table"
 
     const data: Payment[] = [
       {
@@ -460,7 +460,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/table"
+} from "@feely/ui/components/table"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -614,7 +614,7 @@ Update our columns definition to add a new `actions` column. The `actions` cell 
 import { ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal } from "@feely/ui/components/icon";
 
-import { Button } from "@/components/button";
+import { Button } from "@feely/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -622,7 +622,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/dropdown-menu";
+} from "@feely/ui/components/dropdown-menu";
 
 export const columns: ColumnDef<Payment>[] = [
   // ...
@@ -696,7 +696,7 @@ This will automatically paginate your rows into pages of 10. See the [pagination
 We can add pagination controls to our table using the `<Button />` component and the `table.previousPage()`, `table.nextPage()` API methods.
 
 ```js copy {1,15,21-39} filename="app/payments/data-table.tsx"
-import { Button } from "@/components/button";
+import { Button } from "@feely/ui/components/button";
 
 export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
@@ -834,8 +834,8 @@ import {
   useReactTable,
 } from "@tanstack/react-table"
 
-import { Button } from "@/components/button"
-import { Input } from "@/components/input"
+import { Button } from "@feely/ui/components/button"
+import { Input } from "@feely/ui/components/input"
 
 export function DataTable<TData, TValue>({
   columns,
@@ -910,13 +910,13 @@ import {
   useReactTable,
 } from "@tanstack/react-table"
 
-import { Button } from "@/components/button"
+import { Button } from "@feely/ui/components/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/dropdown-menu"
+} from "@feely/ui/components/dropdown-menu"
 
 export function DataTable<TData, TValue>({
   columns,
@@ -1011,8 +1011,8 @@ Next, we're going to add row selection to our table.
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import { Badge } from "@/components/badge";
-import { Checkbox } from "@/components/checkbox";
+import { Badge } from "@feely/ui/components/badge";
+import { Checkbox } from "@feely/ui/components/checkbox";
 
 export const columns: ColumnDef<Payment>[] = [
   {
@@ -1108,14 +1108,14 @@ import {
 import { Column } from "@tanstack/react-table"
 
 import { cn } from "@/lib/twMerge"
-import { Button } from "@/components/button"
+import { Button } from "@feely/ui/components/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/dropdown-menu"
+} from "@feely/ui/components/dropdown-menu"
 
 interface DataTableColumnHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -1188,8 +1188,8 @@ Add pagination controls to your table including page size and selection count.
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "@feely/ui/components/icon";
 import { Table } from "@tanstack/react-table";
 
-import { Button } from "@/components/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/select";
+import { Button } from "@feely/ui/components/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@feely/ui/components/select";
 
 interface DataTablePaginationProps<TData> {
   table: Table<TData>;
@@ -1282,14 +1282,14 @@ import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
 import { Settings2 } from "@feely/ui/components/icon";
 import { Table } from "@tanstack/react-table";
 
-import { Button } from "@/components/button";
+import { Button } from "@feely/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-} from "@/components/dropdown-menu";
+} from "@feely/ui/components/dropdown-menu";
 
 interface DataTableViewOptionsProps<TData> {
   table: Table<TData>;

@@ -2,10 +2,17 @@
 title: Tabs
 ---
 
-import { Tabs, Cards, Card } from 'nextra/components';
-import { AccessibilityTable } from '@components/accessibility/accessibilityTable.mdx';
-import { tabsAccessibilityData } from '@components/accessibility/tabs.mdx';
-import { TabsPreview, TabsDefault, TabsDefaultValue, TabsDisabled, TabsWithIcon, TabsWithCard } from '@components/preview/tabs.tsx'
+import { Tabs, Cards, Card } from "nextra/components";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { tabsAccessibilityData } from "@components/accessibility/tabs.tsx";
+import {
+  TabsPreview,
+  TabsDefault,
+  TabsDefaultValue,
+  TabsDisabled,
+  TabsWithIcon,
+  TabsWithCard,
+} from "@components/preview/tabs.tsx";
 
 # 💠 Tabs
 
@@ -17,11 +24,11 @@ A set of layered sections of content—known as tab panels—that are displayed 
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="tabs.tsx"
-    import { Button } from "@/components/button"
-    import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/card"
-    import { Input } from "@/components/input"
-    import { Label } from "@/components/label"
-    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/tabs"
+    import { Button } from "@feely/ui/components/button"
+    import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@feely/ui/components/card"
+    import { Input } from "@feely/ui/components/input"
+    import { Label } from "@feely/ui/components/label"
+    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@feely/ui/components/tabs"
 
     export function TabsDemo() {
       return (
@@ -81,6 +88,7 @@ A set of layered sections of content—known as tab panels—that are displayed 
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -91,6 +99,7 @@ Tabs organize content across different screens, data sets, and other interactive
 Each tab is typically associated with a pane of content and when a user selects a tab, the associated content or panel is displayed, while others remain hidden.
 
 ### When to use
+
 - **Content Organization**: Use Tabs when you have multiple content areas that are related and of equal importance, which need to be displayed separately to avoid overwhelming the user.
 - **Space-saving**: Employ Tabs as a means to save space on the page while still making all content easily accessible.
 - **Sequential Information**: When content naturally flows from one subject to the next, Tabs can segment the information in a logical manner.
@@ -108,7 +117,7 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="tabs.tsx"
-    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/tabs"
+    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@feely/ui/components/tabs"
 
     export function TabsDemo() {
       return (
@@ -123,6 +132,7 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -134,7 +144,7 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {5} /defaultValue="password"/ filename="tabs.tsx"
-    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/tabs"
+    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@feely/ui/components/tabs"
 
     export function TabsDemo() {
       return (
@@ -149,6 +159,7 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -160,7 +171,7 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {8} /disabled/ filename="tabs.tsx"
-    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/tabs"
+    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@feely/ui/components/tabs"
 
     export function TabsDemo() {
       return (
@@ -175,6 +186,7 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -186,7 +198,7 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {2,8,9} /User/ /Lock/ filename="tabs.tsx"
-    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/tabs"
+    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@feely/ui/components/tabs"
     import { User, Lock } from 'lucide-react';
 
     export function TabsDemo() {
@@ -202,6 +214,7 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -213,11 +226,11 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="tabs.tsx"
-    import { Button } from "@/components/button"
-    import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/card"
-    import { Input } from "@/components/input"
-    import { Label } from "@/components/label"
-    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/tabs"
+    import { Button } from "@feely/ui/components/button"
+    import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@feely/ui/components/card"
+    import { Input } from "@feely/ui/components/input"
+    import { Label } from "@feely/ui/components/label"
+    import { Tabs, TabsContent, TabsList, TabsTrigger } from "@feely/ui/components/tabs"
 
     export function TabsDemo() {
       return (
@@ -276,6 +289,7 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -283,7 +297,7 @@ Avoid using Tabs for unrelated content that doesn’t require a clear separation
 
 **Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
 
-<Cards className='mt-8'>
+<Cards className="mt-8">
   <Card
     title="🤖 Storybook"
     href="https://www.stories.fusillo.design/?path=/docs/components-tabs--documentation"

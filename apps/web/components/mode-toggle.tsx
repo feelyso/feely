@@ -4,7 +4,12 @@ import * as React from "react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@feely/ui/components/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@feely/ui/components/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@feely/ui/components/dropdown-menu";
 import { Moon, Sun } from "@feely/ui/components/icon";
 
 export function ModeToggle() {

@@ -74,7 +74,7 @@ export const ToastBrand = () => {
       <Button
         variant="secondary"
         onClick={() => {
-          toast.info("Your message has been sent.", {
+          toast.success("Your message has been sent.", {
             description: "There was a problem with your request.",
             action: {
               label: "Undo",

@@ -21,10 +21,10 @@ Allows users to input information.
     import { useForm } from 'react-hook-form';
     import * as z from 'zod';
 
-    import { Button } from '@/components/button';
-    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/form';
-    import { Input } from '@/components/input';
-    import { toast } from '@/components/toast/use-toast';
+    import { Button } from '@feely/ui/components/button';
+    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@feely/ui/components/form';
+    import { Input } from '@feely/ui/components/input';
+    import { toast } from '@feely/ui/components/toast/use-toast';
 
     const FormSchema = z.object({
     username: z.string().min(2, {
@@ -233,7 +233,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { Button } from "@/components/button";
+import { Button } from "@feely/ui/components/button";
 import {
   Form,
   FormControl,
@@ -242,8 +242,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/form";
-import { Input } from "@/components/input";
+} from "@feely/ui/components/form";
+import { Input } from "@feely/ui/components/input";
 
 const formSchema = z.object({
   username: z.string().min(2, {

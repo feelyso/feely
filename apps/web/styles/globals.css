@@ -1,4 +1,4 @@
-@import '../../../packages/config/theme/shared-globals.css';
+@import "../../../packages/config/theme/shared-globals.css";
 
 @tailwind base;
 @tailwind components;

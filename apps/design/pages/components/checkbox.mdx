@@ -3,8 +3,8 @@ title: Checkbox
 ---
 
 import { Tabs, Cards, Card } from "nextra/components";
-import { AccessibilityTable } from "@components/accessibility/accessibilityTable.mdx";
-import { checkboxAccessibilityData } from "@components/accessibility/checkbox.mdx";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { checkboxAccessibilityData } from "@components/accessibility/checkbox.tsx";
 import {
   CheckboxPreview,
   CheckboxDisabled,
@@ -23,7 +23,7 @@ A control that allows a user to select one or more options from a number of choi
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="checkbox.tsx"
-    import { Checkbox } from "@/components/checkbox"
+    import { Checkbox } from "@feely/ui/components/checkbox"
 
     export function CheckboxDemo() {
         return <Checkbox id="terms" />
@@ -58,7 +58,7 @@ Avoid using Checkboxes for actions that have an immediate effect, as users might
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="checkbox.tsx"
-    import { Checkbox } from "@/components/checkbox"
+    import { Checkbox } from "@feely/ui/components/checkbox"
 
     export function CheckboxDemo() {
         return <Checkbox id="terms" />
@@ -76,7 +76,7 @@ Avoid using Checkboxes for actions that have an immediate effect, as users might
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {6,7,8,9} /disabled/ filename="checkbox.tsx"
-    import { Checkbox } from "@/components/checkbox"
+    import { Checkbox } from "@feely/ui/components/checkbox"
 
     export function CheckboxDemo() {
         return (
@@ -101,8 +101,8 @@ Avoid using Checkboxes for actions that have an immediate effect, as users might
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {8} /Label/ filename="checkbox.tsx"
-    import { Checkbox } from "@/components/checkbox"
-    import { Label } from "@/components/label"
+    import { Checkbox } from "@feely/ui/components/checkbox"
+    import { Label } from "@feely/ui/components/label"
 
     export function CheckboxDemo() {
         return (
@@ -132,10 +132,10 @@ Avoid using Checkboxes for actions that have an immediate effect, as users might
     import { useForm } from "react-hook-form"
     import * as z from "zod"
 
-    import { Button } from "@/components/button"
-    import { Checkbox } from "@/components/checkbox"
-    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/form"
-    import { toast } from "@/components/toast/use-toast"
+    import { Button } from "@feely/ui/components/button"
+    import { Checkbox } from "@feely/ui/components/checkbox"
+    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@feely/ui/components/form"
+    import { toast } from "@feely/ui/components/toast/use-toast"
 
     const FormSchema = z.object({
     mobile: z.boolean().default(false).optional(),
@@ -208,10 +208,10 @@ Avoid using Checkboxes for actions that have an immediate effect, as users might
     import { useForm } from "react-hook-form"
     import * as z from "zod"
 
-    import { Button } from "@/components/button"
-    import { Checkbox } from "@/components/checkbox"
-    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/form"
-    import { toast } from "@/components/toast/use-toast"
+    import { Button } from "@feely/ui/components/button"
+    import { Checkbox } from "@feely/ui/components/checkbox"
+    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui/components/form"
+    import { toast } from "@feely/ui/components/toast/use-toast"
 
     const items = [
     {

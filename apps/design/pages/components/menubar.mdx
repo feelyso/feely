@@ -3,8 +3,8 @@ title: Menubar
 ---
 
 import { Tabs, Cards, Card } from "nextra/components";
-import { AccessibilityTable } from "@components/accessibility/accessibilityTable.mdx";
-import { menubarAccessibilityData } from "@components/accessibility/menubar.mdx";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { menubarAccessibilityData } from "@components/accessibility/menubar.tsx";
 import { MenubarPreview } from "@components/preview/menubar.tsx";
 
 # 💠 Menubar
@@ -17,7 +17,7 @@ A visually persistent menu common in desktop applications that provides quick ac
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="menubar.tsx"
-    import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "@/components/menubar"
+    import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "@feely/ui/components/menubar"
 
     export function MenubarDemo() {
         return (
@@ -142,7 +142,7 @@ Avoid using Menubars in simple web applications where a more straightforward nav
   </Tabs.Tab>
   <Tabs.Tab>
   ```js copy filename="menubar.tsx"
-    import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "@/components/menubar"
+    import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "@feely/ui/components/menubar"
 
     export function MenubarDemo() {
         return (

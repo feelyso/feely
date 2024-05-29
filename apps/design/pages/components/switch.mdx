@@ -2,10 +2,15 @@
 title: Switch
 ---
 
-import { Tabs, Cards, Card } from 'nextra/components';
-import { AccessibilityTable } from '@components/accessibility/accessibilityTable.mdx';
-import { switchAccessibilityData } from '@components/accessibility/switch.mdx';
-import { SwitchPreview, SwitchWithLabel, SwitchDisabled, SwitchWithForm  } from '@components/preview/switch.tsx'
+import { Tabs, Cards, Card } from "nextra/components";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { switchAccessibilityData } from "@components/accessibility/switch.tsx";
+import {
+  SwitchPreview,
+  SwitchWithLabel,
+  SwitchDisabled,
+  SwitchWithForm,
+} from "@components/preview/switch.tsx";
 
 # 💠 Switch
 
@@ -17,12 +22,13 @@ A control that allows the user to toggle between checked and not checked.
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="switch.tsx"
-    import { Switch } from "@/components/switch"
+    import { Switch } from "@feely/ui/components/switch"
 
     export function SwitchDemo() {
       return <Switch />
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -33,6 +39,7 @@ The Switch component is a control that offers a binary choice, such as on/off or
 Unlike checkboxes, which can be used for multiple selections, a Switch represents a one-or-the-other option and is typically used to activate or deactivate a specific feature or setting.
 
 ### When to use
+
 - **Immediate action settings**: Use a Switch when the user's action should have an immediate effect, without the need for a "Submit" button. For example, toggling dark mode on or off.
 - **Binary options**: Employ a Switch for settings that can only be either enabled or disabled, where no intermediate states are possible.
 - **Space-saving**: A Switch is a good choice when space is at a premium, and you want to avoid cluttering the interface with larger controls like sliders or buttons.
@@ -50,12 +57,13 @@ Avoid using a Switch when the action requires further confirmation or has signif
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="switch.tsx"
-    import { Switch } from "@/components/switch"
+    import { Switch } from "@feely/ui/components/switch"
 
     export function SwitchDemo() {
       return <Switch />
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -67,8 +75,8 @@ Avoid using a Switch when the action requires further confirmation or has signif
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {1,8} /Label/ filename="switch.tsx"
-    import { Label } from "@/components/label"
-    import { Switch } from "@/components/switch"
+    import { Label } from "@feely/ui/components/label"
+    import { Switch } from "@feely/ui/components/switch"
 
     export function SwitchDemo() {
       return (
@@ -79,6 +87,7 @@ Avoid using a Switch when the action requires further confirmation or has signif
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -90,12 +99,13 @@ Avoid using a Switch when the action requires further confirmation or has signif
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="switch.tsx"
-    import { Switch } from "@/components/switch"
+    import { Switch } from "@feely/ui/components/switch"
 
     export function SwitchDemo() {
       return <Switch disabled/>
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -113,10 +123,10 @@ Avoid using a Switch when the action requires further confirmation or has signif
     import { useForm } from 'react-hook-form';
     import * as z from 'zod';
 
-    import { Button } from '@/components/button';
-    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from '@/components/form';
-    import { Switch } from '@/components/switch';
-    import { toast } from '@/components/toast/use-toast';
+    import { Button } from '@feely/ui/components/button';
+    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from '@feely/ui/components/form';
+    import { Switch } from '@feely/ui/components/switch';
+    import { toast } from '@feely/ui/components/toast/use-toast';
 
     const FormSchema = z.object({
       marketing_emails: z.boolean().default(false).optional(),
@@ -200,6 +210,7 @@ Avoid using a Switch when the action requires further confirmation or has signif
       );
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -207,7 +218,7 @@ Avoid using a Switch when the action requires further confirmation or has signif
 
 **Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
 
-<Cards className='mt-8'>
+<Cards className="mt-8">
   <Card
     title="🤖 Storybook"
     href="https://www.stories.fusillo.design/?path=/docs/components-switch--documentation"

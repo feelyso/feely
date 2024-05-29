@@ -2,7 +2,14 @@
 // Import customs
 import Preview from "@components/preview/preview";
 import { Button } from "@feely/ui/components/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@feely/ui/components/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@feely/ui/components/card";
 import { Input } from "@feely/ui/components/input";
 import { Label } from "@feely/ui/components/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@feely/ui/components/tabs";

@@ -3,8 +3,8 @@ title: Toast
 ---
 
 import { Tabs, Cards, Card } from 'nextra/components';
-import { AccessibilityTable } from '@components/accessibility/accessibilityTable.mdx';
-import { toastAccessibilityData } from '@components/accessibility/toast.mdx';
+import { AccessibilityTable } from '@components/accessibility/accessibility-table.mdx';
+import { toastAccessibilityData } from '@components/accessibility/toast.tsx';
 import {
   ToastPreview,
   ToastSimple,
@@ -26,20 +26,17 @@ A succinct message that is displayed temporarily.
   <Tabs.Tab>
   ```js copy filename="toast.tsx"
   "use client"
-  import { Button } from "@/components/button"
-  import { useToast } from "@/components/toast/use-toast"
+  import { Button } from "@feely/ui/components/button"
+  import { toast } from "@feely/ui/components/toast"
 
   export function ToastDemo() {
-  const { toast } = useToast()
 
     return (
         <Button
           variant="secondary"
           onClick={() => {
-            toast({
-              description: "Your message has been sent.",
-            })
-          }}
+            toast("Your message has been sent.");
+          }}>
         >
           Show Toast
         </Button>
@@ -74,20 +71,17 @@ Avoid using Toasts for critical errors or information that requires immediate ac
   <Tabs.Tab>
   ```js copy {13} /description/ filename="toast.tsx"
   "use client"
-  import { Button } from "@/components/button"
-  import { useToast } from "@/components/toast/use-toast"
+  import { Button } from "@feely/ui/components/button"
+  import { toast } from "@feely/ui/components/toast"
 
   export function ToastDemo() {
-  const { toast } = useToast()
 
     return (
         <Button
             variant="secondary"
             onClick={() => {
-                toast({
-                    description: "Your message has been sent.",
-                })
-            }}
+              toast("Your message has been sent.");
+            }}>
             >
                 Show Toast
         </Button>
@@ -105,23 +99,21 @@ Avoid using Toasts for critical errors or information that requires immediate ac
   <Tabs.Tab>
   ```js copy {13} /title/ filename="toast.tsx"
   "use client"
-  import { Button } from "@/components/button"
-  import { useToast } from "@/components/toast/use-toast"
+  import { Button } from "@feely/ui/components/button"
+  import { toast } from "@feely/ui/components/toast"
 
   export function ToastDemo() {
-  const { toast } = useToast()
 
     return (
         <Button
-            variant="secondary"
-            onClick={() => {
-                toast({
-                    title: "Uh oh! Something went wrong.",
-                    description: "Your message has been sent.",
-                })
-            }}
-            >
-                Show Toast
+          variant="secondary"
+          onClick={() => {
+            toast("Your message has been sent.", {
+              description: "There was a problem with your request.",
+            });
+          }}>
+        >
+          Show Toast
         </Button>
     )
   }
@@ -137,8 +129,8 @@ Avoid using Toasts for critical errors or information that requires immediate ac
   <Tabs.Tab>
   ```js copy {15} /action/ filename="toast.tsx"
   "use client"
-  import { Button } from "@/components/button"
-  import { useToast } from "@/components/toast/use-toast"
+  import { Button } from "@feely/ui/components/button"
+  import { toast } from "@feely/ui/components/toast/use-toast"
 
   export function ToastDemo() {
   const { toast } = useToast()
@@ -147,14 +139,16 @@ Avoid using Toasts for critical errors or information that requires immediate ac
         <Button
             variant="secondary"
             onClick={() => {
-                toast({
-                    title: "Uh oh! Something went wrong.",
-                    description: "There was a problem with your request.",
-                    action: "Try again",
-                })
-            }}
-            >
-                Show Toast
+              toast("Your message has been sent.", {
+                description: "There was a problem with your request.",
+                action: {
+                  label: "Undo",
+                  onClick: () => console.log("Undo"),
+                },
+              });
+            }}>
+        >
+          Show Toast
         </Button>
     )
   }
@@ -170,8 +164,8 @@ Avoid using Toasts for critical errors or information that requires immediate ac
   <Tabs.Tab>
   ```js copy {16} /status: "brand"/ filename="toast.tsx"
   "use client"
-  import { Button } from "@/components/button"
-  import { useToast } from "@/components/toast/use-toast"
+  import { Button } from "@feely/ui/components/button"
+  import { useToast } from "@feely/ui/components/toast/use-toast"
 
   export function ToastDemo() {
   const { toast } = useToast()
@@ -180,13 +174,14 @@ Avoid using Toasts for critical errors or information that requires immediate ac
         <Button
             variant="secondary"
             onClick={() => {
-                toast({
-                    title: "Uh oh! Something went wrong.",
-                    description: "There was a problem with your request.",
-                    action: "Try again",
-                    status: "brand",
-                })
-            }}
+              toast.success("Your message has been sent.", {
+                description: "There was a problem with your request.",
+                action: {
+                  label: "Undo",
+                  onClick: () => console.log("Undo"),
+                },
+              });
+            }}>
             >
                 Show Toast
         </Button>
@@ -204,8 +199,8 @@ Avoid using Toasts for critical errors or information that requires immediate ac
   <Tabs.Tab>
   ```js copy {16} /status: "danger"/ filename="toast.tsx"
   "use client"
-  import { Button } from "@/components/button"
-  import { useToast } from "@/components/toast/use-toast"
+  import { Button } from "@feely/ui/components/button"
+  import { useToast } from "@feely/ui/components/toast/use-toast"
 
   export function ToastDemo() {
   const { toast } = useToast()
@@ -214,13 +209,14 @@ Avoid using Toasts for critical errors or information that requires immediate ac
         <Button
             variant="secondary"
             onClick={() => {
-                toast({
-                    title: "Uh oh! Something went wrong.",
-                    description: "There was a problem with your request.",
-                    action: "Try again",
-                    status: "danger",
-                })
-            }}
+              toast.error("Your message has been sent.", {
+                description: "There was a problem with your request.",
+                action: {
+                  label: "Undo",
+                  onClick: () => console.log("Undo"),
+                },
+              });
+            }}>
             >
                 Show Toast
         </Button>
@@ -238,8 +234,8 @@ Avoid using Toasts for critical errors or information that requires immediate ac
   <Tabs.Tab>
   ```js copy {16} /status: "warning"/ filename="toast.tsx"
   "use client"
-  import { Button } from "@/components/button"
-  import { useToast } from "@/components/toast/use-toast"
+  import { Button } from "@feely/ui/components/button"
+  import { useToast } from "@feely/ui/components/toast/use-toast"
 
   export function ToastDemo() {
   const { toast } = useToast()
@@ -248,13 +244,14 @@ Avoid using Toasts for critical errors or information that requires immediate ac
         <Button
             variant="secondary"
             onClick={() => {
-                toast({
-                    title: "Uh oh! Something went wrong.",
-                    description: "There was a problem with your request.",
-                    action: "Try again",
-                    status: "warning",
-                })
-            }}
+              toast.warning("Your message has been sent.", {
+                description: "There was a problem with your request.",
+                action: {
+                  label: "Undo",
+                  onClick: () => console.log("Undo"),
+                },
+              });
+            }}>
             >
                 Show Toast
         </Button>

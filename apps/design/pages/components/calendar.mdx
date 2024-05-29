@@ -18,7 +18,7 @@ An interactive calendar for date selection experiences.
     "use client"
 
     import * as React from "react"
-    import { Calendar } from "@/components/calendar"
+    import { Calendar } from "@feely/ui/components/calendar"
 
     export function CalendarDemo() {
         const [date, setDate] = React.useState<Date | undefined>(new Date())
@@ -70,7 +70,7 @@ You can use the `<Calendar />` component to build a date picker. See the [DayPic
     "use client"
 
     import * as React from "react"
-    import { Calendar } from "@/components/calendar"
+    import { Calendar } from "@feely/ui/components/calendar"
 
     export function CalendarDemo() {
         const [date, setDate] = React.useState<Date | undefined>(new Date())
@@ -106,11 +106,11 @@ You can use the `<Calendar />` component to build a date picker. See the [DayPic
     import * as z from "zod"
 
     import { cn } from "@/lib/twMerge"
-    import { Button } from "@/components/button"
-    import { Calendar } from "@/components/calendar"
-    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/form"
-    import { Popover, PopoverContent, PopoverTrigger } from "@/components/popover"
-    import { toast } from "@/components/toast/use-toast"
+    import { Button } from "@feely/ui/components/button"
+    import { Calendar } from "@feely/ui/components/calendar"
+    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui/components/form"
+    import { Popover, PopoverContent, PopoverTrigger } from "@feely/ui/components/popover"
+    import { toast } from "@feely/ui/components/toast/use-toast"
 
     const FormSchema = z.object({
         dob: z.date({

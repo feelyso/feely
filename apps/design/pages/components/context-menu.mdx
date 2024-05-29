@@ -3,8 +3,8 @@ title: Context Menu
 ---
 
 import { Tabs, Cards, Card } from "nextra/components";
-import { AccessibilityTable } from "@components/accessibility/accessibilityTable.mdx";
-import { contextMenuAccessibilityData } from "@components/accessibility/context-menu.mdx";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { contextMenuAccessibilityData } from "@components/accessibility/context-menu.tsx";
 import { ContextMenuPreview } from "@components/preview/context-menu.tsx";
 
 # 💠 Context Menu
@@ -17,7 +17,7 @@ Displays a menu to the user — such as a set of actions or functions — trigge
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="context-menu.tsx"
-    import { ContextMenu, ContextMenuCheckboxItem, ContextMenuContent, ContextMenuItem, ContextMenuLabel, ContextMenuRadioGroup, ContextMenuRadioItem, ContextMenuSeparator, ContextMenuShortcut, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuTrigger } from "@/components/context-menu"
+    import { ContextMenu, ContextMenuCheckboxItem, ContextMenuContent, ContextMenuItem, ContextMenuLabel, ContextMenuRadioGroup, ContextMenuRadioItem, ContextMenuSeparator, ContextMenuShortcut, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuTrigger } from "@feely/ui/components/context-menu"
 
     export function ContextMenuDemo() {
         return (
@@ -102,7 +102,7 @@ Avoid using Context Menus as the only means of performing important actions, as 
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="context-menu.tsx"
-    import { ContextMenu, ContextMenuCheckboxItem, ContextMenuContent, ContextMenuItem, ContextMenuLabel, ContextMenuRadioGroup, ContextMenuRadioItem, ContextMenuSeparator, ContextMenuShortcut, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuTrigger } from "@/components/context-menu"
+    import { ContextMenu, ContextMenuCheckboxItem, ContextMenuContent, ContextMenuItem, ContextMenuLabel, ContextMenuRadioGroup, ContextMenuRadioItem, ContextMenuSeparator, ContextMenuShortcut, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuTrigger } from "@feely/ui/components/context-menu"
 
     export function ContextMenuDemo() {
         return (

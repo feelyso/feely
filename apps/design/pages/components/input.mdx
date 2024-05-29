@@ -22,7 +22,7 @@ A basic widget for getting the user input in a text field.
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="input.tsx"
-    import { Input } from "@/components/input"
+    import { Input } from "@feely/ui/components/input"
 
     export function InputDemo() {
         return <Input type="email" placeholder="Email" className="w-80"/>
@@ -59,7 +59,7 @@ Avoid using Input components for non-textual data if more suitable controls exis
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="input.tsx"
-    import { Input } from "@/components/input"
+    import { Input } from "@feely/ui/components/input"
 
     export function InputDemo() {
         return <Input type="email" placeholder="Email" className="w-80"/>
@@ -77,7 +77,7 @@ Avoid using Input components for non-textual data if more suitable controls exis
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {4} /type="file"/ filename="input.tsx"
-    import { Input } from "@/components/input"
+    import { Input } from "@feely/ui/components/input"
 
     export function InputDemo() {
         return <Input type="file" className="w-80"/>
@@ -95,7 +95,7 @@ Avoid using Input components for non-textual data if more suitable controls exis
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {4} /disabled/ filename="input.tsx"
-    import { Input } from "@/components/input"
+    import { Input } from "@feely/ui/components/input"
 
     export function InputDemo() {
         return <Input type="email" placeholder="Email" disabled className="w-80"/>
@@ -113,8 +113,8 @@ Avoid using Input components for non-textual data if more suitable controls exis
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {2,7} /Label/ filename="input.tsx"
-    import { Input } from "@/components/input"
-    import { Label } from "@/components/label"
+    import { Input } from "@feely/ui/components/input"
+    import { Label } from "@feely/ui/components/label"
 
     export function InputWithLabel() {
         return (
@@ -137,8 +137,8 @@ Avoid using Input components for non-textual data if more suitable controls exis
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {1,8} /Button/ filename="input.tsx"
-    import { Button } from "@/components/button"
-    import { Input } from "@/components/input"
+    import { Button } from "@feely/ui/components/button"
+    import { Input } from "@feely/ui/components/input"
 
     export function InputWithButton() {
         return (
@@ -167,10 +167,10 @@ Avoid using Input components for non-textual data if more suitable controls exis
     import { useForm } from 'react-hook-form';
     import * as z from 'zod';
 
-    import { Button } from '@/components/button';
-    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/form';
-    import { Input } from '@/components/input';
-    import { toast } from '@/components/toast/use-toast';
+    import { Button } from '@feely/ui/components/button';
+    import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@feely/ui/components/form';
+    import { Input } from '@feely/ui/components/input';
+    import { toast } from '@feely/ui/components/toast/use-toast';
 
     const FormSchema = z.object({
     username: z.string().min(2, {

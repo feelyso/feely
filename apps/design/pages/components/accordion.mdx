@@ -3,8 +3,8 @@ title: Accordion
 ---
 
 import { Tabs, Cards, Card } from "nextra/components";
-import { AccessibilityTable } from "@components/accessibility/accessibilityTable.mdx";
-import { accordionAccessibilityData } from "@components/accessibility/accordion.mdx";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { accordionAccessibilityData } from "@components/accessibility/accordion";
 import {
   AccordionPreview,
   AccordionSingle,
@@ -23,7 +23,7 @@ A vertically stacked set of interactive headings that each reveal a section of c
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="accordion.tsx"
-    import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/accordion"
+    import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@feely/ui/components/accordion"
 
     export function AccordionDemo() {
         return (
@@ -84,7 +84,7 @@ Set the `type` property to `single` to enable only one item to open at a time.
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {5} /single/ filename="accordion.tsx"
-    import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/accordion"
+    import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@feely/ui/components/accordion"
 
     export function AccordionDemo() {
       return (
@@ -125,7 +125,7 @@ Set the `type` prop to `multiple` to enable opening multiple items at once.
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {5} /multiple/ filename="accordion.tsx"
-    import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/accordion"
+    import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@feely/ui/components/accordion"
 
     export function AccordionDemo() {
       return (
@@ -166,7 +166,7 @@ Use the `collapsible` prop to allow all items to close.
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {5} /collapsible/ filename="accordion.tsx"
-    import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/accordion"
+    import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@feely/ui/components/accordion"
 
     export function AccordionDemo() {
       return (
@@ -207,7 +207,7 @@ Use the `defaultValue` prop to define the open item by default.
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {5} /defaultValue/ filename="accordion.tsx"
-    import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/accordion"
+    import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@feely/ui/components/accordion"
 
     export function AccordionDemo() {
       return (

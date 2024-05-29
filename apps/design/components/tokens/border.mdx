@@ -1,4 +1,4 @@
-import border from '@feely/config/tokens/tokens';
+import border from "@feely/config/tokens/tokens";
 
 export const TokensBorder = ({ type }) => (
   <>
@@ -16,41 +16,40 @@ export const TokensBorder = ({ type }) => (
           </tr>
         </thead>
         <tbody>
-          {Object.entries(border.tokens.light.border[type]).map(
-            ([tokenName, tokenInfo]) => (
-              <tr key={tokenName}>
-                <td className="w-full">
-                  <div className="cell-tokens-name">
-                    <code className="font-medium">border-{type}-{tokenName}</code>
-                    <div className="cell-description-tokens">
-                      {tokenInfo.description}
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className="cell-value-scale" align="right">
-                    {tokenInfo.value}
-                  </div>
-                </td>
-                <td className="hidden sm:table-cell">
-                  <div
-                    className={type === 'radius'
-                      ? 'cell-preview-border-radius'
-                      : type === 'width'
-                      ? 'cell-preview-border-width'
-                      : {}}
-                    style={
-                      type === 'radius'
-                      ? { borderRadius: tokenInfo.value }
-                      : type === 'width'
-                      ? { borderWidth: tokenInfo.value, }
+          {Object.entries(border.tokens.light.border[type]).map(([tokenName, tokenInfo]) => (
+            <tr key={tokenName}>
+              <td className="w-full">
+                <div className="cell-tokens-name">
+                  <code className="font-medium">
+                    border-{type}-{tokenName}
+                  </code>
+                  <div className="cell-description-tokens">{tokenInfo.description}</div>
+                </div>
+              </td>
+              <td>
+                <div className="cell-value-scale" align="right">
+                  {tokenInfo.value}
+                </div>
+              </td>
+              <td className="hidden sm:table-cell">
+                <div
+                  className={
+                    type === "radius"
+                      ? "cell-preview-border-radius"
+                      : type === "width"
+                      ? "cell-preview-border-width"
                       : {}
-                    }
-                  ></div>
-                </td>
-              </tr>
-            )
-          )}
+                  }
+                  style={
+                    type === "radius"
+                      ? { borderRadius: tokenInfo.value }
+                      : type === "width"
+                      ? { borderWidth: tokenInfo.value }
+                      : {}
+                  }></div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     }
