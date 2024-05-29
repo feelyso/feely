@@ -1,50 +1,43 @@
-'use client';
+"use client";
 
 // Import core
-import type { Meta, StoryObj } from '@storybook/react';
-import Link from 'next/link';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
+import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import Link from "next/link";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 // Import customs
-import { Checkbox } from './checkbox';
-import { Label } from '../label';
-import { Button } from '../button';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '../form';
-import { ToastProvider, toast } from '../toast';
+import { Checkbox } from "./checkbox";
+import { Label } from "../label";
+import { Button } from "../button";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "../form";
+import { ToastProvider, toast } from "../toast";
 
 const items = [
   {
-    id: 'recents',
-    label: 'Recents',
+    id: "recents",
+    label: "Recents",
   },
   {
-    id: 'home',
-    label: 'Home',
+    id: "home",
+    label: "Home",
   },
   {
-    id: 'applications',
-    label: 'Applications',
+    id: "applications",
+    label: "Applications",
   },
   {
-    id: 'desktop',
-    label: 'Desktop',
+    id: "desktop",
+    label: "Desktop",
   },
   {
-    id: 'downloads',
-    label: 'Downloads',
+    id: "downloads",
+    label: "Downloads",
   },
   {
-    id: 'documents',
-    label: 'Documents',
+    id: "documents",
+    label: "Documents",
   },
 ] as const;
 
@@ -61,13 +54,10 @@ const CheckboxReactHookFormSingle = () => {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast(
-      'You submitted the following values:', {
+    toast("You submitted the following values:", {
       description: (
-        <pre className="mt-2 w-[340px] rounded bg-subtle border border-default p-4">
-          <code className="text">
-            {JSON.stringify(data, null, 2)}
-          </code>
+        <pre className="bg-subtle border-default mt-2 w-[340px] rounded border p-4">
+          <code className="text">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
     });
@@ -80,19 +70,14 @@ const CheckboxReactHookFormSingle = () => {
           control={form.control}
           name="mobile"
           render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded border border-default p-4">
+            <FormItem className="border-default flex flex-row items-start space-x-3 space-y-0 rounded border p-4">
               <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
+                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <FormLabel>
-                  Use different settings for my mobile devices
-                </FormLabel>
+                <FormLabel>Use different settings for my mobile devices</FormLabel>
                 <FormDescription>
-                  You can manage your mobile notifications in the{' '}
+                  You can manage your mobile notifications in the{" "}
                   <Link href="/examples/forms">mobile settings</Link> page.
                 </FormDescription>
               </div>
@@ -103,11 +88,11 @@ const CheckboxReactHookFormSingle = () => {
       </form>
     </Form>
   );
-}
+};
 
 const FormSchemaMultiple = z.object({
   items: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: 'You have to select at least one item.',
+    message: "You have to select at least one item.",
   }),
 });
 
@@ -115,18 +100,15 @@ const CheckboxReactHookFormMultiple = () => {
   const form = useForm<z.infer<typeof FormSchemaMultiple>>({
     resolver: zodResolver(FormSchemaMultiple),
     defaultValues: {
-      items: ['recents', 'home'],
+      items: ["recents", "home"],
     },
   });
 
   function onSubmit(data: z.infer<typeof FormSchemaMultiple>) {
-    toast(
-      'You submitted the following values:', {
+    toast("You submitted the following values:", {
       description: (
-        <pre className="mt-2 w-[340px] rounded bg-subtle border border-default p-4">
-          <code className="text">
-            {JSON.stringify(data, null, 2)}
-          </code>
+        <pre className="bg-subtle border-default mt-2 w-[340px] rounded border p-4">
+          <code className="text">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
     });
@@ -141,12 +123,8 @@ const CheckboxReactHookFormMultiple = () => {
           render={() => (
             <FormItem>
               <div className="mb-4">
-                <FormLabel className="text-lg-medium text">
-                  Sidebar
-                </FormLabel>
-                <FormDescription>
-                  Select the items you want to display in the sidebar.
-                </FormDescription>
+                <FormLabel className="text-lg-medium text">Sidebar</FormLabel>
+                <FormDescription>Select the items you want to display in the sidebar.</FormDescription>
               </div>
               {items.map((item) => (
                 <FormField
@@ -155,27 +133,18 @@ const CheckboxReactHookFormMultiple = () => {
                   name="items"
                   render={({ field }) => {
                     return (
-                      <FormItem
-                        key={item.id}
-                        className="flex flex-row items-start space-x-3 space-y-0"
-                      >
+                      <FormItem key={item.id} className="flex flex-row items-start space-x-3 space-y-0">
                         <FormControl>
                           <Checkbox
                             checked={field.value?.includes(item.id)}
                             onCheckedChange={(checked) => {
                               return checked
                                 ? field.onChange([...field.value, item.id])
-                                : field.onChange(
-                                    field.value?.filter(
-                                      (value) => value !== item.id
-                                    )
-                                  );
+                                : field.onChange(field.value?.filter((value) => value !== item.id));
                             }}
                           />
                         </FormControl>
-                        <FormLabel className="font-normal">
-                          {item.label}
-                        </FormLabel>
+                        <FormLabel className="font-normal">{item.label}</FormLabel>
                       </FormItem>
                     );
                   }}
@@ -189,42 +158,40 @@ const CheckboxReactHookFormMultiple = () => {
       </form>
     </Form>
   );
-}
+};
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Components/Checkbox',
+  title: "Components/Checkbox",
   component: Checkbox,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     checked: {
-      control: 'boolean',
-      description: 'The controlled checked state of the checkbox.',
+      control: "boolean",
+      description: "The controlled checked state of the checkbox.",
       table: {
         type: { summary: null },
       },
     },
     disabled: {
-      control: 'boolean',
-      description:
-        'Prevent user actions when certain conditions are not met.',
+      control: "boolean",
+      description: "Prevent user actions when certain conditions are not met.",
       table: {
-        defaultValue: { summary: 'false' },
+        defaultValue: { summary: "false" },
         type: { summary: null },
       },
     },
     asChild: { table: { disable: true } },
   },
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
-        component:
-          'A control that allows a user to select one or more options from a number of choices.',
+        component: "A control that allows a user to select one or more options from a number of choices.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=233%3A753&mode=design&t=BNqih1pZMuav038B-1',
+      type: "figma",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=233-753&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };

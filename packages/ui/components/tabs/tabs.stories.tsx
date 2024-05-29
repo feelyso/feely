@@ -1,31 +1,23 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
-import { User, Lock } from 'lucide-react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
+import { User, Lock } from "@feely/ui/components/icon";
 // Import customs
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './tabs';
-import { Button } from '../button';
-import { Input } from '../input';
-import { Label } from '../label';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '../card';
-
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
+import { Button } from "../button";
+import { Input } from "../input";
+import { Label } from "../label";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../card";
 
 const meta: Meta<typeof Tabs> = {
-  title: 'Components/Tabs',
+  title: "Components/Tabs",
   component: Tabs,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     defaultValue: {
-      control: 'radio',
-      options: ['account', 'password'],
-      description:
-        'Define the tab opened by default',
+      control: "radio",
+      options: ["account", "password"],
+      description: "Define the tab opened by default",
       table: {
         type: { summary: null },
       },
@@ -33,16 +25,16 @@ const meta: Meta<typeof Tabs> = {
     asChild: { table: { disable: true } },
   },
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
         component:
-          'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
+          "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8882&mode=design&t=7r34RfU06jHXNJDx-1',
+      type: "figma",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8882&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };
@@ -60,15 +52,16 @@ export const Default: Story = {
     <Tabs defaultValue={args.defaultValue} className="max-w-[400px]">
       <TabsList className="w-full">
         <TabsTrigger value="account">Account</TabsTrigger>
-        <TabsTrigger value="password" disabled={args.disabled}>Password</TabsTrigger>
+        <TabsTrigger value="password" disabled={args.disabled}>
+          Password
+        </TabsTrigger>
       </TabsList>
       <TabsContent value="account" className="w-full space-y-4">
-        <div className='space-y-2 mt-2'>
+        <div className="mt-2 space-y-2">
           <div className="space-y-2">
             <p className="text-heading-subsection">Account</p>
             <p className="text-md text-description">
-              Make changes to your account here. Click save when you&apos;re
-              done.
+              Make changes to your account here. Click save when you&apos;re done.
             </p>
           </div>
           <div className="grid gap-2 py-4">
@@ -87,7 +80,7 @@ export const Default: Story = {
         </div>
       </TabsContent>
       <TabsContent value="password" className="w-full space-y-4">
-        <div className='space-y-2 mt-2'>
+        <div className="mt-2 space-y-2">
           <div className="space-y-2">
             <p className="text-heading-subsection">Password</p>
             <p className="text-md text-description">
@@ -112,16 +105,15 @@ export const Default: Story = {
     </Tabs>
   ),
   args: {
-    defaultValue: 'account',
+    defaultValue: "account",
     disabled: false,
   },
   argTypes: {
     disabled: {
-      control: 'boolean',
-      description:
-        'Prevent user actions when certain conditions are not met.',
+      control: "boolean",
+      description: "Prevent user actions when certain conditions are not met.",
       table: {
-        defaultValue: { summary: 'false' },
+        defaultValue: { summary: "false" },
         type: { summary: null },
       },
     },
@@ -137,14 +129,12 @@ export const DefaultValue: Story = {
           Password
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="account">
-        Make changes to your account here.
-      </TabsContent>
+      <TabsContent value="account">Make changes to your account here.</TabsContent>
       <TabsContent value="password">Change your password here.</TabsContent>
     </Tabs>
   ),
   args: {
-    defaultValue: 'password',
+    defaultValue: "password",
     disabled: false,
   },
 };
@@ -158,14 +148,12 @@ export const Disabled: Story = {
           Password
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="account">
-        Make changes to your account here.
-      </TabsContent>
+      <TabsContent value="account">Make changes to your account here.</TabsContent>
       <TabsContent value="password">Change your password here.</TabsContent>
     </Tabs>
   ),
   args: {
-    defaultValue: 'account',
+    defaultValue: "account",
     disabled: true,
   },
 };
@@ -183,14 +171,12 @@ export const WithIcon: Story = {
           Password
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="account">
-        Make changes to your account here.
-      </TabsContent>
+      <TabsContent value="account">Make changes to your account here.</TabsContent>
       <TabsContent value="password">Change your password here.</TabsContent>
     </Tabs>
   ),
   args: {
-    defaultValue: 'account',
+    defaultValue: "account",
     disabled: false,
   },
 };
@@ -251,6 +237,6 @@ export const WithCard: Story = {
     </Tabs>
   ),
   args: {
-    defaultValue: 'account',
+    defaultValue: "account",
   },
 };

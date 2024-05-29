@@ -4,17 +4,15 @@
 @tailwind utilities;
 
 @layer components {
+  .tabs-list {
+    @apply border-default text-description inline-flex h-9 w-full items-center border-b;
+  }
 
-    .tabs-list {
-        @apply inline-flex h-9 items-center border-b border-default w-full text-description;
-    }
+  .tabs-trigger {
+    @apply text-md-medium ring-offset-background focus-visible:ring-brand disabled:opacity-disabled data-[state=active]:border-brand data-[state=active]:text-brand inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap border-b-2 border-transparent px-3 py-1 transition-all focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none data-[state=active]:border-b-2 data-[state=active]:focus-visible:border-0 [&>svg]:h-4 [&>svg]:w-4;
+  }
 
-    .tabs-trigger {
-        @apply inline-flex items-center border-b-2 gap-2 border-transparent justify-center whitespace-nowrap px-3 py-1 h-9 text-md-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-disabled data-[state=active]:border-b-2 data-[state=active]:border-brand data-[state=active]:text-brand data-[state=active]:focus-visible:border-0 [&>svg]:w-4 [&>svg]:h-4;
-    }
-
-    .tabs-content {
-        @apply mt-2 p-3 ring-offset-background focus-visible:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2;
-    }
-
+  .tabs-content {
+    @apply ring-offset-background focus-visible:ring-brand mt-2 p-3 focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
 }

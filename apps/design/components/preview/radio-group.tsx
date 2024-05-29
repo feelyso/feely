@@ -6,11 +6,11 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Label } from "@feely/ui";
-import { RadioGroup, RadioGroupItem } from "@feely/ui";
-import { Button } from "@feely/ui";
-import { toast } from "@feely/ui";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui";
+import { Label } from "@feely/ui/components/label";
+import { RadioGroup, RadioGroupItem } from "@feely/ui/components/radio-group";
+import { Button } from "@feely/ui/components/button";
+import { toast } from "@feely/ui/components/toast";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui/components/form";
 
 const FormSchema = z.object({
   type: z.enum(["all", "mentions", "none"], {

@@ -1,4 +1,4 @@
-import size from '@feely/config/tokens/tokens';
+import size from "@feely/config/tokens/tokens";
 
 export const TokensSize = () => (
   <>
@@ -16,31 +16,26 @@ export const TokensSize = () => (
           </tr>
         </thead>
         <tbody>
-          {Object.entries(size.tokens.light.size).map(
-            ([tokenName, tokenInfo]) => (
-              <tr key={tokenName}>
-                <td className="w-full">
-                  <div className="cell-tokens-name">
-                    <code className="font-medium">size-{tokenName}</code>
-                    <div className="cell-description-tokens">
-                      {tokenInfo.description}
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className="cell-value-scale" align="right">
-                    {tokenInfo.value}
-                  </div>
-                </td>
-                <td className="hidden sm:table-cell">
-                    <div
-                      className="cell-preview-size"
-                      style={{ width: tokenInfo.value, height: tokenInfo.value, }}
-                    ></div>
-                </td>
-              </tr>
-            )
-          )}
+          {Object.entries(size.tokens.light.size).map(([tokenName, tokenInfo]) => (
+            <tr key={tokenName}>
+              <td className="w-full">
+                <div className="cell-tokens-name">
+                  <code className="font-medium">size-{tokenName}</code>
+                  <div className="cell-description-tokens">{tokenInfo.description}</div>
+                </div>
+              </td>
+              <td>
+                <div className="cell-value-scale" align="right">
+                  {tokenInfo.value}
+                </div>
+              </td>
+              <td className="hidden sm:table-cell">
+                <div
+                  className="cell-preview-size"
+                  style={{ width: tokenInfo.value, height: tokenInfo.value }}></div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     }

@@ -2,8 +2,8 @@
 title: Separator
 ---
 
-import { Tabs, Cards, Card } from 'nextra/components';
-import { SeparatorPreview, SeparatorHorizontal, SeparatorVertical  } from '@components/preview/separator.tsx'
+import { Tabs, Cards, Card } from "nextra/components";
+import { SeparatorPreview, SeparatorHorizontal, SeparatorVertical } from "@components/preview/separator.tsx";
 
 # 💠 Separator
 
@@ -15,13 +15,13 @@ Visually or semantically separates content.
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="separator.tsx"
-    import { Separator } from "@/components/separator"
+    import { Separator } from "@feely/ui/components/separator"
 
     export function SeparatorDemo() {
         return (
             <div>
               <div className="space-y-1">
-                <h4 className="text-lg-semibold leading-none">{logo}</h4>
+                <h4 className="text-lg-semibold leading-none">Feely Design System</h4>
                 <p className="text-md text-description">
                   Crafting inclusive experiences for everyone
                 </p>
@@ -38,6 +38,7 @@ Visually or semantically separates content.
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -48,6 +49,7 @@ The Separator component is used to create a clear visual or semantic division be
 Separators help organize content and group related items together, making the interface easier to navigate and understand.
 
 ### When to use
+
 - **Grouping elements**: Use Separators to define groups within lists or layouts, such as between navigation items, form inputs, or within dropdown menus.
 - **Enhancing readability**: Employ Separators to break up long stretches of content, like in articles, forms, or sidebars, to enhance readability and prevent visual fatigue.
 - **Structural clarity**: Utilize Separators to clarify the structure of the layout, especially in complex interfaces with multiple nested sections or levels of hierarchy.
@@ -65,12 +67,12 @@ Avoid using Separators to decorate the interface or add visual flair; their prim
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {7} /orientation="horizontal"/ filename="separator.tsx"
-    import { Separator } from "@/components/separator"
+    import { Separator } from "@feely/ui/components/separator"
 
     export function SeparatorDemo() {
         return (
             <div>
-                <h4 className="text-lg-semibold leading-none">{logo}</h4>
+                <h4 className="text-lg-semibold leading-none">Feely Design System</h4>
                 <Separator orientation="horizontal" className="my-4" />
                 <p className="text-md text-description">
                   Crafting inclusive experiences for everyone
@@ -79,6 +81,7 @@ Avoid using Separators to decorate the interface or add visual flair; their prim
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -90,7 +93,7 @@ Avoid using Separators to decorate the interface or add visual flair; their prim
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {7,9} /orientation="vertical"/ filename="separator.tsx"
-    import { Separator } from "@/components/separator"
+    import { Separator } from "@feely/ui/components/separator"
 
     export function SeparatorDemo() {
         return (
@@ -104,6 +107,7 @@ Avoid using Separators to decorate the interface or add visual flair; their prim
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -111,14 +115,14 @@ Avoid using Separators to decorate the interface or add visual flair; their prim
 
 **Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
 
-<Cards className='mt-8'>
+<Cards className="mt-8">
   <Card
     title="🤖 Storybook"
-    href="https://www.stories.fusillo.design/?path=/docs/components-separator--documentation"
+    href="https://www.stories.feely.so/?path=/docs/components-separator--documentation"
   />
   <Card
     title="🪄 Figma"
-    href="https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8876&mode=design&t=7r34RfU06jHXNJDx-1"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8876&t=nua4UmG9Iu1hfUAm-1"
   />
   <Card
     title="🐝 API Reference"

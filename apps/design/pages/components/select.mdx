@@ -3,8 +3,8 @@ title: Select
 ---
 
 import { Tabs, Cards, Card } from 'nextra/components';
-import { AccessibilityTable } from '@components/accessibility/accessibilityTable.mdx';
-import { selectAccessibilityData } from '@components/accessibility/select.mdx';
+import { AccessibilityTable } from '@components/accessibility/accessibility-table.mdx';
+import { selectAccessibilityData } from '@components/accessibility/select.tsx';
 import {
   SelectPreview, SelectScrollable, SelectWithForm
 } from '@components/preview/select.tsx';
@@ -20,7 +20,7 @@ Displays a list of options for the user to pick from—triggered by a button.
   <Tabs.Tab>
   ```js copy filename="select.tsx"
   import * as React from "react"
-  import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/select"
+  import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@feely/ui/components/select"
 
   export function SelectDemo() {
     return (
@@ -70,7 +70,7 @@ Avoid using Select components for very short lists where radio buttons or toggle
   <Tabs.Tab>
   ```js copy filename="select.tsx"
   import * as React from "react"
-  import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/select"
+  import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@feely/ui/components/select"
 
   export function SelectDemo() {
     return (
@@ -104,7 +104,7 @@ Avoid using Select components for very short lists where radio buttons or toggle
   <Tabs.Tab>
   ```js copy filename="select.tsx"
   import * as React from "react"
-  import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/select"
+  import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@feely/ui/components/select"
 
   export function SelectScrollable() {
     return (
@@ -188,10 +188,10 @@ Avoid using Select components for very short lists where radio buttons or toggle
   import { useForm } from "react-hook-form"
   import * as z from "zod"
 
-  import { Button } from "@/components/button"
-  import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/form"
-  import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/select"
-  import { toast } from "@/components/toast/use-toast"
+  import { Button } from "@feely/ui/components/button"
+  import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui/components/form"
+  import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@feely/ui/components/select"
+  import { toast } from "@feely/ui/components/toast/use-toast"
 
   const FormSchema = z.object({
     email: z
@@ -262,11 +262,11 @@ Avoid using Select components for very short lists where radio buttons or toggle
 <Cards className="mt-8">
   <Card
     title="🤖 Storybook"
-    href="https://www.stories.fusillo.design/?path=/docs/components-select--documentation"
+    href="https://www.stories.feely.so/?path=/docs/components-select--documentation"
   />
   <Card
     title="🪄 Figma"
-    href="https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8875&mode=design&t=h85Ey3chnxVlElkp-1"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8875&t=nua4UmG9Iu1hfUAm-1"
   />
   <Card
     title="🐝 API Reference"
@@ -289,8 +289,8 @@ See the W3C [Select-Only Combobox](https://www.w3.org/WAI/ARIA/apg/patterns/comb
 Use our [Label](https://fusillo-design-system.vercel.app/components/label) component in order to offer a visual and accessible label for the select.
 
 ```js copy {6} /Label/
-import { Select } from "@/components/select"
-import { Label } from "@/components/label"
+import { Select } from "@feely/ui/components/select"
+import { Label } from "@feely/ui/components/label"
 
 export default () => (
   <>

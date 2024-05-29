@@ -2,10 +2,10 @@
 title: Tooltip
 ---
 
-import { Tabs, Cards, Card } from 'nextra/components';
-import { AccessibilityTable } from '@components/accessibility/accessibilityTable.mdx';
-import { tooltipAccessibilityData } from '@components/accessibility/tooltip.mdx';
-import { TooltipPreview, TooltipOutline, TooltipFilled, TooltipSide } from '@components/preview/tooltip.tsx'
+import { Tabs, Cards, Card } from "nextra/components";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { tooltipAccessibilityData } from "@components/accessibility/tooltip.tsx";
+import { TooltipPreview, TooltipOutline, TooltipFilled, TooltipSide } from "@components/preview/tooltip.tsx";
 
 # 💠 Tooltip
 
@@ -17,9 +17,9 @@ A floating, non-actionable label used to explain a user interface element or fea
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="tooltip.tsx"
-    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/tooltip"
-    import { Button } from "@/components/button"
-    import { FilePlus } from "lucide-react"
+    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@feely/ui/components/tooltip"
+    import { Button } from "@feely/ui/components/button"
+    import { FilePlus } from "@feely/ui/components/icon"
 
     export function TooltipDemo() {
       return (
@@ -36,9 +36,9 @@ A floating, non-actionable label used to explain a user interface element or fea
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
-
 
 ## Usage
 
@@ -60,19 +60,19 @@ Information necessary for completing tasks should be visible and not hidden with
 
 Additionally, refrain from using Tooltips to provide instructions that are complex or require significant interaction, as this can lead to a frustrating user experience.
 
-
 ## Examples
 
 ### Outline
+
 <Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <TooltipOutline />
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {12} /type="outline"/ filename="tooltip.tsx"
-    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/tooltip"
-    import { Button } from "@/components/button"
-    import { FilePlus } from "lucide-react"
+    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@feely/ui/components/tooltip"
+    import { Button } from "@feely/ui/components/button"
+    import { FilePlus } from "@feely/ui/components/icon"
 
     export function TooltipDemo() {
       return (
@@ -89,19 +89,21 @@ Additionally, refrain from using Tooltips to provide instructions that are compl
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
 ### Fill
+
 <Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <TooltipFilled />
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {12} /type="fill"/ filename="tooltip.tsx"
-    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/tooltip"
-    import { Button } from "@/components/button"
-    import { FilePlus } from "lucide-react"
+    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@feely/ui/components/tooltip"
+    import { Button } from "@feely/ui/components/button"
+    import { FilePlus } from "@feely/ui/components/icon"
 
     export function TooltipDemo() {
       return (
@@ -118,19 +120,21 @@ Additionally, refrain from using Tooltips to provide instructions that are compl
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
 ### Side
+
 <Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <TooltipSide />
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {13, 23, 33, 43} /side/ filename="tooltip.tsx"
-    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/tooltip"
-    import { Button } from "@/components/button"
-    import { FilePlus } from "lucide-react"
+    import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@feely/ui/components/tooltip"
+    import { Button } from "@feely/ui/components/button"
+    import { FilePlus } from "@feely/ui/components/icon"
 
     export function TooltipDemo() {
       return (
@@ -179,29 +183,28 @@ Additionally, refrain from using Tooltips to provide instructions that are compl
       )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
-
 
 ## Useful links
 
 **Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
 
-<Cards className='mt-8'>
+<Cards className="mt-8">
   <Card
     title="🤖 Storybook"
-    href="https://www.stories.fusillo.design/?path=/docs/components-tooltip--documentation"
+    href="https://www.stories.feely.so/?path=/docs/components-tooltip--documentation"
   />
   <Card
     title="🪄 Figma"
-    href="https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8886&mode=design&t=ADS6PLdzJ7eQkKd7-1"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8886&t=nua4UmG9Iu1hfUAm-1"
   />
   <Card
     title="🐝 API Reference"
     href="https://www.radix-ui.com/primitives/docs/components/tooltip#api-reference"
   />
 </Cards>
-
 
 ## Accessibility
 

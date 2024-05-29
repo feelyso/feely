@@ -1,6 +1,6 @@
 /* Import css files */
-@import './foundations.css';
-@import './tokens.css';
+@import "./foundations.css";
+@import "./tokens.css";
 
 /* Import tailwind */
 @tailwind base;
@@ -13,7 +13,7 @@
   }
 
   body {
-    @apply font-sans bg-background text antialiased;
+    @apply bg-background text font-sans antialiased;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }

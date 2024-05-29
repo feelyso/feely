@@ -4,9 +4,8 @@
 @tailwind utilities;
 
 @layer components {
-
   .context-menu-subtrigger {
-    @apply flex cursor-default select-none items-center rounded-sm px-2 py-1 h-8 text-md outline-none focus:bg-item-hover focus:text data-[state=open]:bg-item-hover data-[state=open]:text;
+    @apply text-md focus:bg-item-hover focus:text data-[state=open]:bg-item-hover data-[state=open]:text flex h-8 cursor-default select-none items-center rounded-sm px-2 py-1 outline-none;
   }
 
   .context-menu-subtrigger-icon {
@@ -14,23 +13,23 @@
   }
 
   .context-menu-subcontent {
-    @apply z-50 min-w-[8rem] overflow-hidden rounded border border-default bg-elevated p-1 text shadow-md;
+    @apply border-default bg-elevated text z-50 min-w-[8rem] overflow-hidden rounded border p-1 shadow-md;
   }
 
   .context-menu-content {
-    @apply z-50 min-w-[8rem] overflow-hidden rounded border border-default bg-elevated p-1 text shadow-md;
+    @apply border-default bg-elevated text z-50 min-w-[8rem] overflow-hidden rounded border p-1 shadow-md;
   }
 
   .context-menu-item {
-    @apply relative flex cursor-default select-none items-center rounded-sm px-2 py-1 h-8 text-md outline-none focus:bg-item-hover focus:text data-[disabled]:pointer-events-none data-[disabled]:opacity-disabled;
+    @apply text-md focus:bg-item-hover focus:text data-[disabled]:opacity-disabled relative flex h-8 cursor-default select-none items-center rounded-sm px-2 py-1 outline-none data-[disabled]:pointer-events-none;
   }
 
   .context-menu-checkbox {
-    @apply relative flex cursor-default select-none items-center rounded-sm py-1 h-8 pl-8 pr-2 text-md outline-none focus:bg-item-hover focus:text data-[disabled]:pointer-events-none data-[disabled]:opacity-disabled;
+    @apply text-md focus:bg-item-hover focus:text data-[disabled]:opacity-disabled relative flex h-8 cursor-default select-none items-center rounded-sm py-1 pl-8 pr-2 outline-none data-[disabled]:pointer-events-none;
   }
 
   .context-menu-checkbox-span {
-    @apply absolute left-2 flex h-4 w-4 items-center justify-center
+    @apply absolute left-2 flex h-4 w-4 items-center justify-center;
   }
 
   .context-menu-checkbox-icon {
@@ -38,7 +37,7 @@
   }
 
   .context-menu-radio {
-    @apply relative flex cursor-default select-none items-center rounded-sm py-1 h-8 pl-8 pr-2 text-md outline-none focus:bg-item-hover focus:text data-[disabled]:pointer-events-none data-[disabled]:opacity-disabled;
+    @apply text-md focus:bg-item-hover focus:text data-[disabled]:opacity-disabled relative flex h-8 cursor-default select-none items-center rounded-sm py-1 pl-8 pr-2 outline-none data-[disabled]:pointer-events-none;
   }
 
   .context-menu-radio-span {
@@ -50,17 +49,14 @@
   }
 
   .context-menu-label {
-    @apply relative flex items-center px-2 py-1 h-8 text-heading-group text-description;
+    @apply text-heading-group text-description relative flex h-8 items-center px-2 py-1;
   }
 
   .context-menu-separator {
-    @apply -mx-1 my-1 h-[1px] bg-border;
+    @apply bg-border -mx-1 my-1 h-[1px];
   }
 
   .context-menu-shortcut {
-    @apply ml-auto pl-1 text-sm tracking-widest text-description;
+    @apply text-description ml-auto pl-1 text-sm tracking-widest;
   }
-
 }
-
-

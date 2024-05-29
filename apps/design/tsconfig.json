@@ -4,16 +4,14 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
+      "@pages/*": ["pages/*"]
     },
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "typeRoots": [
-      "./tokens.d.ts"
-    ],
+    "typeRoots": ["./tokens.d.ts"],
     "strictNullChecks": true,
     "experimentalDecorators": true
   },

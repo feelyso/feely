@@ -1,5 +1,6 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
 import {
   AlertDialog,
@@ -11,24 +12,23 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from './alert-dialog';
-import { Button } from '../button';
+} from "./alert-dialog";
+import { Button } from "../button";
 
 const meta: Meta<typeof AlertDialog> = {
-  title: 'Components/AlertDialog',
+  title: "Components/AlertDialog",
   component: AlertDialog,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
-        component:
-          'A modal dialog that interrupts the user with important content and expects a response.',
+        component: "A modal dialog that interrupts the user with important content and expects a response.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=482%3A9166&mode=design&t=F5zgbD2phu8xvUpj-1',
+      type: "figma",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=482-9166&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };
@@ -47,8 +47,8 @@ export const Default: Story = {
         <AlertDialogHeader>
           <AlertDialogTitle>Are you sure absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            This action cannot be undone. This will permanently delete your account and remove your data from
+            our servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

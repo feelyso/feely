@@ -3,25 +3,9 @@
 // Import core
 import * as React from "react";
 import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
-import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  User,
-  UserPlus,
-  Users,
-} from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -38,7 +22,23 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-} from "@feely/ui";
+} from "@feely/ui/components/dropdown-menu";
+import {
+  Cloud,
+  CreditCard,
+  Github,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  UserPlus,
+  Users,
+} from "@feely/ui/components/icon";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 

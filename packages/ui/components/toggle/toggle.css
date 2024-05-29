@@ -4,13 +4,11 @@
 @tailwind utilities;
 
 @layer components {
-
   .toggle-component {
-    @apply inline-flex gap-1 items-center h-9 min-w-[36px] px-2 justify-center rounded text-md ring-offset-background transition-colors hover:bg-item-hover hover:text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-disabled data-[state=on]:bg-brand-subtle data-[state=on]:text-brand [&>svg]:stroke-2 [&>svg]:w-4 [&>svg]:h-4;
+    @apply text-md ring-offset-background hover:bg-item-hover hover:text focus-visible:ring-brand disabled:opacity-disabled data-[state=on]:bg-brand-subtle data-[state=on]:text-brand inline-flex h-9 min-w-[36px] items-center justify-center gap-1 rounded px-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none [&>svg]:h-4 [&>svg]:w-4 [&>svg]:stroke-2;
   }
 
   .toggle-component-outline {
-    @apply border border-default bg-item hover:bg-item-hover data-[state=on]:border-brand;
+    @apply border-default bg-item hover:bg-item-hover data-[state=on]:border-brand border;
   }
-
 }

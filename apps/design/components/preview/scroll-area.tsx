@@ -3,8 +3,8 @@ import * as React from "react";
 import Image from "next/image";
 // Import customs
 import Preview from "@components/preview/preview";
-import { ScrollArea, ScrollBar } from "@feely/ui";
-import { Separator } from "@feely/ui";
+import { ScrollArea, ScrollBar } from "@feely/ui/components/scroll-area";
+import { Separator } from "@feely/ui/components/separator";
 
 const tags = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${a.length - i}`);
 

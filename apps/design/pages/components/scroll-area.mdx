@@ -2,8 +2,8 @@
 title: Scroll Area
 ---
 
-import { Tabs, Cards, Card } from 'nextra/components';
-import { ScrollAreaPreview, ScrollAreaHorizontal } from '@components/preview/scroll-area.tsx'
+import { Tabs, Cards, Card } from "nextra/components";
+import { ScrollAreaPreview, ScrollAreaHorizontal } from "@components/preview/scroll-area.tsx";
 
 # 💠 Scroll Area
 
@@ -16,8 +16,8 @@ Augments native scroll functionality for custom, cross-browser styling.
   <Tabs.Tab>
     ```js copy filename="scroll-area.tsx"
     import * as React from "react"
-    import { ScrollArea } from "@/components/scroll-area"
-    import { Separator } from "@/components/separator"
+    import { ScrollArea } from "@feely/ui/components/scroll-area"
+    import { Separator } from "@feely/ui/components/separator"
 
     const tags = Array.from({ length: 50 }).map(
         (_, i, a) => `v1.2.0-beta.${a.length - i}`
@@ -41,6 +41,7 @@ Augments native scroll functionality for custom, cross-browser styling.
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -51,6 +52,7 @@ The Scroll Area component enhances the native scrolling experience by providing 
 It allows designers and developers to style the scrollbar to match the application's design language, offering better visual integration and user experience than the default browser scrollbar.
 
 ### When to use
+
 - **Custom styling**: Use a Scroll Area when the default browser scrollbar does not fit the design aesthetic of your application or when a more consistent cross-browser look is required.
 - **Enhanced user experience**: Employ a Scroll Area to provide users with a more visually appealing and potentially more intuitive scrolling interface.
 - **Limited space**: Utilize a Scroll Area in interfaces where space is at a premium, such as modals or side panels, and the default scrollbar takes up too much space or looks out of place.
@@ -69,8 +71,8 @@ Avoid using a Scroll Area if it significantly alters the default scrolling behav
   <Tabs.Tab>
     ```js copy filename="scroll-area.tsx"
     import * as React from "react"
-    import { ScrollArea } from "@/components/scroll-area"
-    import { Separator } from "@/components/separator"
+    import { ScrollArea } from "@feely/ui/components/scroll-area"
+    import { Separator } from "@feely/ui/components/separator"
 
     const tags = Array.from({ length: 50 }).map(
         (_, i, a) => `v1.2.0-beta.${a.length - i}`
@@ -94,6 +96,7 @@ Avoid using a Scroll Area if it significantly alters the default scrolling behav
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -107,7 +110,7 @@ Avoid using a Scroll Area if it significantly alters the default scrolling behav
     ```js copy {46} /orientation="horizontal"/ filename="scroll-area.tsx"
     import * as React from "react"
     import Image from "next/image"
-    import { ScrollArea, ScrollBar } from "@/components/scroll-area"
+    import { ScrollArea, ScrollBar } from "@feely/ui/components/scroll-area"
 
     export interface Artwork {
         artist: string
@@ -156,22 +159,22 @@ Avoid using a Scroll Area if it significantly alters the default scrolling behav
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
-
 
 ## Useful links
 
 **Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
 
-<Cards className='mt-8'>
+<Cards className="mt-8">
   <Card
     title="🤖 Storybook"
-    href="https://www.stories.fusillo.design/?path=/docs/components-scrollarea--documentation"
+    href="https://www.stories.feely.so/?path=/docs/components-scrollarea--documentation"
   />
   <Card
     title="🪄 Figma"
-    href="https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8874&mode=design&t=BNqih1pZMuav038B-1"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8874&t=nua4UmG9Iu1hfUAm-1"
   />
   <Card
     title="🐝 API Reference"

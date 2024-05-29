@@ -1,23 +1,16 @@
-'use client';
+"use client";
 
 // Import core
-import * as React from 'react';
+import * as React from "react";
 // Import customs
-import { cn } from '@feely/lib/twMerge';
-import './textarea.css';
+import { cn } from "@feely/lib/twMerge";
+import "./textarea.css";
 
-export interface TextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, ...props }, ref) => {
-    return (
-      <textarea
-        className={cn('textarea-component', className)}
-        ref={ref}
-        {...props}
-      />
-    );
+    return <textarea className={cn("textarea-component", className)} ref={ref} {...props} />;
   }
 );
-Textarea.displayName = 'Textarea';
+Textarea.displayName = "Textarea";

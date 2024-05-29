@@ -5,12 +5,12 @@
 import Preview from "@components/preview/preview";
 import * as React from "react";
 import { addDays, format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
+import { Calendar as CalendarIcon } from "@feely/ui/components/icon";
 import { DateRange } from "react-day-picker";
 import { cn } from "@feely/lib/twMerge";
-import { Button } from "@feely/ui";
-import { Calendar } from "@feely/ui";
-import { Popover, PopoverContent, PopoverTrigger } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
+import { Calendar } from "@feely/ui/components/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@feely/ui/components/popover";
 
 export const DatePickerPreview = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());

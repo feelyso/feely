@@ -4,25 +4,23 @@
 @tailwind utilities;
 
 @layer components {
+  .badge-component {
+    @apply text-md-medium inline-flex h-6 items-center gap-1 rounded-full px-2 py-1 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:stroke-2;
+  }
 
-    .badge-component {
-        @apply inline-flex items-center gap-1 rounded-full px-2 py-1 h-6 text-md-medium [&>svg]:stroke-2 [&>svg]:w-4 [&>svg]:h-4;
-    }
+  .badge-default {
+    @apply bg-inverse text-inverse stroke-icon-inverse;
+  }
 
-    .badge-default {
-        @apply bg-inverse text-inverse stroke-icon-inverse;
-    }
+  .badge-brand {
+    @apply bg-brand text-brand-inverse stroke-icon-brand-inverse;
+  }
 
-    .badge-brand {
-        @apply bg-brand text-brand-inverse stroke-icon-brand-inverse;
-    }
+  .badge-danger {
+    @apply bg-danger text-danger-inverse stroke-icon-danger-inverse;
+  }
 
-    .badge-danger {
-        @apply bg-danger text-danger-inverse stroke-icon-danger-inverse;
-    }
-
-    .badge-warning {
-        @apply bg-warning text-warning-inverse stroke-icon-warning-inverse;
-    }
-
+  .badge-warning {
+    @apply bg-warning text-warning-inverse stroke-icon-warning-inverse;
+  }
 }

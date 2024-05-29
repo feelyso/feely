@@ -2,7 +2,7 @@
 title: Iconography
 ---
 
-import { Tabs } from 'nextra/components';
+import { Tabs } from "nextra/components";
 
 # 🦸‍♂️ Iconography
 
@@ -58,21 +58,26 @@ In addition to design, code is also important. Assets like icons can significant
 
 ### Installation
 
-<Tabs items={['pnpm', 'npm', 'yarn']}>
+<Tabs items={["bun", "pnpm", "npm", "yarn"]}>
   <Tabs.Tab>
-  ```node copy
-  pnpm install lucide-react
-  ```
+    ```node copy
+    bun install lucide-react
+    ```
   </Tabs.Tab>
   <Tabs.Tab>
-  ```node copy
-  npm install lucide-react
-  ```
+    ```node copy
+    pnpm install lucide-react
+    ```
   </Tabs.Tab>
   <Tabs.Tab>
-  ```node copy
-  yarn add lucide-react
-  ```
+    ```node copy
+    npm install lucide-react
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```node copy
+    yarn add lucide-react
+    ```
   </Tabs.Tab>
 </Tabs>
 
@@ -89,7 +94,7 @@ Here you can find the [Icon Gallery](/components/icon#icon-gallery) with list of
 Additional props can be passed to adjust the icon:
 
 ```tsx copy
-import { Camera } from 'lucide-react';
+import { Camera } from "lucide-react";
 
 // Usage
 const App = () => {

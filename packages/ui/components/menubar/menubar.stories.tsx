@@ -1,5 +1,6 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
 import {
   Menubar,
@@ -15,26 +16,26 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from './menubar';
+} from "./menubar";
 
 const meta: Meta<typeof Menubar> = {
-  title: 'Components/Menubar',
+  title: "Components/Menubar",
   component: Menubar,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     asChild: { table: { disable: true } },
   },
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
         component:
-          'A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.',
+          "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8869&mode=design&t=h85Ey3chnxVlElkp-1',
+      type: "figma",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8869&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };
@@ -100,9 +101,7 @@ export const Default: Story = {
         <MenubarTrigger>View</MenubarTrigger>
         <MenubarContent>
           <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
-          <MenubarCheckboxItem checked>
-            Always Show Full URLs
-          </MenubarCheckboxItem>
+          <MenubarCheckboxItem checked>Always Show Full URLs</MenubarCheckboxItem>
           <MenubarSeparator />
           <MenubarItem inset>
             Reload <MenubarShortcut>⌘R</MenubarShortcut>

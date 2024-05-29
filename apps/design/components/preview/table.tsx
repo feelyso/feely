@@ -10,7 +10,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@feely/ui";
+} from "@feely/ui/components/table";
 
 const invoices = [
   {

@@ -1,8 +1,8 @@
 // Import core
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
-import { toast } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
+import { toast } from "@feely/ui/components/toast";
 
 export const ToastPreview = () => {
   return (
@@ -74,7 +74,7 @@ export const ToastBrand = () => {
       <Button
         variant="secondary"
         onClick={() => {
-          toast.info("Your message has been sent.", {
+          toast.success("Your message has been sent.", {
             description: "There was a problem with your request.",
             action: {
               label: "Undo",

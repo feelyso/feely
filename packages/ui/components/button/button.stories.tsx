@@ -1,41 +1,42 @@
 // Import core
-import type { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 // Import customs
-import { Button } from './button';
-import { Download, Search } from '../icon';
+import { Button } from "./button";
+import { Download, Search } from "../icon";
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: "Components/Button",
   component: Button,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     title: {
-      description: 'Define the text label displayed on the button.',
+      description: "Define the text label displayed on the button.",
       table: {
         type: { summary: null },
       },
     },
     variant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'text', 'link', 'danger'],
-      description: 'Define the priority of the button',
+      control: "select",
+      options: ["primary", "secondary", "text", "link", "danger"],
+      description: "Define the priority of the button",
       table: {
-        defaultValue: { summary: 'primary' },
+        defaultValue: { summary: "primary" },
         type: { summary: null },
       },
     },
     icon: {
-      control: 'boolean',
-      description: 'Display an icon button',
+      control: "boolean",
+      description: "Display an icon button",
       table: {
         defaultValue: { summary: false },
         type: { summary: null },
       },
     },
     asChild: {
-      control: 'boolean',
+      control: "boolean",
       description:
-        'Change the default rendered element for the one passed as a child, merging their props and behavior.',
+        "Change the default rendered element for the one passed as a child, merging their props and behavior.",
       table: {
         defaultValue: { summary: false },
         type: { summary: null },
@@ -43,22 +44,21 @@ const meta: Meta<typeof Button> = {
     },
   },
   args: {
-    title: 'Button',
-    variant: 'primary',
+    title: "Button",
+    variant: "primary",
     icon: false,
     asChild: false,
   },
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
-        component:
-          'Triggers an event or action. They let users know what will happen next.',
+        component: "Triggers an event or action. They let users know what will happen next.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=119%3A6&mode=design&t=MpDMELWReoDbdLIS-1',
+      type: "figma",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=119-6&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };
@@ -69,36 +69,36 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    title: 'Primary',
-    variant: 'primary',
+    title: "Primary",
+    variant: "primary",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    title: 'Secondary',
-    variant: 'secondary',
+    title: "Secondary",
+    variant: "secondary",
   },
 };
 
 export const Text: Story = {
   args: {
-    title: 'Text',
-    variant: 'text',
+    title: "Text",
+    variant: "text",
   },
 };
 
 export const Link: Story = {
   args: {
-    title: 'Link',
-    variant: 'link',
+    title: "Link",
+    variant: "link",
   },
 };
 
 export const Danger: Story = {
   args: {
-    title: 'Danger',
-    variant: 'danger',
+    title: "Danger",
+    variant: "danger",
   },
 };
 
@@ -110,7 +110,7 @@ export const WithIcon: Story = {
     </Button>
   ),
   args: {
-    variant: 'primary',
+    variant: "primary",
   },
   argTypes: {
     title: { table: { disable: true } },
@@ -128,11 +128,11 @@ export const Icon: Story = {
   ),
   args: {
     title: undefined,
-    variant: 'secondary',
+    variant: "secondary",
     icon: true,
   },
   argTypes: {
     title: { table: { disable: true } },
-    asChild: { table: { disable: true } }
+    asChild: { table: { disable: true } },
   },
 };

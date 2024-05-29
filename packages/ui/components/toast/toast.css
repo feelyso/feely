@@ -4,21 +4,20 @@
 @tailwind utilities;
 
 @layer components {
-
   .toast-component {
-    @apply bg-background text text-md-medium gap-2 border border-default rounded-lg shadow-lg;
+    @apply bg-background text text-md-medium border-default gap-2 rounded-lg border shadow-lg;
   }
 
   .toast-description {
     @apply text-md text-description;
   }
 
-  .toast-action-button{
-    @apply bg-inverse text-inverse text-md-medium hover:opacity-hover flex items-center h-8 px-3 !important;
+  .toast-action-button {
+    @apply bg-inverse text-inverse text-md-medium hover:opacity-hover flex h-8 items-center px-3 !important;
   }
 
   .toast-cancel-button {
-    @apply bg-transparent text text-md-medium hover:opacity-hover h-8 flex items-center px-3 !important;
+    @apply text text-md-medium hover:opacity-hover flex h-8 items-center bg-transparent px-3 !important;
   }
 
   .toast-brand {
@@ -41,5 +40,4 @@
       @apply text-warning-inverse;
     }
   }
-
 }

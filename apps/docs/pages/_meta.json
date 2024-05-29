@@ -1,7 +1,7 @@
 {
   "index": "Welcome",
   "advanced": "Advanced",
-   "404": {
+  "404": {
     "type": "page",
     "theme": {
       "timestamp": false,

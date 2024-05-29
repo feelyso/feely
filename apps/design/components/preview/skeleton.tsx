@@ -1,8 +1,8 @@
 // Import core
 // Import customs
 import Preview from "@components/preview/preview";
-import { Card, CardContent } from "@feely/ui";
-import { Skeleton } from "@feely/ui";
+import { Card, CardContent } from "@feely/ui/components/card";
+import { Skeleton } from "@feely/ui/components/skeleton";
 
 export const SkeletonPreview = () => (
   <Preview>

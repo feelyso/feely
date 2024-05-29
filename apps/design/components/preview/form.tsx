@@ -6,10 +6,18 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Input } from "@feely/ui";
-import { Button } from "@feely/ui";
-import { toast } from "@feely/ui";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui";
+import { Input } from "@feely/ui/components/input";
+import { Button } from "@feely/ui/components/button";
+import { toast } from "@feely/ui/components/toast";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@feely/ui/components/form";
 
 const FormSchema = z.object({
   username: z.string().min(2, {

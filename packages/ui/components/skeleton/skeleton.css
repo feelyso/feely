@@ -4,17 +4,15 @@
 @tailwind utilities;
 
 @layer components {
+  .skeleton-component {
+    @apply bg-muted animate-pulse rounded-full;
+  }
 
-    .skeleton-component {
-        @apply animate-pulse rounded-full bg-muted;
-    }
+  .skeleton-line {
+    @apply h-4 w-full;
+  }
 
-    .skeleton-line {
-        @apply h-4 w-full;
-    }
-
-    .skeleton-circle {
-        @apply h-12 w-12;
-    }
-
+  .skeleton-circle {
+    @apply h-12 w-12;
+  }
 }

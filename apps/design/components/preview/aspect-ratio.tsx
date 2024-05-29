@@ -2,7 +2,7 @@
 import Image from "next/image";
 // Import customs
 import Preview from "@components/preview/preview";
-import { AspectRatio } from "@feely/ui";
+import { AspectRatio } from "@feely/ui/components/aspect-ratio";
 
 export const AspectRatioPreview = () => (
   <Preview>

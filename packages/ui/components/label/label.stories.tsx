@@ -1,20 +1,21 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
-import { Label } from './label';
-import { Checkbox } from '../checkbox';
-import { Input } from '../input';
-import { Textarea } from '../textarea';
+import { Label } from "./label";
+import { Checkbox } from "../checkbox";
+import { Input } from "../input";
+import { Textarea } from "../textarea";
 
 const meta: Meta<typeof Label> = {
-  title: 'Components/Label',
+  title: "Components/Label",
   component: Label,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     asChild: {
-      control: 'boolean',
+      control: "boolean",
       description:
-        'Change the default rendered element for the one passed as a child, merging their props and behavior.',
+        "Change the default rendered element for the one passed as a child, merging their props and behavior.",
       table: {
         defaultValue: { summary: false },
         type: { summary: null },
@@ -22,15 +23,15 @@ const meta: Meta<typeof Label> = {
     },
   },
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
-        component: 'Renders an accessible label associated with controls.',
+        component: "Renders an accessible label associated with controls.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8868&mode=design&t=7r34RfU06jHXNJDx-1',
+      type: "figma",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8868&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };
@@ -51,12 +52,12 @@ export const WithCheckbox: Story = {
     </div>
   ),
   args: {
-    htmlFor: 'terms',
-    label: 'Accept terms and conditions',
+    htmlFor: "terms",
+    label: "Accept terms and conditions",
   },
   argTypes: {
     htmlFor: {
-      description: 'The id of the element the label is associated with.',
+      description: "The id of the element the label is associated with.",
     },
   },
 };
@@ -69,8 +70,8 @@ export const WithInput: Story = {
     </div>
   ),
   args: {
-    htmlFor: 'email',
-    label: 'Email',
+    htmlFor: "email",
+    label: "Email",
   },
 };
 
@@ -82,7 +83,7 @@ export const WithTextarea: Story = {
     </div>
   ),
   args: {
-    htmlFor: 'message',
-    label: 'Your story',
+    htmlFor: "message",
+    label: "Your story",
   },
 };

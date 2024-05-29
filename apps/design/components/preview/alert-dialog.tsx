@@ -11,8 +11,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@feely/ui";
-import { Button } from "@feely/ui";
+} from "@feely/ui/components/alert-dialog";
+import { Button } from "@feely/ui/components/button";
 
 export const AlertDialogPreview = () => (
   <Preview>

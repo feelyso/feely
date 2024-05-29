@@ -3,8 +3,8 @@ title: Alert Dialog
 ---
 
 import { Tabs, Cards, Card } from "nextra/components";
-import { AccessibilityTable } from "@components/accessibility/accessibilityTable.mdx";
-import { alertDialogAccessibilityData } from "@components/accessibility/alert-dialog.mdx";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { alertDialogAccessibilityData } from "@components/accessibility/alert-dialog.tsx";
 import { AlertDialogPreview } from "@components/preview/alert-dialog.tsx";
 
 # 💠 Alert Dialog
@@ -17,8 +17,8 @@ A modal dialog that interrupts the user with important content and expects a res
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="alert-dialog.tsx"
-    import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/alert-dialog"
-    import { Button } from "@/components/button"
+    import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@feely/ui/components/alert-dialog"
+    import { Button } from "@feely/ui/components/button"
 
     export function AlertDialogDemo() {
       return (
@@ -71,8 +71,8 @@ Remember to avoid using AlertDialogs for non-essential information that does not
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="alert-dialog.tsx"
-    import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/alert-dialog"
-    import { Button } from "@/components/button"
+    import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@feely/ui/components/alert-dialog"
+    import { Button } from "@feely/ui/components/button"
 
     export function AlertDialogDemo() {
       return (
@@ -108,11 +108,11 @@ Remember to avoid using AlertDialogs for non-essential information that does not
 <Cards className="mt-8">
   <Card
     title="🤖 Storybook"
-    href="https://www.stories.fusillo.design/?path=/docs/components-alertdialog--documentation"
+    href="https://www.stories.feely.so/?path=/docs/components-alertdialog--documentation"
   />
   <Card
     title="🪄 Figma"
-    href="https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=482%3A9166&mode=design&t=F5zgbD2phu8xvUpj-1"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=482-9166&t=nua4UmG9Iu1hfUAm-1"
   />
   <Card
     title="🐝 API Reference"

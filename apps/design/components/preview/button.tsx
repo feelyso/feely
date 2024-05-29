@@ -1,9 +1,9 @@
 // Import core
-import { Download, Search } from "lucide-react";
 import Link from "next/link";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Button } from "@feely/ui";
+import { Button } from "@feely/ui/components/button";
+import { Download, Search } from "@feely/ui/components/icon";
 
 export const ButtonPreview = () => (
   <Preview>

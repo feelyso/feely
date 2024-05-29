@@ -6,11 +6,18 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Switch } from "@feely/ui";
-import { Label } from "@feely/ui";
-import { Button } from "@feely/ui";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@feely/ui";
-import { toast } from "@feely/ui";
+import { Switch } from "@feely/ui/components/switch";
+import { Label } from "@feely/ui/components/label";
+import { Button } from "@feely/ui/components/button";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@feely/ui/components/form";
+import { toast } from "@feely/ui/components/toast";
 
 const FormSchema = z.object({
   marketing_emails: z.boolean().default(false).optional(),

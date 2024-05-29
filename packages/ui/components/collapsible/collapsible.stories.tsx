@@ -1,25 +1,17 @@
 // Import core
-import * as React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 // Import customs
-import { ChevronsUpDown } from '../icon';
-import { Button } from '../button';
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from './collapsible';
+import { ChevronsUpDown } from "../icon";
+import { Button } from "../button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./collapsible";
 
 type CollapsibleDemoProps = {
   open?: boolean;
   onOpenChange?: (newOpen: boolean) => void;
 };
 
-const CollapsibleDemo = ({
-  open,
-  onOpenChange,
-  ...restArgs
-}: CollapsibleDemoProps) => {
+const CollapsibleDemo = ({ open, onOpenChange, ...restArgs }: CollapsibleDemoProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   React.useEffect(() => {
     if (open !== undefined) {
@@ -35,12 +27,7 @@ const CollapsibleDemo = ({
   };
 
   return (
-    <Collapsible
-      open={isOpen}
-      onOpenChange={handleOpenChange}
-      className="w-[340px] space-y-2"
-      {...restArgs}
-    >
+    <Collapsible open={isOpen} onOpenChange={handleOpenChange} className="w-[340px] space-y-2" {...restArgs}>
       <div className="flex items-center justify-between space-x-4 px-4">
         <p className="text-md-semibold">@kkratterf starred 3 repositories</p>
         <CollapsibleTrigger asChild>
@@ -50,17 +37,13 @@ const CollapsibleDemo = ({
           </Button>
         </CollapsibleTrigger>
       </div>
-      <div className="rounded border border-default px-4 py-3 font-mono text-md">
+      <div className="border-default text-md rounded border px-4 py-3 font-mono">
         @design-system/foundations
       </div>
       <CollapsibleContent className="space-y-2">
-        <div className="rounded border border-default px-4 py-3 font-mono text-md">
-          @design-system/tokens
-        </div>
-        <div className="rounded border border-default px-4 py-3 font-mono text-md">
-          @feely/ui
-        </div>
-        <div className="rounded border border-default px-4 py-3 font-mono text-md">
+        <div className="border-default text-md rounded border px-4 py-3 font-mono">@design-system/tokens</div>
+        <div className="border-default text-md rounded border px-4 py-3 font-mono">@feely/ui</div>
+        <div className="border-default text-md rounded border px-4 py-3 font-mono">
           @design-system/visualizations
         </div>
       </CollapsibleContent>
@@ -69,30 +52,30 @@ const CollapsibleDemo = ({
 };
 
 const meta: Meta<typeof Collapsible> = {
-  title: 'Components/Collapsible',
+  title: "Components/Collapsible",
   component: Collapsible,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     open: {
-      control: 'boolean',
-      description: 'The controlled open state of the collapsible.',
+      control: "boolean",
+      description: "The controlled open state of the collapsible.",
     },
     defaultOpen: {
-      control: 'boolean',
+      control: "boolean",
       description:
-        'The open state of the collapsible when it is initially rendered. Use when you do not need to control its open state.',
+        "The open state of the collapsible when it is initially rendered. Use when you do not need to control its open state.",
       table: {
         type: { summary: null },
       },
     },
     disabled: {
-      control: 'boolean',
-      description: 'Prevent user actions when certain conditions are not met.',
+      control: "boolean",
+      description: "Prevent user actions when certain conditions are not met.",
     },
     asChild: {
-      control: 'boolean',
+      control: "boolean",
       description:
-        'Change the default rendered element for the one passed as a child, merging their props and behavior.',
+        "Change the default rendered element for the one passed as a child, merging their props and behavior.",
       table: {
         defaultValue: { summary: false },
         type: { summary: null },
@@ -101,15 +84,15 @@ const meta: Meta<typeof Collapsible> = {
     onOpenChange: { table: { disable: true } },
   },
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
-        component: 'An interactive component which expands/collapses a panel.',
+        component: "An interactive component which expands/collapses a panel.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=550%3A41441&mode=design&t=BNqih1pZMuav038B-1',
+      type: "figma",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=550-41441&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };

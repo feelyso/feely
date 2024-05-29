@@ -2,10 +2,16 @@
 title: Toggle
 ---
 
-import { Tabs, Cards, Card } from 'nextra/components';
-import { AccessibilityTable } from '@components/accessibility/accessibilityTable.mdx';
-import { toggleAccessibilityData } from '@components/accessibility/toggle.mdx';
-import { TogglePreview, ToggleDefault, ToggleOutline, ToggleWithText, ToggleDisabled } from '@components/preview/toggle.tsx'
+import { Tabs, Cards, Card } from "nextra/components";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { toggleAccessibilityData } from "@components/accessibility/toggle.tsx";
+import {
+  TogglePreview,
+  ToggleDefault,
+  ToggleOutline,
+  ToggleWithText,
+  ToggleDisabled,
+} from "@components/preview/toggle.tsx";
 
 # 💠 Toggle
 
@@ -17,8 +23,8 @@ A two-state button that can be either on or off.
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="toggle.tsx"
-    import { Bold } from "lucide-react"
-    import { Toggle } from "@/components/toggle"
+    import { Bold } from "@feely/ui/components/icon"
+    import { Toggle } from "@feely/ui/components/toggle"
 
     export function ToggleDemo() {
         return (
@@ -28,6 +34,7 @@ A two-state button that can be either on or off.
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -36,6 +43,7 @@ A two-state button that can be either on or off.
 The Toggle component functions as a switch that allows users to change a setting between two states, such as "on" or "off". Toggles are an intuitive choice for options that have an immediate effect and do not require a submission action to apply changes.
 
 ### When to use
+
 - **Instant changes**: Use a Toggle for settings that take effect immediately when changed, like enabling/disabling options in preferences or settings.
 - **Binary settings**: Toggles are suitable for binary options where there are only two possible choices and no intermediate states.
 - **Reducing clutter**: Employ Toggles when you want to reduce the clutter of having submit buttons for small actions.
@@ -53,8 +61,8 @@ Avoid using Toggles for actions that require more deliberate consideration or ha
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {6} /variant="default"/ filename="toggle.tsx"
-    import { Bold } from "lucide-react"
-    import { Toggle } from "@/components/toggle"
+    import { Bold } from "@feely/ui/components/icon"
+    import { Toggle } from "@feely/ui/components/toggle"
 
     export function ToggleDemo() {
         return (
@@ -64,6 +72,7 @@ Avoid using Toggles for actions that require more deliberate consideration or ha
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -75,8 +84,8 @@ Avoid using Toggles for actions that require more deliberate consideration or ha
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {6} /variant="outline"/ filename="toggle.tsx"
-    import { Bold } from "lucide-react"
-    import { Toggle } from "@/components/toggle"
+    import { Bold } from "@feely/ui/components/icon"
+    import { Toggle } from "@feely/ui/components/toggle"
 
     export function ToggleDemo() {
         return (
@@ -86,6 +95,7 @@ Avoid using Toggles for actions that require more deliberate consideration or ha
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -97,8 +107,8 @@ Avoid using Toggles for actions that require more deliberate consideration or ha
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {7} /Bold/ filename="toggle.tsx"
-    import { Bold } from "lucide-react"
-    import { Toggle } from "@/components/toggle"
+    import { Bold } from "@feely/ui/components/icon"
+    import { Toggle } from "@feely/ui/components/toggle"
 
     export function ToggleDemo() {
         return (
@@ -108,6 +118,7 @@ Avoid using Toggles for actions that require more deliberate consideration or ha
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -119,8 +130,8 @@ Avoid using Toggles for actions that require more deliberate consideration or ha
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy {6} /disabled/ filename="toggle.tsx"
-    import { Bold } from "lucide-react"
-    import { Toggle } from "@/components/toggle"
+    import { Bold } from "@feely/ui/components/icon"
+    import { Toggle } from "@feely/ui/components/toggle"
 
     export function ToggleDemo() {
         return (
@@ -130,29 +141,28 @@ Avoid using Toggles for actions that require more deliberate consideration or ha
         )
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
-
 
 ## Useful links
 
 **Here you go!** Here are all the resources you might need if you are a designer, a developer or a content manager:
 
-<Cards className='mt-8'>
+<Cards className="mt-8">
   <Card
     title="🤖 Storybook"
-    href="https://www.stories.fusillo.design/?path=/docs/components-toggle--documentation"
+    href="https://www.stories.feely.so/?path=/docs/components-toggle--documentation"
   />
   <Card
     title="🪄 Figma"
-    href="https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8885&mode=design&t=7r34RfU06jHXNJDx-1"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8885&t=nua4UmG9Iu1hfUAm-1"
   />
   <Card
     title="🐝 API Reference"
     href="https://www.radix-ui.com/primitives/docs/components/toggle#api-reference"
   />
 </Cards>
-
 
 ## Accessibility
 

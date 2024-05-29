@@ -4,9 +4,7 @@
 @tailwind utilities;
 
 @layer components {
-
-    .label-component {
-        @apply text-md-medium text leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-disabled;
-    }
-
+  .label-component {
+    @apply text-md-medium text peer-disabled:opacity-disabled leading-none peer-disabled:cursor-not-allowed;
+  }
 }

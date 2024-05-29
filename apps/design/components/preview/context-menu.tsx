@@ -15,7 +15,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@feely/ui";
+} from "@feely/ui/components/context-menu";
 
 export const ContextMenuPreview = () => (
   <Preview>

@@ -1,21 +1,17 @@
-"use client"
+"use client";
 
 // Import core
-import * as React from 'react';
-import * as SliderPrimitive from '@radix-ui/react-slider';
+import * as React from "react";
+import * as SliderPrimitive from "@radix-ui/react-slider";
 // Import customs
 import { cn } from "@feely/lib/twMerge";
-import './slider.css';
+import "./slider.css";
 
 export const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
 >(({ className, ...props }, ref) => (
-  <SliderPrimitive.Root
-    ref={ref}
-    className={cn('slider-component', className)}
-    {...props}
-  >
+  <SliderPrimitive.Root ref={ref} className={cn("slider-component", className)} {...props}>
     <SliderPrimitive.Track className="slider-track">
       <SliderPrimitive.Range className="slider-range" />
     </SliderPrimitive.Track>
@@ -23,4 +19,4 @@ export const Slider = React.forwardRef<
     <SliderPrimitive.Thumb className="slider-thumb" />
   </SliderPrimitive.Root>
 ));
-Slider.displayName = SliderPrimitive.Root.displayName
+Slider.displayName = SliderPrimitive.Root.displayName;

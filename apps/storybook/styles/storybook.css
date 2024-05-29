@@ -38,25 +38,29 @@
 @import "../../../packages/ui/components/tooltip/tooltip.css";
 
 @font-face {
-  font-family: 'GeistSans';
-  src: url('../public/fonts/GeistSans.woff2') format('woff2');
+  font-family: "GeistSans";
+  src: url("../public/fonts/GeistSans.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'GeistMono';
-  src: url('../public/fonts/GeistMono.woff2') format('woff2');
+  font-family: "GeistMono";
+  src: url("../public/fonts/GeistMono.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: 'GeistSans', sans-serif !important;
+  font-family: "GeistSans", sans-serif !important;
+}
+
+input {
+  @apply border-default bg-card text-md ring-offset-background file:text-md-medium file:text placeholder:text-placeholder focus-visible:border-default focus-visible:ring-brand focus-visible:ring-offset-background disabled:opacity-disabled flex h-9 w-full rounded border px-3 py-1 file:border-0 file:bg-transparent file:py-[2px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed !important;
 }
 
 .font-mono {
-  font-family: 'GeistMono', monospace !important;
+  font-family: "GeistMono", monospace !important;
 }

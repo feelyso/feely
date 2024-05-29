@@ -1,8 +1,8 @@
 // Import core
-import { AlertTriangle, Info, Megaphone, XCircle } from "lucide-react";
 // Import customs
 import Preview from "@components/preview/preview";
-import { Alert, AlertIcon, AlertDescription, AlertTitle } from "@feely/ui";
+import { Alert, AlertIcon, AlertDescription, AlertTitle } from "@feely/ui/components/alert";
+import { AlertTriangle, Info, Megaphone, XCircle } from "@feely/ui/components/icon";
 
 export const AlertPreview = () => (
   <Preview>

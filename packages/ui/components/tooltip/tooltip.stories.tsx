@@ -1,38 +1,33 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from './tooltip';
-import { Button } from '../button';
-import { FilePlus } from '../icon';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
+import { Button } from "../button";
+import { FilePlus } from "../icon";
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Components/Tooltip',
+  title: "Components/Tooltip",
   component: Tooltip,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
-        component:
-          'A floating, non-actionable label used to explain a user interface element or feature.',
+        component: "A floating, non-actionable label used to explain a user interface element or feature.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8886&mode=design&t=ADS6PLdzJ7eQkKd7-1',
+      type: "figma",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8886&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };
 export default meta;
 
 type TooltipCustomProps = {
-  type?: 'outline' | 'fill';
-  side?: 'top' | 'bottom' | 'left' | 'right';
+  type?: "outline" | "fill";
+  side?: "top" | "bottom" | "left" | "right";
 };
 
 type Story = StoryObj<TooltipCustomProps>;
@@ -56,25 +51,25 @@ export const Outline: Story = {
     </TooltipProvider>
   ),
   args: {
-    type: 'outline',
-    side: 'top',
+    type: "outline",
+    side: "top",
   },
   argTypes: {
     type: {
-      control: 'radio',
-      options: ['outline', 'fill'],
-      description: 'Define the look and feel of the tooltip',
+      control: "radio",
+      options: ["outline", "fill"],
+      description: "Define the look and feel of the tooltip",
       table: {
-        defaultValue: { summary: 'outline' },
+        defaultValue: { summary: "outline" },
         type: { summary: null },
       },
     },
     side: {
-      control: 'select',
-      options: ['top', 'bottom', 'left', 'right'],
-      description: 'Define the direction in which the tooltip will open',
+      control: "select",
+      options: ["top", "bottom", "left", "right"],
+      description: "Define the direction in which the tooltip will open",
       table: {
-        defaultValue: { summary: 'top' },
+        defaultValue: { summary: "top" },
         type: { summary: null },
       },
     },
@@ -100,29 +95,28 @@ export const Fill: Story = {
     </TooltipProvider>
   ),
   args: {
-    type: 'fill',
-    side: 'top',
+    type: "fill",
+    side: "top",
   },
   argTypes: {
     type: {
-      control: 'radio',
-      options: ['outline', 'fill'],
+      control: "radio",
+      options: ["outline", "fill"],
       table: {
-        defaultValue: { summary: 'outline' },
+        defaultValue: { summary: "outline" },
         type: { summary: null },
       },
     },
     side: {
-      control: 'select',
-      options: ['top', 'bottom', 'left', 'right'],
+      control: "select",
+      options: ["top", "bottom", "left", "right"],
       table: {
-        defaultValue: { summary: 'top' },
+        defaultValue: { summary: "top" },
         type: { summary: null },
       },
     },
   },
 };
-
 
 export const Side: Story = {
   render: (args) => (
@@ -182,14 +176,14 @@ export const Side: Story = {
     </div>
   ),
   args: {
-    type: 'outline',
+    type: "outline",
   },
   argTypes: {
     type: {
-      control: 'radio',
-      options: ['outline', 'fill'],
+      control: "radio",
+      options: ["outline", "fill"],
       table: {
-        defaultValue: { summary: 'outline' },
+        defaultValue: { summary: "outline" },
         type: { summary: null },
       },
     },

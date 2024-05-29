@@ -4,17 +4,15 @@
 @tailwind utilities;
 
 @layer components {
+  .separator-component {
+    @apply bg-border shrink-0;
+  }
 
-    .separator-component {
-        @apply shrink-0 bg-border;
-    }
+  .separator-horizontal {
+    @apply h-[1px] w-full;
+  }
 
-    .separator-horizontal {
-        @apply h-[1px] w-full;
-    }
-
-    .separator-vertical {
-        @apply h-full min-h-2 w-[1px];
-    }
-
+  .separator-vertical {
+    @apply h-full min-h-2 w-[1px];
+  }
 }

@@ -3,11 +3,9 @@ title: Sheet
 ---
 
 import { Tabs, Cards, Card } from 'nextra/components';
-import { AccessibilityTable } from '@components/accessibility/accessibilityTable.mdx';
-import { sheetAccessibilityData } from '@components/accessibility/sheet.mdx';
-import {
-  SheetPreview, SheetSide
-} from '@components/preview/sheet.tsx';
+import { AccessibilityTable } from '@components/accessibility/accessibility-table.mdx';
+import { sheetAccessibilityData } from '@components/accessibility/sheet.tsx';
+import { SheetPreview, SheetSide } from '@components/preview/sheet.tsx';
 
 # 💠 Sheet
 
@@ -19,9 +17,9 @@ Extends the Dialog component to display content that complements the main conten
   </Tabs.Tab>
   <Tabs.Tab>
   ```js copy filename="sheet.tsx"
-  import { Button } from "@/components/button"
-  import { Input } from "@/components/input"
-  import { Label } from "@/components/label"
+  import { Button } from "@feely/ui/components/button"
+  import { Input } from "@feely/ui/components/input"
+  import { Label } from "@feely/ui/components/label"
   import {
     Sheet,
     SheetClose,
@@ -31,7 +29,7 @@ Extends the Dialog component to display content that complements the main conten
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-  } from "@/components/sheet"
+  } from "@feely/ui/components/sheet"
 
   export function SheetDemo() {
     return (
@@ -97,9 +95,9 @@ Avoid using Sheets for critical actions or information that users must interact 
   </Tabs.Tab>
   <Tabs.Tab>
   ```js copy filename="sheet.tsx"
-  import { Button } from "@/components/button"
-  import { Input } from "@/components/input"
-  import { Label } from "@/components/label"
+  import { Button } from "@feely/ui/components/button"
+  import { Input } from "@feely/ui/components/input"
+  import { Label } from "@feely/ui/components/label"
   import {
     Sheet,
     SheetClose,
@@ -109,7 +107,7 @@ Avoid using Sheets for critical actions or information that users must interact 
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-  } from "@/components/sheet"
+  } from "@feely/ui/components/sheet"
 
   export function SheetDemo() {
     return (
@@ -161,9 +159,9 @@ Avoid using Sheets for critical actions or information that users must interact 
   ```js copy filename="sheet.tsx"
    "use client"
 
-  import { Button } from "@/components/button"
-  import { Input } from "@/components/input"
-  import { Label } from "@/components/label"
+  import { Button } from "@feely/ui/components/button"
+  import { Input } from "@feely/ui/components/input"
+  import { Label } from "@feely/ui/components/label"
   import {
     Sheet,
     SheetClose,
@@ -173,7 +171,7 @@ Avoid using Sheets for critical actions or information that users must interact 
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-  } from "@/components/sheet"
+  } from "@feely/ui/components/sheet"
 
   const SHEET_SIDES = ["top", "right", "bottom", "left"] as const
 
@@ -249,11 +247,11 @@ You can adjust the `size` of the sheet using CSS classes:
 <Cards className="mt-8">
   <Card
     title="🤖 Storybook"
-    href="https://www.stories.fusillo.design/?path=/docs/components-sheet--documentation"
+    href="https://www.stories.feely.so/?path=/docs/components-sheet--documentation"
   />
   <Card
     title="🪄 Figma"
-    href="https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8877&mode=design&t=Aq9znIDZ1U4lgvQV-1"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8877&t=nua4UmG9Iu1hfUAm-1"
   />
   <Card
     title="🐝 API Reference"

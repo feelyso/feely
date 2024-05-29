@@ -1,55 +1,56 @@
 // Import core
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from "react";
+import { Meta, StoryObj } from "@storybook/react";
 // Import customs
-import { Tag } from './tag';
-import { TagIcon } from '../icon';
+import { Tag } from "./tag";
+import { TagIcon } from "../icon";
 
 const meta: Meta<typeof Tag> = {
-  title: 'Components/Tag',
+  title: "Components/Tag",
   component: Tag,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     colors: {
-      control: 'select',
+      control: "select",
       options: [
-        'red',
-        'orange',
-        'amber',
-        'yellow',
-        'lime',
-        'green',
-        'emerald',
-        'teal',
-        'cyan',
-        'sky',
-        'blue',
-        'indigo',
-        'violet',
-        'purple',
-        'fuchsia',
-        'pink',
-        'rose',
+        "red",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "green",
+        "emerald",
+        "teal",
+        "cyan",
+        "sky",
+        "blue",
+        "indigo",
+        "violet",
+        "purple",
+        "fuchsia",
+        "pink",
+        "rose",
       ],
-      description: 'Define the color of message communicated by the badge',
+      description: "Define the color of message communicated by the badge",
       table: {
-        defaultValue: { summary: 'blue' },
+        defaultValue: { summary: "blue" },
         type: { summary: null },
       },
     },
   },
   args: {
-    colors: 'blue',
+    colors: "blue",
   },
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     docs: {
       description: {
-        component: 'Displays an element for categorizing or markup.',
+        component: "Displays an element for categorizing or markup.",
       },
     },
     design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=635%3A3323&mode=design&t=7r34RfU06jHXNJDx-1',
+      type: "figma",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=635-3323&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };
@@ -65,7 +66,7 @@ export const Red: Story = {
     </Tag>
   ),
   args: {
-    colors: 'red',
+    colors: "red",
   },
 };
 
@@ -77,7 +78,7 @@ export const Orange: Story = {
     </Tag>
   ),
   args: {
-    colors: 'orange',
+    colors: "orange",
   },
 };
 
@@ -89,7 +90,7 @@ export const Amber: Story = {
     </Tag>
   ),
   args: {
-    colors: 'amber',
+    colors: "amber",
   },
 };
 
@@ -101,7 +102,7 @@ export const Yellow: Story = {
     </Tag>
   ),
   args: {
-    colors: 'yellow',
+    colors: "yellow",
   },
 };
 
@@ -113,7 +114,7 @@ export const Lime: Story = {
     </Tag>
   ),
   args: {
-    colors: 'lime',
+    colors: "lime",
   },
 };
 
@@ -125,7 +126,7 @@ export const Green: Story = {
     </Tag>
   ),
   args: {
-    colors: 'green',
+    colors: "green",
   },
 };
 
@@ -137,7 +138,7 @@ export const Emerald: Story = {
     </Tag>
   ),
   args: {
-    colors: 'emerald',
+    colors: "emerald",
   },
 };
 
@@ -149,7 +150,7 @@ export const Teal: Story = {
     </Tag>
   ),
   args: {
-    colors: 'teal',
+    colors: "teal",
   },
 };
 
@@ -161,7 +162,7 @@ export const Cyan: Story = {
     </Tag>
   ),
   args: {
-    colors: 'cyan',
+    colors: "cyan",
   },
 };
 
@@ -173,7 +174,7 @@ export const Sky: Story = {
     </Tag>
   ),
   args: {
-    colors: 'sky',
+    colors: "sky",
   },
 };
 
@@ -185,7 +186,7 @@ export const Blue: Story = {
     </Tag>
   ),
   args: {
-    colors: 'blue',
+    colors: "blue",
   },
 };
 
@@ -197,7 +198,7 @@ export const Indigo: Story = {
     </Tag>
   ),
   args: {
-    colors: 'indigo',
+    colors: "indigo",
   },
 };
 
@@ -209,7 +210,7 @@ export const Violet: Story = {
     </Tag>
   ),
   args: {
-    colors: 'violet',
+    colors: "violet",
   },
 };
 
@@ -221,7 +222,7 @@ export const Purple: Story = {
     </Tag>
   ),
   args: {
-    colors: 'purple',
+    colors: "purple",
   },
 };
 
@@ -233,7 +234,7 @@ export const Fuchsia: Story = {
     </Tag>
   ),
   args: {
-    colors: 'fuchsia',
+    colors: "fuchsia",
   },
 };
 
@@ -245,7 +246,7 @@ export const Pink: Story = {
     </Tag>
   ),
   args: {
-    colors: 'pink',
+    colors: "pink",
   },
 };
 
@@ -257,6 +258,6 @@ export const Rose: Story = {
     </Tag>
   ),
   args: {
-    colors: 'rose',
+    colors: "rose",
   },
 };

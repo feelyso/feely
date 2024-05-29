@@ -3,8 +3,8 @@ title: Radio Group
 ---
 
 import { Tabs, Cards, Card } from "nextra/components";
-import { AccessibilityTable } from "@components/accessibility/accessibilityTable.mdx";
-import { radioGroupAccessibilityData } from "@components/accessibility/radio-group.mdx";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { radioGroupAccessibilityData } from "@components/accessibility/radio-group.tsx";
 import {
   RadioGroupPreview,
   RadioGroupDefault,
@@ -21,8 +21,8 @@ A set of checkable buttons—known as radio buttons—where no more than one of 
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="radio-group.tsx"
-    import { Label } from "@/components/label"
-    import { RadioGroup, RadioGroupItem } from "@/components/radio-group"
+    import { Label } from "@feely/ui/components/label"
+    import { RadioGroup, RadioGroupItem } from "@feely/ui/components/radio-group"
 
     export function RadioGroupDemo() {
         return (
@@ -72,8 +72,8 @@ Avoid using Radio Groups when multiple selections are allowed; checkboxes would 
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="radio-group.tsx"
-    import { Label } from "@/components/label"
-    import { RadioGroup, RadioGroupItem } from "@/components/radio-group"
+    import { Label } from "@feely/ui/components/label"
+    import { RadioGroup, RadioGroupItem } from "@feely/ui/components/radio-group"
 
     export function RadioGroupDemo() {
         return (
@@ -112,10 +112,10 @@ Avoid using Radio Groups when multiple selections are allowed; checkboxes would 
     import { useForm } from "react-hook-form"
     import * as z from "zod"
 
-    import { Button } from "@/components/button"
-    import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/form"
-    import { RadioGroup, RadioGroupItem } from "@/components/radio-group"
-    import { toast } from "@/components/toast/use-toast"
+    import { Button } from "@feely/ui/components/button"
+    import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@feely/ui/components/form"
+    import { RadioGroup, RadioGroupItem } from "@feely/ui/components/radio-group"
+    import { toast } from "@feely/ui/components/toast/use-toast"
 
     const FormSchema = z.object({
         type: z.enum(["all", "mentions", "none"], {
@@ -199,11 +199,11 @@ Avoid using Radio Groups when multiple selections are allowed; checkboxes would 
 <Cards className="mt-8">
   <Card
     title="🤖 Storybook"
-    href="https://www.stories.fusillo.design/?path=/docs/components-radiogroup--documentation"
+    href="https://www.stories.feely.so/?path=/docs/components-radiogroup--documentation"
   />
   <Card
     title="🪄 Figma"
-    href="https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8873&mode=design&t=BNqih1pZMuav038B-1"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8873&t=nua4UmG9Iu1hfUAm-1"
   />
   <Card
     title="🐝 API Reference"

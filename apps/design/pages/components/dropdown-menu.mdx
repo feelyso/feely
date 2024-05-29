@@ -3,8 +3,8 @@ title: Dropdown Menu
 ---
 
 import { Tabs, Cards, Card } from "nextra/components";
-import { AccessibilityTable } from "@components/accessibility/accessibilityTable.mdx";
-import { dropdownMenuAccessibilityData } from "@components/accessibility/dropdown-menu.mdx";
+import { AccessibilityTable } from "@components/accessibility/accessibility-table.mdx";
+import { dropdownMenuAccessibilityData } from "@components/accessibility/dropdown-menu.tsx";
 import {
   DropdownMenuPreview,
   DropdownMenuWithCheckboxes,
@@ -21,9 +21,9 @@ Displays a menu to the user — such as a set of actions or functions — trigge
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="dropdown-menu.tsx"
-    import { Cloud, CreditCard, Github, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from "lucide-react"
-    import { Button } from "@/components/button"
-    import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/dropdown-menu"
+    import { Cloud, CreditCard, Github, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from "@feely/ui/components/icon"
+    import { Button } from "@feely/ui/components/button"
+    import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@feely/ui/components/dropdown-menu"
 
     export function DropdownMenuDemo() {
         return (
@@ -143,9 +143,9 @@ Avoid using Dropdown Menus for critical actions that users need to access freque
   </Tabs.Tab>
   <Tabs.Tab>
     ```js copy filename="dropdown-menu.tsx"
-    import { Cloud, CreditCard, Github, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from "lucide-react"
-    import { Button } from "@/components/button"
-    import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/dropdown-menu"
+    import { Cloud, CreditCard, Github, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from "@feely/ui/components/icon"
+    import { Button } from "@feely/ui/components/button"
+    import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@feely/ui/components/dropdown-menu"
 
     export function DropdownMenuDemo() {
         return (
@@ -254,8 +254,8 @@ Avoid using Dropdown Menus for critical actions that users need to access freque
     import * as React from "react"
     import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
 
-    import { Button } from "@/components/button"
-    import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/dropdown-menu"
+    import { Button } from "@feely/ui/components/button"
+    import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@feely/ui/components/dropdown-menu"
 
     type Checked = DropdownMenuCheckboxItemProps["checked"]
 
@@ -312,8 +312,8 @@ Avoid using Dropdown Menus for critical actions that users need to access freque
 
     import * as React from "react"
 
-    import { Button } from "@/components/button"
-    import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/dropdown-menu"
+    import { Button } from "@feely/ui/components/button"
+    import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@feely/ui/components/dropdown-menu"
 
     export function DropdownMenuRadioGroupDemo() {
         const [position, setPosition] = React.useState("bottom")
@@ -347,11 +347,11 @@ Avoid using Dropdown Menus for critical actions that users need to access freque
 <Cards className="mt-8">
   <Card
     title="🤖 Storybook"
-    href="https://www.stories.fusillo.design/?path=/docs/components-dropdownmenu--documentation"
+    href="https://www.stories.feely.so/?path=/docs/components-dropdownmenu--documentation"
   />
   <Card
     title="🪄 Figma"
-    href="https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8864&mode=design&t=BNqih1pZMuav038B-1"
+    href="https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8864&t=nua4UmG9Iu1hfUAm-1"
   />
   <Card
     title="🐝 API Reference"

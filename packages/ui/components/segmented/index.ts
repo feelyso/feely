@@ -1,1 +1,1 @@
-export * from './segmented';
+export * from "./segmented";

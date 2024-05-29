@@ -5,7 +5,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@lib/*": ["lib/*"],
+      "@lib/*": ["lib/*"]
     },
     "plugins": [
       {
@@ -21,7 +21,7 @@
     "../../packages/types/next-auth.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

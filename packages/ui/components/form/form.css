@@ -4,17 +4,15 @@
 @tailwind utilities;
 
 @layer components {
+  .form-label {
+    @apply text-danger;
+  }
 
-    .form-label {
-        @apply text-danger;
-    }
+  .form-description {
+    @apply text-md text-description;
+  }
 
-    .form-description {
-        @apply text-md text-description;
-    }
-
-    .form-message {
-        @apply text-md-medium text-danger;
-    }
-
+  .form-message {
+    @apply text-md-medium text-danger;
+  }
 }

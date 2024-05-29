@@ -4,49 +4,47 @@
 @tailwind utilities;
 
 @layer components {
+  .sheet-overlay {
+    @apply bg-mask fixed inset-0 z-50 backdrop-blur-sm;
+  }
 
-    .sheet-overlay {
-        @apply fixed inset-0 z-50 bg-mask backdrop-blur-sm;
-    }
+  .sheet-component {
+    @apply bg-elevated fixed z-50 gap-4 p-6 shadow-lg transition ease-in-out;
+  }
 
-    .sheet-component {
-        @apply fixed z-50 gap-4 bg-elevated p-6 shadow-lg transition ease-in-out;
-    }
+  .sheet-top {
+    @apply border-b-default inset-x-0 top-0 border-b;
+  }
 
-    .sheet-top {
-        @apply inset-x-0 top-0 border-b border-b-default;
-    }
+  .sheet-bottom {
+    @apply border-t-default inset-x-0 bottom-0 border-t;
+  }
 
-    .sheet-bottom {
-        @apply inset-x-0 bottom-0 border-t border-t-default;
-    }
+  .sheet-left {
+    @apply border-r-default inset-y-0 left-0 h-full border-r;
+  }
 
-    .sheet-left {
-        @apply inset-y-0 left-0 h-full border-r border-r-default;
-    }
+  .sheet-right {
+    @apply border-l-default inset-y-0 right-0  h-full border-l;
+  }
 
-    .sheet-right {
-        @apply inset-y-0 right-0 h-full  border-l border-l-default;
-    }
+  .sheet-close {
+    @apply ring-offset-background focus:ring-brand data-[state=open]:bg-item [&>svg]:stroke-icon [&>svg]:hover:stroke-icon-hover absolute right-4 top-4 rounded-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none [&>svg]:h-4 [&>svg]:w-4;
+  }
 
-    .sheet-close {
-        @apply absolute right-4 top-4 rounded-sm ring-offset-background transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-item [&>svg]:w-4 [&>svg]:h-4 [&>svg]:stroke-icon [&>svg]:hover:stroke-icon-hover;
-    }
+  .sheet-header {
+    @apply flex flex-col space-y-2 text-center sm:text-left;
+  }
 
-    .sheet-header {
-        @apply flex flex-col space-y-2 text-center sm:text-left;
-    }
+  .sheet-footer {
+    @apply flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2;
+  }
 
-    .sheet-footer {
-        @apply flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2;
-    }
+  .sheet-title {
+    @apply text-heading-body text;
+  }
 
-    .sheet-title {
-        @apply text-heading-body text;
-    }
-
-    .sheet-description {
-        @apply text-md text-description;
-    }
-
+  .sheet-description {
+    @apply text-md text-description;
+  }
 }

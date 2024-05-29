@@ -1,10 +1,10 @@
 // Import core
 // Import customs
 import Preview from "@components/preview/preview";
-import { Label } from "@feely/ui";
-import { Checkbox } from "@feely/ui";
-import { Input } from "@feely/ui";
-import { Textarea } from "@feely/ui";
+import { Label } from "@feely/ui/components/label";
+import { Checkbox } from "@feely/ui/components/checkbox";
+import { Input } from "@feely/ui/components/input";
+import { Textarea } from "@feely/ui/components/textarea";
 
 export const LabelPreview = () => (
   <Preview>
