@@ -28,7 +28,7 @@ const meta: Meta<typeof Alert> = {
     },
     design: {
       type: "figma",
-      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=233%3A751&mode=design&t=F5zgbD2phu8xvUpj-1",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=233-751&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };

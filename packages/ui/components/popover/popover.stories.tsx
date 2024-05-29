@@ -21,7 +21,7 @@ const meta: Meta<typeof Popover> = {
     },
     design: {
       type: "figma",
-      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=540%3A8871&mode=design&t=h85Ey3chnxVlElkp-1",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8871&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };

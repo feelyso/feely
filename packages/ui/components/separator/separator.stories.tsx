@@ -29,7 +29,7 @@ const meta: Meta<typeof Separator> = {
     },
     design: {
       type: "figma",
-      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%94%B5-Fusillo-Design-System?type=design&node-id=540%3A8876&mode=design&t=7r34RfU06jHXNJDx-1",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8876&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };

@@ -17,7 +17,7 @@ const meta: Meta<typeof Table> = {
     },
     design: {
       type: "figma",
-      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%A4%8C-Al-dente--%3E-Fusillo-Design-System?type=design&node-id=540%3A8881&mode=design&t=tRuDbCO0tu1RLI41-1",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=540-8881&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };

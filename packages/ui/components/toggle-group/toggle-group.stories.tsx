@@ -52,7 +52,7 @@ const meta: Meta<typeof ToggleGroup> = {
     },
     design: {
       type: "figma",
-      url: "https://www.figma.com/file/acdO58jx9zgGfkKu6htrx2/%F0%9F%8D%9D-Fusillo-Design-System?type=design&node-id=1063%3A304&mode=design&t=Aq9znIDZ1U4lgvQV-1",
+      url: "https://www.figma.com/design/Jfto7FUoU7mSpnv9uESD60/%F0%9F%9F%A0-feely---design-system?node-id=1063-304&t=nua4UmG9Iu1hfUAm-1",
     },
   },
 };
