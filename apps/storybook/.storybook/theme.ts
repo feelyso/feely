@@ -4,6 +4,6 @@ export default create({
   base: "dark",
   brandTitle: "feely",
   brandUrl: "https://feely.so",
-  brandImage: "/public/logo/logo.png",
+  brandImage: "https://www.feely.so/logo/logo.png",
   brandTarget: "_self",
 });
