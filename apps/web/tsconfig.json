@@ -5,7 +5,8 @@
     "paths": {
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@lib/*": ["lib/*"]
+      "@lib/*": ["lib/*"],
+      "@data/*": ["data/*"]
     },
     "plugins": [
       {

@@ -1,7 +1,8 @@
+// Import core
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-
+// Import custom
 import { ToastProvider } from "@feely/ui/components/toast";
 import { ThemeProvider } from "@components/theme-provider";
 import "../styles/globals.css";
