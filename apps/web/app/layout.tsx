@@ -1,5 +1,6 @@
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 
 import { ToastProvider } from "@feely/ui/components/toast";
@@ -24,6 +25,7 @@ export default function RootLayout({
           {children}
           <ToastProvider />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
