@@ -157,16 +157,16 @@
   --opacity-invisible: 0;
 }
 .dark {
-  --color-bg-background: var(--color-neutral-950);
-  --color-bg-card: var(--color-neutral-950);
-  --color-bg-subtle: var(--color-neutral-900);
-  --color-bg-muted: var(--color-neutral-800);
+  --color-bg-background: var(--color-neutral-900);
+  --color-bg-card: var(--color-neutral-900);
+  --color-bg-subtle: var(--color-neutral-950);
+  --color-bg-muted: var(--color-neutral-700);
   --color-bg-inverse: var(--color-neutral-0);
-  --color-bg-elevated: var(--color-neutral-950);
+  --color-bg-elevated: var(--color-neutral-900);
   --color-bg-mask: #09090be6;
-  --color-bg-item: var(--color-neutral-950);
-  --color-bg-item-hover: var(--color-neutral-900);
-  --color-bg-item-selected: var(--color-neutral-800);
+  --color-bg-item: var(--color-neutral-900);
+  --color-bg-item-hover: var(--color-neutral-800);
+  --color-bg-item-selected: var(--color-neutral-700);
   --color-bg-brand-default: var(--color-brand-600);
   --color-bg-brand-hover: var(--color-brand-700);
   --color-bg-brand-active: var(--color-brand-500);
@@ -235,8 +235,8 @@
   --color-text-chart-fuchsia: var(--color-fuchsia-300);
   --color-text-chart-pink: var(--color-pink-300);
   --color-text-chart-rose: var(--color-rose-300);
-  --color-border-default: var(--color-neutral-800);
-  --color-border-hover: var(--color-neutral-600);
+  --color-border-default: var(--color-neutral-700);
+  --color-border-hover: var(--color-neutral-500);
   --color-border-brand-default: var(--color-brand-600);
   --color-border-brand-hover: var(--color-brand-700);
   --color-border-brand-active: var(--color-brand-500);
