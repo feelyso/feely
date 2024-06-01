@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { ToastProvider } from "@feely/ui/components/toast";
 import Main from "@components/main";
 import "../styles/globals.css";
@@ -7,6 +8,7 @@ export default function App({ Component, pageProps }) {
     <Main>
       <Component {...pageProps} />
       <ToastProvider />
+      <Analytics />
     </Main>
   );
 }

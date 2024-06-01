@@ -1,6 +1,7 @@
 // Import core
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 // Import custom
 import { ToastProvider } from "@feely/ui/components/toast";
@@ -19,11 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+      <head />
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
           <ToastProvider />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
