@@ -1,0 +1,16 @@
+/* Import tailwind & tailwind layer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navigation-menu-component {
+    @apply relative z-10 flex max-w-max flex-1 items-center justify-center;
+  }
+  .navigation-menu-list {
+    @apply flex flex-1 list-none items-center justify-center space-x-1;
+  }
+  .navigation-menu-trigger-style {
+    @apply bg-item text-description data-[active]:text-brand text-md-medium hover:bg-item-hover hover:text focus:bg-item focus:text ring-offset-background focus-visible:ring-brand focus-visible:ring-2 focus-visible:ring-offset-2 [&>svg]:h-4 [&>svg]:stroke-[1.25px] [&>svg]:w-4 inline-flex w-max items-center justify-center rounded px-3 py-1 h-9 gap-1 transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-disabled;
+  }
+}
