@@ -159,7 +159,7 @@
 .dark {
   --color-bg-background: var(--color-neutral-950);
   --color-bg-card: var(--color-neutral-950);
-  --color-bg-subtle: var(--color-neutral-900);
+  --color-bg-subtle: var(--color-neutral-1000);
   --color-bg-muted: var(--color-neutral-800);
   --color-bg-inverse: var(--color-neutral-0);
   --color-bg-elevated: var(--color-neutral-950);
