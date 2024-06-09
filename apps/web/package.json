@@ -13,11 +13,13 @@
     "@feely/lib": "*",
     "@feely/tsconfig": "*",
     "@feely/ui": "*",
+    "@prisma/client": "5.15.0",
     "geist": "^1.2.2",
     "next": "14.1.4",
+    "next-themes": "^0.3.0",
+    "prisma": "^5.15.0",
     "react": "^18",
-    "react-dom": "^18",
-    "next-themes": "^0.3.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@feely/config": "*",
