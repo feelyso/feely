@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "https://feely.com/images/twitter-og.png",
+        url: "https://feely.so/images/twitter-og.png",
         alt: "Feely Logo",
       },
     ],
