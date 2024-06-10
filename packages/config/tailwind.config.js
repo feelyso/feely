@@ -268,6 +268,14 @@ module.exports = {
         mono: ["var(--font-geist-mono)", ...fontFamily.mono],
       },
       fontSize: {
+        "display-website": [
+          "3rem",
+          {
+            lineHeight: "1",
+            letterSpacing: "-2.5%",
+            fontWeight: "700",
+          },
+        ],
         "heading-screen": [
           "2.25rem",
           {
