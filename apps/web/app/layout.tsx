@@ -2,16 +2,13 @@
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { Analytics } from "@vercel/analytics/react";
-import type { Metadata } from "next";
 // Import custom
 import { ToastProvider } from "@feely/ui/components/toast";
 import { ThemeProvider } from "@components/theme-provider";
+import { metadata } from "@lib/metadata";
 import "../styles/globals.css";
 
-export const metadata: Metadata = {
-  title: "Feely",
-  description: "",
-};
+export { metadata };
 
 export default function RootLayout({
   children,

@@ -103,16 +103,18 @@ export default function WaitlistForm() {
     case SUCCESS:
       return (
         <>
-          <div className=" relative z-50 flex h-screen w-screen items-center justify-center">
-            <div className="grid max-w-[440px] gap-8 p-6">
-              <div className="grid gap-4 text-center">
-                <h1 className="text-display-website">
-                  Yay, <span className="text-brand-gradient">success</span>
+          <div className="relative z-40 flex w-screen items-center justify-center overflow-auto sm:h-screen">
+            <div className="m-6 grid max-w-screen-sm justify-items-center gap-8 py-20 sm:py-0">
+              <div className="grid gap-6 text-left sm:text-center">
+                <h1 className="sm:text-display-website text-heading-screen">
+                  Yay, can you <span className="text-brand-gradient">feel the joy?</span>
                 </h1>
-                <p className="text-description text-md">
-                  Lorem ipsum dolor sit amet consectetur. Consequat eu fringilla dui tincidunt semper. Sed
-                  adipiscing faucibus nisi egestas ut. Quam eget risus turpis elit vel id hendrerit sagittis.
-                  Condimentum nunc vitae pellentesque nisl lorem elit auctor.
+                <p className="text-description text-lg leading-7">
+                  You&apos;ve just joined feely waitlist. Make sure you&apos;ve received our{" "}
+                  <b>welcome email</b>.
+                  <br />
+                  If you don&apos;t find her, <b>check your spam or promotions tab</b> – she sometimes like to
+                  hide in there.
                 </p>
               </div>
             </div>
@@ -122,18 +124,23 @@ export default function WaitlistForm() {
     case ERROR:
       return (
         <>
-          <div className=" relative z-50 flex h-screen w-screen items-center justify-center">
-            <div className="grid max-w-[440px] justify-items-center gap-8 p-6">
-              <div className="grid gap-4 text-center">
-                <h1 className="text-heading-screen">Something went wrong</h1>
-                <p className="text-description text-md">
-                  Lorem ipsum dolor sit amet consectetur. Consequat eu fringilla dui tincidunt semper. Sed
-                  adipiscing faucibus nisi egestas ut. Quam eget risus turpis elit vel id hendrerit sagittis.
-                  Condimentum nunc vitae pellentesque nisl lorem elit auctor.
+          <div className="relative z-40 flex w-screen items-center justify-center overflow-auto sm:h-screen">
+            <div className="m-6 grid max-w-screen-sm justify-items-start gap-8  py-20 sm:justify-items-center sm:py-0">
+              <div className="grid gap-6 text-left sm:text-center">
+                <h1 className="sm:text-display-website text-heading-screen">
+                  Hey hey, <span className="text-brand-gradient">slow down</span>
+                </h1>
+                <p className="text-description text-lg leading-7">
+                  Seems like you tried a little bit too hard: <b>you&apos;ve just submitted</b> another email
+                  address.
+                  <br />
+                  Go and <b>check your email</b>, you might already have our welcome message in there.
+                  Otherwise,
+                  <b>wait a minute and try again</b>.
                 </p>
               </div>
               <Button className="button-waitlist w-fit" onClick={resetForm}>
-                Back
+                Okay, I&apos;ll go back
               </Button>
             </div>
           </div>
@@ -142,27 +149,38 @@ export default function WaitlistForm() {
     default:
       return (
         <>
-          <div className=" relative z-50 flex h-screen w-screen items-center justify-center">
-            <div className="grid max-w-[440px] gap-8 p-6">
-              <div className="grid gap-4 text-center">
-                <h1 className="text-display-website">
-                  Join the <span className="text-brand-gradient">waitlist</span>
+          <div className=" relative z-40 flex w-screen items-center justify-center overflow-auto sm:h-screen">
+            <div className="m-6 grid max-w-screen-sm justify-items-center gap-8 py-20 sm:py-0">
+              <div className="grid gap-6 text-left sm:text-center">
+                <h1 className="sm:text-display-website text-heading-screen max-w-[600px]">
+                  <span className="text-brand-gradient">User feedbacks</span> get real by being rewarded
                 </h1>
-                <p className="text-description text-md">
-                  Lorem ipsum dolor sit amet consectetur. Consequat eu fringilla dui tincidunt semper. Sed
-                  adipiscing faucibus nisi egestas ut. Quam eget risus turpis elit vel id hendrerit sagittis.
-                  Condimentum nunc vitae pellentesque nisl lorem elit auctor.
+                <p className="text-description text-lg leading-7">
+                  We&apos;re building a spot where <b>user thoughts</b> become a <b>treasure</b>.
+                  <br />
+                  Entirely opensource, entirely bootstrapped.
+                  <br />
+                  We&apos;ll encourge users to listen to each other through <b>conversations</b> and{" "}
+                  <b>rewarding</b>.
+                  <br />
+                  The result? A product actually built for your people. And <b>they will feel part of it</b>.
+                  <br />
+                  <b>Join the waitlist</b>: we&apos;ll send you new feature releases, case histories and tips.
+                  Only when you need them.
                 </p>
               </div>
-              <form onSubmit={handleSubmit} className="flex items-center justify-center gap-3">
+              <form
+                onSubmit={handleSubmit}
+                className="items-left xs:flex xs:items-center xs:justify-center grid w-full max-w-[420px] justify-start gap-3">
                 <Input
                   type="email"
                   name="email"
-                  placeholder="you@example.com"
+                  placeholder="your.email@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required={true}
-                  className="input-waitlist w-full max-w-96"
+                  className="input-waitlist w-full"
+                  autoFocus
                 />
                 <Input type="hidden" name="userGroup" value="waitlist" />
                 <Button
@@ -170,7 +188,7 @@ export default function WaitlistForm() {
                     formState === SUBMITTING ? "button-waitlist opacity-disabled" : "button-waitlist"
                   }
                   type="submit">
-                  {formState === SUBMITTING ? "Please wait..." : "Join now"}
+                  {formState === SUBMITTING ? "Wait a sec" : "Join the waitlist"}
                 </Button>
               </form>
             </div>
