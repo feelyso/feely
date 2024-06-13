@@ -1,21 +1,31 @@
-"use client";
-
-import React from 'react'
-import { createClient } from 'utils/supabase/client';
+import { redirect } from "next/navigation";
+import React from "react";
+import { createClient } from "utils/supabase/server";
 
 const AuthButtons = () => {
-const supabase = createClient();
-
-const handleGoogleLogin = async () => {
+  const handleGoogleLogin = async () => {
+    "use server";
+    const supabase = createClient();
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
+      provider: "google",
+      options: {
+        // Uncomment the next line if you want to redirect the user to a specific URL after login
+        redirectTo: "http://localhost:3000/auth/callback",
+      },
     });
+    if (data.url) {
+      return redirect(data.url);
+    }
     console.log("Data", data);
     if (error) {
-      console.error('Error logging in with Google:', error.message);
+      console.error("Error logging in with Google:", error.message);
     }
   };
 
-return <button onClick={handleGoogleLogin}>LogIn</button>;
-}
-export default AuthButtons
+  return (
+    <form action={handleGoogleLogin}>
+      <button onClick={handleGoogleLogin}>LogIn</button>
+    </form>
+  );
+};
+export default AuthButtons;

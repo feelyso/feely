@@ -1,13 +1,15 @@
-"use client";
-
 import { ModeToggle } from "@components/mode-toggle";
-import AuthButtons from "app/components/auth";
+import protectRoute from "app/utils/protectedRoute";
+import Link from "next/link";
+export default async function Home() {
+  await protectRoute();
 
-export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <ModeToggle />
-      <AuthButtons />
+      <Link href="/login" className="bg-red">
+        Login
+      </Link>
     </main>
   );
 }
