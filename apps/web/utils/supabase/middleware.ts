@@ -2,6 +2,7 @@ import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { type NextRequest, NextResponse } from "next/server";
 
 export const updateSession = async (request: NextRequest) => {
+  console.log("Calling udpate session");
   // Create an unmodified response
   let response = NextResponse.next({
     request: {
@@ -23,6 +24,7 @@ export const updateSession = async (request: NextRequest) => {
             name,
             value,
             ...options,
+            domain: "localhost",
           });
           response = NextResponse.next({
             request: {
@@ -33,6 +35,7 @@ export const updateSession = async (request: NextRequest) => {
             name,
             value,
             ...options,
+            domain: "localhost",
           });
         },
         remove(name: string, options: CookieOptions) {
@@ -54,12 +57,19 @@ export const updateSession = async (request: NextRequest) => {
           });
         },
       },
+      cookieOptions: {
+        domain: "localhost",
+        sameSite: "lax",
+        path: "/",
+        secure: true,
+        maxAge: 1000000000,
+      },
     }
   );
 
   // This will refresh session if expired - required for Server Components
   // https://supabase.com/docs/guides/auth/server-side/nextjs
-  await supabase.auth.getUser();
-
+  const user = await supabase.auth.getUser();
+  console.log("User", user);
   return response;
 };

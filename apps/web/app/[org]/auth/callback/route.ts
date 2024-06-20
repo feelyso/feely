@@ -10,8 +10,9 @@ export async function GET(request: Request) {
 
   if (code) {
     const supabase = createClient();
-    console.log("Code2", code, next);
+    console.log("Code", code);
     const { error } = await supabase.auth.exchangeCodeForSession(code);
+    console.log("Error", error);
     if (!error) {
       return NextResponse.redirect(`${origin}${next}`);
     }

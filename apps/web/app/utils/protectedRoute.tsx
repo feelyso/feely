@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "utils/supabase/server";
 
-const protectRoute = async () => {
+const protectRoute = async (subdomain: string = "") => {
   const supabase = createClient();
 
   const {
@@ -9,7 +9,8 @@ const protectRoute = async () => {
   } = await supabase.auth.getSession();
 
   if (!session) {
-    return redirect("/login");
+    return redirect(`${subdomain}/login`);
   }
+  return session;
 };
 export default protectRoute;
