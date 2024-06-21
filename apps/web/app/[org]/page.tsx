@@ -8,7 +8,7 @@ export interface IPropsDynamicRoute {
 }
 
 const InsideOrg = async ({ params: { org } }: IPropsDynamicRoute) => {
-  await protectRoute();
+  await protectRoute(`/${org}`);
   return <div>InsideOrg {org}</div>;
 };
 

@@ -11,7 +11,7 @@ export function createClient() {
       },
       set(name: string, value: string, options: CookieOptions) {
         try {
-          cookieStore.set({ name, value, ...options, domain: "localhost", path: "/" });
+          cookieStore.set({ name, value, ...options });
         } catch (error) {
           // The `set` method was called from a Server Component.
           // This can be ignored if you have middleware refreshing
@@ -27,13 +27,6 @@ export function createClient() {
           // user sessions.
         }
       },
-    },
-    cookieOptions: {
-      domain: "localhost",
-      sameSite: "lax",
-      path: "/",
-      secure: true,
-      maxAge: 1000000000,
     },
   });
 }
