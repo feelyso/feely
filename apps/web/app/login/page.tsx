@@ -9,7 +9,7 @@ export default async function Login() {
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
       <AuthButtons />
       <p>
-        Don't have an account? <Link href={"/signup"}>Sign up</Link>
+        Don&apos;t have an account? <Link href={"/signup"}>Sign up</Link>
       </p>
     </div>
   );
