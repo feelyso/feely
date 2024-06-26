@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@feely/ui/components/button";
 import { redirect } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import React from "react";
@@ -8,12 +9,22 @@ import { createClient } from "utils/supabase/client";
 const AuthButtons = () => {
   const searchParams = useSearchParams();
   const next = searchParams.get("next");
+  const workspace = searchParams.get("workspace");
+  //If only one of next and workspace use that, otherwise concat with &
+  const redirectString =
+    next && workspace
+      ? `?next=${next}&workspace=${workspace}`
+      : next
+      ? `?next=${next}`
+      : workspace
+      ? `?workspace=${workspace}`
+      : "";
   const handleGoogleLogin = async () => {
     const supabase = createClient();
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback${next ? `?next=${next}` : ""}`,
+        redirectTo: `${window.location.origin}/auth/callback${redirectString}`,
       },
     });
     if (data.url) {
@@ -31,7 +42,7 @@ const AuthButtons = () => {
   return (
     <>
       <form onSubmit={handleGoogleLogin}>
-        <button>LogIn</button>
+        <Button>LogIn with google</Button>
       </form>
       {/* <form onSubmit={handleLoginUserPass} className="mt-4 flex flex-col gap-4">
         <input

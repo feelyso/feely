@@ -9,9 +9,18 @@ datasource db {
 }
 
 model users {
-  id         String   @id @default(uuid())
-  email      String   @unique
+  id         String      @id @default(uuid())
+  email      String      @unique
   name       String?
-  created_at DateTime @default(now())
+  created_at DateTime    @default(now())
   image_url  String?
+  workspaces workspace[]
+}
+
+model workspace {
+  id         String   @id @default(uuid())
+  name       String
+  created_at DateTime @default(now())
+  ownerId    String
+  owner      users    @relation(fields: [ownerId], references: [id])
 }
