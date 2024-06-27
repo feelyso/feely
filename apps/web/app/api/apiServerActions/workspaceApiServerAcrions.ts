@@ -72,3 +72,40 @@ export const createWorkspace = async (workspaceName: string) => {
     id: newWorkspace.id,
   };
 };
+
+export const getWorkspaceByUser = async () => {
+  const supabase = createClient();
+  const currentUser = await supabase.auth.getUser();
+  if (!currentUser.data.user) {
+    return {
+      isSuccess: false,
+      error: "Session not found",
+    };
+  }
+  const user = await prisma.users.findFirst({
+    where: {
+      id: currentUser.data.user.id,
+    },
+  });
+  if (!user) {
+    return {
+      isSuccess: false,
+      error: "User not found",
+    };
+  }
+  const workspace = await prisma.workspace.findFirst({
+    where: {
+      ownerId: user.id,
+    },
+  });
+  if (!workspace) {
+    return {
+      isSuccess: false,
+      error: "Workspace not found",
+    };
+  }
+  return {
+    isSuccess: true,
+    workspace: workspace,
+  };
+};

@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@feely/ui/components/button";
 import { Loader2 } from "@feely/ui/components/icon";
-import { createWorkspace } from "app/api/serverApiActions";
+import { createWorkspace } from "app/api/apiServerActions/workspaceApiServerAcrions";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -21,7 +21,7 @@ const CompleteAccountSetup = () => {
       if (!res.isSuccess) {
         setError(res.error ?? null);
       } else {
-        router.push("/dashboard");
+        router.push(`/${workspace}`);
       }
     } catch (e: any) {
       console.log("Error", e);

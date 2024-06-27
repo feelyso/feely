@@ -8,7 +8,7 @@ import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@feely/ui/components/form";
 import { useRouter } from "next/navigation";
-import { checkWorkspaceExistance } from "app/api/controller";
+import { checkWorkspaceExistance } from "app/api/controllers/workspaceController";
 
 const WorkspaceInputField = () => {
   const FormSchema = z.object({

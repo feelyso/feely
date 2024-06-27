@@ -8,7 +8,7 @@ import { createClient } from "utils/supabase/client";
 
 const AuthButtons = () => {
   const searchParams = useSearchParams();
-  const next = searchParams.get("next");
+  const next = searchParams.get("next") ?? "/redirect_to_workspace";
   const workspace = searchParams.get("workspace");
   //If only one of next and workspace use that, otherwise concat with &
   const redirectString =
