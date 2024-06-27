@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@feely/ui/components/button";
 import { Loader2 } from "@feely/ui/components/icon";
-import { createWorkspace } from "app/api/workspace/createWorkspace/server";
+import { createWorkspace } from "app/api/serverApiActions";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

@@ -1,8 +1,20 @@
 "use server";
 
-import { checkWorkspaceExistanceServer } from "app/api/workspace/checkExistance/server";
 import prisma from "prisma/client";
 import { createClient } from "utils/supabase/server";
+
+// Server example
+export const checkWorkspaceExistanceServer = async (workspaceName: string) => {
+  const res = await prisma.workspace.findFirst({
+    where: {
+      name: workspaceName,
+    },
+  });
+  if (res) {
+    return true;
+  }
+  return false;
+};
 
 export const createWorkspace = async (workspaceName: string) => {
   const alreadyExists = await checkWorkspaceExistanceServer(workspaceName);

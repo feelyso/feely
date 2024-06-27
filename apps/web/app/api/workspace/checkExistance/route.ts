@@ -18,16 +18,3 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({ exists: !!workspaceExists }, { status: 200 });
 }
-
-export const checkWorkspaceExistance = async (workspaceName: string) => {
-  const response = await fetch(Endpoints.workspace.checkExistance, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ workspaceName }),
-  });
-
-  const data = await response.json();
-  return data.exists;
-};
