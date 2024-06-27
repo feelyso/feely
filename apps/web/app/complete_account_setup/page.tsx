@@ -1,10 +1,10 @@
 "use client";
 import { Button } from "@feely/ui/components/button";
 import { Loader2 } from "@feely/ui/components/icon";
-import { createWorkspace } from "app/api/workspace/createWorkspace/route";
-import { redirect, useSearchParams } from "next/navigation";
+import { createWorkspace } from "app/api/workspace/createWorkspace/server";
+import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { useEffect, useState, Dispatch } from "react";
+import { useState } from "react";
 
 const CompleteAccountSetup = () => {
   const searchParams = useSearchParams();
