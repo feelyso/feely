@@ -4,7 +4,7 @@ import { Endpoints } from "app/api/endpoints";
 import { createClient } from "utils/supabase/server";
 
 export const checkWorkspaceExistance = async (workspaceName: string) => {
-  const response = await fetch(Endpoints.workspace.checkExistance, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${Endpoints.workspace.checkExistance}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const checkWorkspaceExistance = async (workspaceName: string) => {
 export const createWorkspace = async (workspaceName: string) => {
   const supabase = createClient();
   const { data: dataSession } = await supabase.auth.getSession();
-  const response = await fetch(Endpoints.workspace.createWorkspace, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${Endpoints.workspace.createWorkspace}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
