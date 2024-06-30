@@ -1,10 +1,10 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["NEXT_PUBLIC_*"],
+  "globalEnv": ["NEXT_PUBLIC_BASE_URL"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "env": [],
+      "env": ["NEXT_PUBLIC_BASE_URL"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "@feely/storybook#build": {
@@ -12,8 +12,9 @@
       "outputs": ["storybook-static/**", "!storybook-static/cache/**"]
     },
     "preview": {
-      "env": [""],
-      "outputs": ["dist/**", ".next/**"]
+      "env": ["NEXT_PUBLIC_BASE_URL"],
+      "outputs": ["dist/**", ".next/**"],
+      "cache": false
     },
     "start": {
       "dependsOn": ["^build"]
@@ -28,6 +29,7 @@
     },
     "typecheck": {},
     "dev": {
+      "env": ["NEXT_PUBLIC_BASE_URL"],
       "cache": false
     },
     "check": {
