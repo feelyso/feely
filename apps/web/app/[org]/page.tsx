@@ -1,4 +1,5 @@
 import protectRoute from "app/utils/protectedRoute";
+import { redirect } from "next/navigation";
 import React from "react";
 
 export interface IPropsDynamicRoute {
@@ -9,7 +10,7 @@ export interface IPropsDynamicRoute {
 
 const InsideOrg = async ({ params: { org } }: IPropsDynamicRoute) => {
   await protectRoute(`/${org}`);
-  return <div>InsideOrg {org}</div>;
+  redirect(`/${org}/ideas`);
 };
 
 export default InsideOrg;

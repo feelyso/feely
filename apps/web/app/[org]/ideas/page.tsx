@@ -1,7 +1,7 @@
 import React from "react";
 
-const Ideas = () => {
-  return <div>Ideas</div>;
+const EmptyPage = () => {
+  return <div></div>;
 };
 
-export default Ideas;
+export default EmptyPage;

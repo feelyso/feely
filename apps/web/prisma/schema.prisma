@@ -15,12 +15,58 @@ model users {
   created_at DateTime    @default(now())
   image_url  String?
   workspaces workspace[]
+  ideas      idea[]
+  voted      votedIdea[]
 }
 
 model workspace {
   id         String   @id @default(uuid())
-  name       String
+  name       String   @unique
   created_at DateTime @default(now())
   ownerId    String
   owner      users    @relation(fields: [ownerId], references: [id])
+  topics     topic[]
+  ideas      idea[]
+}
+
+model topic {
+  id          String    @id @default(uuid())
+  name        String
+  created_at  DateTime  @default(now())
+  workspaceId String
+  workspace   workspace @relation(fields: [workspaceId], references: [id])
+  ideas       idea[]
+}
+
+model status {
+  id         String   @id @default(uuid())
+  name       String
+  created_at DateTime @default(now())
+  ideas      idea[]
+}
+
+model idea {
+  id          String      @id @default(uuid())
+  title       String
+  description String
+  created_at  DateTime    @default(now())
+  updated_at  DateTime    @updatedAt
+  workspaceId String
+  workspace   workspace   @relation(fields: [workspaceId], references: [id])
+  authorId    String
+  author      users       @relation(fields: [authorId], references: [id])
+  topicId     String
+  topic       topic       @relation(fields: [topicId], references: [id])
+  statusId    String
+  status      status      @relation(fields: [statusId], references: [id])
+  voters      votedIdea[]
+}
+
+model votedIdea {
+  ideaId String
+  userId String
+  idea   idea   @relation(fields: [ideaId], references: [id])
+  user   users  @relation(fields: [userId], references: [id])
+
+  @@id([ideaId, userId])
 }

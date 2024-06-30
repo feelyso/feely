@@ -1,4 +1,4 @@
-import { getWorkspaceByUser } from "app/api/apiServerActions/workspaceApiServerAcrions";
+import { getWorkspaceByUser } from "app/api/apiServerActions/workspaceApiServerActions";
 import protectRoute from "app/utils/protectedRoute";
 import { redirect } from "next/navigation";
 
