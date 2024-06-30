@@ -9,7 +9,7 @@
     "lint": "next lint",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next",
     "postinstall": "prisma generate",
-    "vercel-build": "prisma generate && prisma migrate deploy && env-cmd -f .env.prod next build"
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "dependencies": {
     "@feely/lib": "*",
