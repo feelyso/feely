@@ -1,3 +1,4 @@
+import Navbar from "@components/navbar";
 import Hero from "@components/homepage/hero";
 import TrusteBy from "@components/homepage/trusted-by";
 import Features from "@components/homepage/features";
@@ -6,7 +7,8 @@ import Footer from "@components/homepage/footer";
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
+      <Navbar />
       <Hero />
       <TrusteBy />
       <Features />

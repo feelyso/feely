@@ -14,10 +14,11 @@ export default function Hero() {
           <h1 className="text-display-website">
             <span className="text-brand-gradient">User feedbacks</span> get real by being rewarded
           </h1>
-          <p>
-            Feely is a spot where user thoughts become a treasure. More than giving users a voice: it&apos;s
-            encouraging them to listen to each other, through conversations and rewarding. The result? A
-            product actually built for your people. And they will feel part of it.
+          <p className="text-description max-w-screen-sm text-lg">
+            Feely is a spot where user thoughts become a treasure. <br />
+            More than giving users a voice: it&apos;s encouraging them to listen to each other, through
+            conversations and rewarding. <br />
+            The result? A product actually built for your people. And they will feel part of it.
           </p>
         </div>
         <div className="mt-8">
