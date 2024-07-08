@@ -1,45 +1,23 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": [
-    "NEXT_PUBLIC_BASE_URL"
-  ],
+  "globalEnv": ["NEXT_PUBLIC_BASE_URL"],
   "tasks": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "env": [
-        "NEXT_PUBLIC_BASE_URL"
-      ],
-      "outputs": [
-        "dist/**",
-        ".next/**",
-        "!.next/cache/**"
-      ]
+      "dependsOn": ["^build"],
+      "env": ["NEXT_PUBLIC_BASE_URL"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "@feely/storybook#build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        "storybook-static/**",
-        "!storybook-static/cache/**"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": ["storybook-static/**", "!storybook-static/cache/**"]
     },
     "preview": {
-      "env": [
-        "NEXT_PUBLIC_BASE_URL"
-      ],
-      "outputs": [
-        "dist/**",
-        ".next/**"
-      ],
+      "env": ["NEXT_PUBLIC_BASE_URL"],
+      "outputs": ["dist/**", ".next/**"],
       "cache": false
     },
     "start": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     },
     "lint": {
       "cache": false,
@@ -51,9 +29,7 @@
     },
     "typecheck": {},
     "dev": {
-      "env": [
-        "NEXT_PUBLIC_BASE_URL"
-      ],
+      "env": ["NEXT_PUBLIC_BASE_URL"],
       "cache": false
     },
     "check": {
