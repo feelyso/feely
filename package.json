@@ -30,8 +30,13 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@react-three/drei": "^9.106.0",
+    "@react-three/fiber": "^8.16.6",
+    "@tabler/icons-react": "^3.5.0",
+    "clsx": "^2.1.1",
     "eslint": "^8.34.0",
-    "turbo": "^2.0.6"
+    "react-hook-form": "^7.51.5",
+    "turbo": "^1.10.1"
   },
   "resolutions": {
     "@types/react": "18.0.26",
