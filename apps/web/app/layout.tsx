@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 // Import custom
 import { ToastProvider } from "@feely/ui/components/toast";
 import { ThemeProvider } from "@components/theme-provider";
+import Navbar from "@components/navbar";
 import { metadata } from "@lib/metadata";
 import "../styles/globals.css";
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Navbar />
           {children}
         </ThemeProvider>
         <ToastProvider />
