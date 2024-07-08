@@ -6,6 +6,8 @@
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@lib/*": ["lib/*"],
+      "@utils/*": ["utils/*"],
+      "@context/*": ["context/*"],
       "@data/*": ["data/*"]
     },
     "plugins": [

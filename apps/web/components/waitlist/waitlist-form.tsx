@@ -1,3 +1,5 @@
+"use client";
+
 // Import core
 import { useState } from "react";
 // Import custom
