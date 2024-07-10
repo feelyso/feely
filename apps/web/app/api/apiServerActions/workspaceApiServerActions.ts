@@ -67,6 +67,34 @@ export const createWorkspace = async (workspaceName: string) => {
       error: "Failed to create workspace",
     };
   }
+
+  //Create default topics
+  const defaultTopics = ["Bug", "Feature"];
+  const resultTopics = await prisma.topic.createMany({
+    data: defaultTopics.map((topic) => ({
+      name: topic,
+      workspaceId: newWorkspace.id,
+    })),
+  });
+  if (resultTopics.count !== defaultTopics.length) {
+    //Delete created topics
+    await prisma.topic.deleteMany({
+      where: {
+        workspaceId: newWorkspace.id,
+      },
+    });
+    //Delete the workspace
+    await prisma.workspace.delete({
+      where: {
+        id: newWorkspace.id,
+      },
+    });
+
+    return {
+      isSuccess: false,
+      error: "Failed to initialize the workspace correctly",
+    };
+  }
   return {
     isSuccess: true,
     id: newWorkspace.id,
