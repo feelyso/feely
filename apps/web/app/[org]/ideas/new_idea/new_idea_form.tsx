@@ -13,6 +13,7 @@ import { Label } from "@feely/ui/components/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@feely/ui/components/select";
 import { topic } from "@prisma/client";
 import { getTopicsByWorkspaceName } from "app/api/apiServerActions/topicApiServerActions";
+import { createIdea } from "app/api/apiServerActions/ideaApiServerActions";
 
 interface IProps {
   org: string;
@@ -47,8 +48,17 @@ const NewIdeaForm = ({ org }: IProps) => {
     getTopics();
   }, []);
 
+  const router = useRouter();
   const handleSubmit = async ({ title, description, topic }: z.infer<typeof FormSchema>) => {
-    console.log(title, description, topic);
+    const res = await createIdea({
+      description: description,
+      org: org,
+      title: title,
+      topicId: topic,
+    });
+    if (res) {
+      router.push(`/${org}/ideas`);
+    }
   };
   return (
     <Form {...form}>

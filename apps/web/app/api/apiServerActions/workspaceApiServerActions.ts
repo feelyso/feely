@@ -16,6 +16,18 @@ export const checkWorkspaceExistanceServer = async (workspaceName: string) => {
   return false;
 };
 
+export const getWorkspaceByName = async (workspaceName: string) => {
+  const res = await prisma.workspace.findFirst({
+    where: {
+      name: workspaceName,
+    },
+  });
+  if (res) {
+    return res;
+  }
+  return null;
+};
+
 export const createWorkspace = async (workspaceName: string) => {
   const alreadyExists = await checkWorkspaceExistanceServer(workspaceName);
   if (alreadyExists) {
@@ -77,6 +89,41 @@ export const createWorkspace = async (workspaceName: string) => {
     })),
   });
   if (resultTopics.count !== defaultTopics.length) {
+    //Delete created topics
+    await prisma.topic.deleteMany({
+      where: {
+        workspaceId: newWorkspace.id,
+      },
+    });
+    //Delete the workspace
+    await prisma.workspace.delete({
+      where: {
+        id: newWorkspace.id,
+      },
+    });
+
+    return {
+      isSuccess: false,
+      error: "Failed to initialize the workspace correctly",
+    };
+  }
+
+  //Create default statuses
+  const defaultStatuses = ["In review", "Planned", "In progress", "Completed", "Archived"];
+  const resultStatuses = await prisma.status.createMany({
+    data: defaultStatuses.map((status, index) => ({
+      name: status,
+      workspaceId: newWorkspace.id,
+      order: index,
+    })),
+  });
+  if (resultStatuses.count !== defaultStatuses.length) {
+    //Delete created statuses
+    await prisma.status.deleteMany({
+      where: {
+        workspaceId: newWorkspace.id,
+      },
+    });
     //Delete created topics
     await prisma.topic.deleteMany({
       where: {

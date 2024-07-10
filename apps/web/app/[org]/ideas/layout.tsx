@@ -14,10 +14,9 @@ export default async function RootLayout({
     org: string;
   };
 }>) {
-  const ideas = await Ideas({ org });
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      {ideas}
+      <Ideas org={org} />
       {children}
     </Suspense>
   );

@@ -26,6 +26,7 @@ model workspace {
   ownerId    String
   owner      users    @relation(fields: [ownerId], references: [id])
   topics     topic[]
+  statuses   status[]
   ideas      idea[]
 }
 
@@ -39,10 +40,13 @@ model topic {
 }
 
 model status {
-  id         String   @id @default(uuid())
-  name       String
-  created_at DateTime @default(now())
-  ideas      idea[]
+  id          String    @id @default(uuid())
+  name        String
+  created_at  DateTime  @default(now())
+  ideas       idea[]
+  workspaceId String
+  workspace   workspace @relation(fields: [workspaceId], references: [id])
+  order       Int
 }
 
 model idea {
