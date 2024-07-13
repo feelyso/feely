@@ -1,7 +1,8 @@
 "use client";
 import { Button } from "@feely/ui/components/button";
 import { Loader2 } from "@feely/ui/components/icon";
-import { createWorkspace } from "app/api/apiServerActions/workspaceApiServerActions";
+import { createWorkspace } from "app/api/controllers/workspaceController";
+// import { createWorkspace } from "app/api/apiServerActions/workspaceApiServerActions";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -14,14 +15,16 @@ const CompleteAccountSetup = () => {
   if (!workspace) {
     return <div>Missing workspace parameter</div>;
   }
+  const { mutateAsync: createWorkspaceFunction } = createWorkspace();
+
   const handleCreateWorkspace = async (workspace: string) => {
     try {
-      const res = await createWorkspace(workspace);
+      const res = await createWorkspaceFunction(workspace);
       console.log("Res", res);
-      if (!res.isSuccess) {
-        setError(res.error ?? null);
+      if (!res.data.name) {
+        setError(res.data.message ?? null);
       } else {
-        router.push(`/${workspace}`);
+        router.push(`/${res.data.name}`);
       }
     } catch (e: any) {
       console.log("Error", e);

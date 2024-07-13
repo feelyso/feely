@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation";
 import { checkWorkspaceExistance } from "app/api/controllers/workspaceController";
 
 const WorkspaceInputField = () => {
+  const { mutateAsync: checkWorkspaceExistanceAsync } = checkWorkspaceExistance();
+
   const FormSchema = z.object({
     workspaceName: z
       .string()
@@ -21,8 +23,10 @@ const WorkspaceInputField = () => {
         message: "Invalid input: only alphanumeric characters, hyphens, and underscores are allowed.",
       })
       .refine(async (value) => {
-        const checkSimilar = await checkWorkspaceExistance(value);
-        return !checkSimilar;
+        if (!value) return;
+        const checkSimilar = await checkWorkspaceExistanceAsync(value);
+        console.log("Chec", checkSimilar);
+        return !checkSimilar.data.exists;
       }, "This workspace name is already taken."),
   });
 

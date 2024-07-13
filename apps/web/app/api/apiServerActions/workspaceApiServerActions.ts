@@ -28,7 +28,7 @@ export const getWorkspaceByName = async (workspaceName: string) => {
   return null;
 };
 
-export const createWorkspace = async (workspaceName: string) => {
+export const createWorkspace = async (workspaceName: string, access_token?: string) => {
   const alreadyExists = await checkWorkspaceExistanceServer(workspaceName);
   if (alreadyExists) {
     return {
@@ -37,7 +37,8 @@ export const createWorkspace = async (workspaceName: string) => {
     };
   }
   const supabase = createClient();
-  const currentUser = await supabase.auth.getUser();
+  const currentUser = await supabase.auth.getUser(access_token);
+  console.log("Current user", currentUser);
   if (!currentUser.data.user) {
     return {
       isSuccess: false,
