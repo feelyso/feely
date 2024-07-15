@@ -13,7 +13,7 @@ import { Label } from "@feely/ui/components/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@feely/ui/components/select";
 import { topic } from "@prisma/client";
 import { getTopicsByWorkspaceName } from "app/api/apiServerActions/topicApiServerActions";
-import { createIdea } from "app/api/apiServerActions/ideaApiServerActions";
+import { useCreateIdea } from "app/api/controllers/ideaController";
 
 interface IProps {
   org: string;
@@ -49,6 +49,8 @@ const NewIdeaForm = ({ org }: IProps) => {
   }, []);
 
   const router = useRouter();
+
+  const { mutateAsync: createIdea } = useCreateIdea();
   const handleSubmit = async ({ title, description, topic }: z.infer<typeof FormSchema>) => {
     const res = await createIdea({
       description: description,

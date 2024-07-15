@@ -2,18 +2,16 @@
 
 import { createClient } from "@utils/supabase/server";
 import { getWorkspaceByName } from "app/api/apiServerActions/workspaceApiServerActions";
-import { revalidatePath } from "next/cache";
 import prisma from "prisma/client";
 
-interface ICreateIdea {
+export interface ICreateIdea {
   org: string;
   title: string;
   description: string;
   topicId: string;
 }
 
-export const createIdea = async (body: ICreateIdea) => {
-  console.log("Body", body);
+export const createIdea = async (body: ICreateIdea, access_token?: string) => {
   const { org } = body;
   const workspace = await getWorkspaceByName(org);
   if (!workspace) {
@@ -23,7 +21,7 @@ export const createIdea = async (body: ICreateIdea) => {
     };
   }
   const supabase = createClient();
-  const currentUser = await supabase.auth.getUser();
+  const currentUser = await supabase.auth.getUser(access_token);
   if (!currentUser.data.user) {
     return {
       isSuccess: false,
@@ -78,7 +76,13 @@ export const createIdea = async (body: ICreateIdea) => {
   }
 };
 
-export const getIdeasByWorkspaceName = async ({ workspaceName }: { workspaceName: string }) => {
+export const getIdeasByWorkspaceName = async ({
+  workspaceName,
+  access_token,
+}: {
+  workspaceName: string;
+  access_token: string;
+}) => {
   const workspace = await getWorkspaceByName(workspaceName);
   if (!workspace) {
     return {
@@ -87,7 +91,7 @@ export const getIdeasByWorkspaceName = async ({ workspaceName }: { workspaceName
     };
   }
   const supabase = createClient();
-  const currentUser = await supabase.auth.getUser();
+  const currentUser = await supabase.auth.getUser(access_token);
   if (!currentUser.data.user) {
     return {
       isSuccess: false,

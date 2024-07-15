@@ -2,11 +2,8 @@
 import client, { FeelyRequest } from "app/api/apiClient";
 import { Endpoints } from "app/api/endpoints";
 import { useMutation } from "react-query";
-import { createClient } from "utils/supabase/client";
 
-export const checkWorkspaceExistance = () => {
-  // const queryClient = useQueryClient();
-
+export const useCheckWorkspaceExistance = () => {
   const checkWorkspaceExistanceFunction = async (workspaceName: string) => {
     const req: FeelyRequest = {
       url: Endpoints.workspace.checkExistance,
@@ -19,20 +16,9 @@ export const checkWorkspaceExistance = () => {
   };
 
   return useMutation<{ data: { exists: boolean } }, null, string>(checkWorkspaceExistanceFunction, {});
-
-  // const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${Endpoints.workspace.checkExistance}`, {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({ workspaceName }),
-  // });
-
-  // const data = await response.json();
-  // return data.exists;
 };
 
-export const createWorkspace = () => {
+export const useCreateWorkspace = () => {
   const createWorkspaceFunction = async (workspaceName: string) => {
     const req: FeelyRequest = {
       url: Endpoints.workspace.createWorkspace,

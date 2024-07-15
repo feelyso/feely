@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@feely/ui/components/button";
 import { Loader2 } from "@feely/ui/components/icon";
-import { createWorkspace } from "app/api/controllers/workspaceController";
+import { useCreateWorkspace } from "app/api/controllers/workspaceController";
 // import { createWorkspace } from "app/api/apiServerActions/workspaceApiServerActions";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
@@ -12,10 +12,10 @@ const CompleteAccountSetup = () => {
   const workspace = searchParams.get("workspace");
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
+  const { mutateAsync: createWorkspaceFunction } = useCreateWorkspace();
   if (!workspace) {
     return <div>Missing workspace parameter</div>;
   }
-  const { mutateAsync: createWorkspaceFunction } = createWorkspace();
 
   const handleCreateWorkspace = async (workspace: string) => {
     try {
