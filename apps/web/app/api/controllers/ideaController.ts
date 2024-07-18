@@ -1,4 +1,4 @@
-import { idea } from "@prisma/client";
+import { idea, Prisma } from "@prisma/client";
 import client, { FeelyRequest } from "app/api/apiClient";
 import { ICreateIdea } from "app/api/apiServerActions/ideaApiServerActions";
 import { Endpoints } from "app/api/endpoints";
@@ -18,7 +18,21 @@ export const useGetIdeasByWorkspaceName = ({ workspaceName }: { workspaceName: s
     staleTime: 60 * 1000,
   };
 
-  return useQuery<{ data: { message: string; ideas: idea[] } }, null>(requestConfig);
+  return useQuery<
+    {
+      data: {
+        message: string;
+        ideas: Prisma.ideaGetPayload<{
+          include: {
+            author: true;
+            status: true;
+            topic: true;
+          };
+        }>[];
+      };
+    },
+    null
+  >(requestConfig);
 };
 
 export const useCreateIdea = () => {

@@ -11,16 +11,23 @@ import {
   SheetClose,
 } from "@feely/ui/components/sheet";
 import { usePathname, useRouter } from "next/navigation";
-import { Button } from "@feely/ui/components/button";
-import { FormField } from "@feely/ui/components/form";
 import NewIdeaForm from "app/[org]/ideas/new_idea/new_idea_form";
 import { IPropsDynamicRoute } from "app/[org]/page";
+interface IProps {
+  params: {
+    org: string;
+    id: string;
+  };
+}
 
-const NewIdea = async ({ params: { org } }: IPropsDynamicRoute) => {
+const IdeaPage = (props: IProps) => {
+  const {
+    params: { id },
+  } = props;
   const router = useRouter();
   const pathName = usePathname();
   const handleClose = () => {
-    router.push(pathName.split("/new_idea")[0]);
+    router.push(pathName.substring(0, pathName.lastIndexOf("/")));
   };
   return (
     <div>
@@ -33,12 +40,12 @@ const NewIdea = async ({ params: { org } }: IPropsDynamicRoute) => {
         }}>
         <SheetContent>
           <SheetHeader>Tell us your idea</SheetHeader>
-          <SheetDescription>Lorem ipsum dolor sit amet cum condipiscitur</SheetDescription>
-          <NewIdeaForm org={org} />
+          <SheetDescription>{id}</SheetDescription>
+          {/* <NewIdeaForm org={org} /> */}
         </SheetContent>
       </Sheet>
     </div>
   );
 };
 
-export default NewIdea;
+export default IdeaPage;

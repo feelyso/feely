@@ -113,6 +113,12 @@ export const getIdeasByWorkspaceName = async ({
     where: {
       workspaceId: workspace.id,
     },
+    include: {
+      author: true,
+      status: true,
+      topic: true,
+    },
+    take: 50,
   });
   if (!ideas) {
     return {
