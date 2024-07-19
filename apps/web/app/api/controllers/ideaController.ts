@@ -2,7 +2,7 @@ import { idea, Prisma } from "@prisma/client";
 import client, { FeelyRequest } from "app/api/apiClient";
 import { ICreateIdea } from "app/api/apiServerActions/ideaApiServerActions";
 import { Endpoints } from "app/api/endpoints";
-import { QueryClient, useMutation, useQuery, useQueryClient } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 
 export const useGetIdeasByWorkspaceName = ({ workspaceName }: { workspaceName: string }) => {
   const request: FeelyRequest = {
@@ -56,4 +56,37 @@ export const useCreateIdea = () => {
       },
     }
   );
+};
+
+export const useGetIdeaById = ({ id }: { id: string }) => {
+  const params = new URLSearchParams({ id });
+  const request: FeelyRequest = {
+    url: `${Endpoints.idea.main}?${params.toString()}`,
+    config: {
+      method: "get",
+    },
+  };
+
+  const requestConfig = {
+    queryKey: [Endpoints.idea.main, id],
+    queryFn: () => client(request),
+    staleTime: 60 * 1000,
+  };
+
+  return useQuery<
+    {
+      data: {
+        message: string;
+        idea: Prisma.ideaGetPayload<{
+          include: {
+            author: true;
+            status: true;
+            topic: true;
+            voters: true;
+          };
+        }>;
+      };
+    },
+    null
+  >(requestConfig);
 };

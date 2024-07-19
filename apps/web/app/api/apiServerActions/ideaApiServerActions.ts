@@ -131,3 +131,46 @@ export const getIdeasByWorkspaceName = async ({
     };
   }
 };
+
+export const getIdeaById = async ({ ideaId, access_token }: { ideaId: string; access_token: string }) => {
+  const supabase = createClient();
+  const currentUser = await supabase.auth.getUser(access_token);
+  if (!currentUser.data.user) {
+    return {
+      isSuccess: false,
+      error: "Session not found",
+    };
+  }
+  const user = await prisma.users.findFirst({
+    where: {
+      id: currentUser.data.user.id,
+    },
+  });
+  if (!user) {
+    return {
+      isSuccess: false,
+      error: "User not found",
+    };
+  }
+  const idea = await prisma.idea.findUnique({
+    where: {
+      id: ideaId,
+    },
+    include: {
+      author: true,
+      status: true,
+      topic: true,
+      voters: true,
+    },
+  });
+  if (!idea) {
+    return {
+      isSuccess: false,
+    };
+  } else {
+    return {
+      isSuccess: true,
+      data: idea,
+    };
+  }
+};

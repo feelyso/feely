@@ -4,6 +4,7 @@ export const Endpoints = {
     createWorkspace: "/api/workspace/createWorkspace",
   },
   idea: {
+    main: "/api/idea",
     createIdea: "/api/idea/createIdea",
     getIdeasByWorkspaceName: "/api/idea/ideasByWorkspaceName",
   },
