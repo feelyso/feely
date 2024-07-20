@@ -14,7 +14,11 @@ const client = async (req: FeelyRequest) => {
   const { data: dataSession } = await supabase.auth.getSession();
   console.log("Data session", dataSession);
   const { url, config } = req;
-  return axios(`${process.env.NEXT_PUBLIC_BASE_URL}/${url}`, {
+  const baseUrl =
+    process.env.VERCEL_ENV === "preview"
+      ? "https://" + process.env.VERCEL_URL
+      : process.env.NEXT_PUBLIC_BASE_URL;
+  return axios(`${baseUrl}/${url}`, {
     ...config,
     ...(dataSession && {
       headers: {
