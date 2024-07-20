@@ -1,11 +1,22 @@
 import React from "react";
+import {
+  FifthBlock,
+  FirstBlock,
+  FourthBlock,
+  SecondBlock,
+  SixthBlock,
+  ThirdBlock,
+} from "@components/homepage/features/blocks";
 
 export default function Features() {
   return (
-    <div className="relative z-20 w-screen">
-      <div className="container mx-auto py-16">
-        <p className="text-description">Features</p>
-      </div>
-    </div>
+    <section id="features" className="w-screen">
+      <FirstBlock />
+      <SecondBlock />
+      <ThirdBlock />
+      <FourthBlock />
+      <FifthBlock />
+      <SixthBlock />
+    </section>
   );
 }
