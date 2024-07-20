@@ -9,14 +9,16 @@ datasource db {
 }
 
 model users {
-  id         String      @id @default(uuid())
-  email      String      @unique
-  name       String?
-  created_at DateTime    @default(now())
-  image_url  String?
-  workspaces workspace[]
-  ideas      idea[]
-  voted      votedIdea[]
+  id            String         @id @default(uuid())
+  email         String         @unique
+  name          String?
+  created_at    DateTime       @default(now())
+  image_url     String?
+  workspaces    workspace[]
+  ideas         idea[]
+  voted         votedIdea[]
+  comments      comment[]
+  votedComments votedComment[]
 }
 
 model workspace {
@@ -64,6 +66,7 @@ model idea {
   statusId    String
   status      status      @relation(fields: [statusId], references: [id])
   voters      votedIdea[]
+  comments    comment[]
 }
 
 model votedIdea {
@@ -73,4 +76,27 @@ model votedIdea {
   user   users  @relation(fields: [userId], references: [id])
 
   @@id([ideaId, userId])
+}
+
+model comment {
+  id            String         @id @default(uuid())
+  text          String
+  created_at    DateTime       @default(now())
+  authorId      String
+  author        users          @relation(fields: [authorId], references: [id])
+  ideaId        String
+  idea          idea           @relation(fields: [ideaId], references: [id])
+  votes         votedComment[]
+  parentId      String?
+  parent        comment?       @relation("ChildComments", fields: [parentId], references: [id])
+  childComments comment[]      @relation("ChildComments")
+}
+
+model votedComment {
+  commentId String
+  userId    String
+  comment   comment @relation(fields: [commentId], references: [id])
+  user      users   @relation(fields: [userId], references: [id])
+
+  @@id([commentId, userId])
 }
