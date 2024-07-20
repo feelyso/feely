@@ -18,6 +18,7 @@ interface Item {
   topic?: string;
   karmas?: number;
   position?: string;
+  toggled?: boolean;
 }
 
 export const FirstIllustration = () => {
@@ -43,7 +44,7 @@ export const FirstIllustration = () => {
   const [items, setItems] = useState(initialItems);
 
   interface CountButtonProps {
-    count: number;
+    count: number | undefined;
     onToggle: () => void;
     toggled: boolean;
   }
@@ -59,7 +60,7 @@ export const FirstIllustration = () => {
     );
   };
 
-  const CountButton: React.FC<CountButtonProps> = ({ count, onToggle, toggled }) => (
+  const CountButton: React.FC<CountButtonProps> = ({ count = 0, onToggle, toggled }) => (
     <Toggle
       variant="outline"
       className="grid h-14 w-11 justify-items-center gap-0 rounded p-1"
@@ -113,6 +114,7 @@ export const FirstIllustration = () => {
 
 interface StatusItem {
   count: number;
+  toggled?: boolean;
 }
 
 export const SecondIllustration = () => {
