@@ -134,6 +134,7 @@ module.exports = {
       borderColor: {
         default: "var(--color-border-default)",
         hover: "var(--color-border-hover)",
+        secondary: "var(--color-border-secondary)",
         brand: "var(--color-border-brand-default)",
         "brand-hover": "var(--color-border-brand-hover)",
         "brand-active": "var(--color-border-brand-active)",

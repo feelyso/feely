@@ -2,8 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Logo from "@components/homepage/logo";
 import { Button } from "@feely/ui/components/button";
-import { Icon, Menu } from "@feely/ui/components/icon";
-import { ModeToggle } from "@components/mode-toggle";
+import { Mail } from "@feely/ui/components/icon";
 // import { createClient } from "@utils/supabase/server";
 
 export default function Navbar() {
@@ -23,21 +22,26 @@ export default function Navbar() {
       )}
   */
 
+  /*
+  <Button variant="text" icon asChild className="flex sm:hidden">
+    <Link href="/waitlist">
+      <Mail size={16} />
+    </Link>
+  </Button>
+  */
+
   // const { data } = await supabase.auth.getSession();
   return (
     <nav className="border-b-default bg-background fixed left-0 top-0 z-50 flex h-12 w-screen items-center border-b sm:h-14">
-      <div className="mx-auto flex w-full max-w-screen-lg items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex w-full max-w-screen-xl items-center justify-between px-4 sm:px-6">
         <Link href="/" passHref legacyBehavior>
           <Logo />
         </Link>
-        <ModeToggle />
         <Button asChild className="button-waitlist hidden sm:flex">
           <Link href="/waitlist">Join the waitlist</Link>
         </Button>
-        <Button variant="text" icon asChild className="flex sm:hidden">
-          <Link href="/waitlist">
-            <Menu size={16} />
-          </Link>
+        <Button variant="text" asChild className="flex sm:hidden">
+          <Link href="/waitlist">Join the waitlist</Link>
         </Button>
       </div>
     </nav>
