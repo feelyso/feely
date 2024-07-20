@@ -184,9 +184,13 @@ export const getIdeaById = async ({ ideaId, access_token }: { ideaId: string; ac
       isSuccess: false,
     };
   } else {
+    const isVoted = idea.voters.find((voter) => voter.userId === user.id);
     return {
       isSuccess: true,
-      data: idea,
+      data: {
+        ...idea,
+        isVoted: !!isVoted,
+      },
     };
   }
 };

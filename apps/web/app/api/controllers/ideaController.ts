@@ -101,7 +101,9 @@ export const useGetIdeaById = ({ id }: { id: string }) => {
               };
             };
           };
-        }>;
+        }> & {
+          isVoted: boolean;
+        };
       };
     },
     null

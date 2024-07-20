@@ -3,11 +3,12 @@
 import React, { useState } from "react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader } from "@feely/ui/components/sheet";
 import { usePathname, useRouter } from "next/navigation";
-import { useGetIdeaById } from "app/api/controllers/ideaController";
+import { useGetIdeaById, useVoteIdea } from "app/api/controllers/ideaController";
 import { Input } from "@feely/ui/components/input";
 import { Button } from "@feely/ui/components/button";
 import { useCreateComment } from "app/api/controllers/commentController";
 import { Loader } from "@feely/ui/components/icon";
+import { IconArrowUp } from "@tabler/icons-react";
 interface IProps {
   params: {
     org: string;
@@ -39,6 +40,12 @@ const IdeaPage = (props: IProps) => {
       });
       setComment("");
     } catch (e) {}
+  };
+
+  const { mutate: voteIdea } = useVoteIdea();
+
+  const handleVoteIdea = (isVoted: boolean) => {
+    voteIdea({ id, isVoted: !isVoted });
   };
 
   return (
@@ -77,6 +84,15 @@ const IdeaPage = (props: IProps) => {
               </div>
             </div>
             <div className="flex flex-col items-end gap-2">
+              <Button
+                className={idea.isVoted ? "" : "border-2 border-white bg-transparent"}
+                onClick={(ev) => {
+                  ev.stopPropagation();
+                  ev.preventDefault();
+                  handleVoteIdea(idea.isVoted);
+                }}>
+                <IconArrowUp />
+              </Button>
               <Input
                 placeholder={`Reply to ${idea.author.name}`}
                 value={comment}
