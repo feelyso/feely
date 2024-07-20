@@ -1,4 +1,4 @@
-import { idea, Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import client, { FeelyRequest } from "app/api/apiClient";
 import { ICreateIdea } from "app/api/apiServerActions/ideaApiServerActions";
 import { Endpoints } from "app/api/endpoints";
@@ -83,6 +83,21 @@ export const useGetIdeaById = ({ id }: { id: string }) => {
             status: true;
             topic: true;
             voters: true;
+            comments: {
+              include: {
+                childComments: true;
+                votes: true;
+                author: true;
+              };
+              select: {
+                id: true;
+                childComments: true;
+                votes: true;
+                text: true;
+                author: true;
+                created_at: true;
+              };
+            };
           };
         }>;
       };

@@ -161,6 +161,13 @@ export const getIdeaById = async ({ ideaId, access_token }: { ideaId: string; ac
       status: true,
       topic: true,
       voters: true,
+      comments: {
+        include: {
+          author: true,
+          childComments: true,
+          votes: true,
+        },
+      },
     },
   });
   if (!idea) {

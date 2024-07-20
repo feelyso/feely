@@ -8,4 +8,7 @@ export const Endpoints = {
     createIdea: "/api/idea/createIdea",
     getIdeasByWorkspaceName: "/api/idea/ideasByWorkspaceName",
   },
+  comment: {
+    main: "/api/comment",
+  },
 };
