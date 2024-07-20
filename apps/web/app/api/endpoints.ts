@@ -5,6 +5,7 @@ export const Endpoints = {
   },
   idea: {
     main: "/api/idea",
+    vote: "api/idea/vote",
     createIdea: "/api/idea/createIdea",
     getIdeasByWorkspaceName: "/api/idea/ideasByWorkspaceName",
   },

@@ -117,6 +117,7 @@ export const getIdeasByWorkspaceName = async ({
       author: true,
       status: true,
       topic: true,
+      voters: true,
     },
     take: 50,
   });
@@ -125,9 +126,17 @@ export const getIdeasByWorkspaceName = async ({
       isSuccess: false,
     };
   } else {
+    const ideasWithVored = ideas.map((idea) => {
+      const isVoted = idea.voters.find((voter) => voter.userId === user.id);
+      const { voters, ...ideaWithoutVoters } = idea;
+      return {
+        ...ideaWithoutVoters,
+        isVoted: !!isVoted,
+      };
+    });
     return {
       isSuccess: true,
-      data: ideas,
+      data: ideasWithVored,
     };
   }
 };
@@ -180,4 +189,52 @@ export const getIdeaById = async ({ ideaId, access_token }: { ideaId: string; ac
       data: idea,
     };
   }
+};
+
+export interface IVoteIdea {
+  id: string;
+  isVoted: boolean;
+}
+
+export const voteIdea = async (body: IVoteIdea, access_token?: string) => {
+  const supabase = createClient();
+  const currentUser = await supabase.auth.getUser(access_token);
+  if (!currentUser.data.user) {
+    return {
+      isSuccess: false,
+      error: "Session not found",
+    };
+  }
+  const user = await prisma.users.findFirst({
+    where: {
+      id: currentUser.data.user.id,
+    },
+  });
+  if (!user) {
+    return {
+      isSuccess: false,
+      error: "User not found",
+    };
+  }
+
+  if (!body.isVoted) {
+    await prisma.votedIdea.delete({
+      where: {
+        ideaId_userId: {
+          userId: user.id,
+          ideaId: body.id,
+        },
+      },
+    });
+  } else {
+    await prisma.votedIdea.create({
+      data: {
+        userId: user.id,
+        ideaId: body.id,
+      },
+    });
+  }
+  return {
+    isSuccess: true,
+  };
 };

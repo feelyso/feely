@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 import client, { FeelyRequest } from "app/api/apiClient";
-import { ICreateIdea } from "app/api/apiServerActions/ideaApiServerActions";
+import { ICreateIdea, IVoteIdea } from "app/api/apiServerActions/ideaApiServerActions";
 import { Endpoints } from "app/api/endpoints";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
@@ -22,13 +22,15 @@ export const useGetIdeasByWorkspaceName = ({ workspaceName }: { workspaceName: s
     {
       data: {
         message: string;
-        ideas: Prisma.ideaGetPayload<{
+        ideas: (Prisma.ideaGetPayload<{
           include: {
             author: true;
             status: true;
             topic: true;
           };
-        }>[];
+        }> & {
+          isVoted: boolean;
+        })[];
       };
     },
     null
@@ -104,4 +106,25 @@ export const useGetIdeaById = ({ id }: { id: string }) => {
     },
     null
   >(requestConfig);
+};
+
+export const useVoteIdea = () => {
+  const queryClient = useQueryClient();
+  const voteIdeaFunction = async (voteIdea: IVoteIdea) => {
+    const req: FeelyRequest = {
+      url: Endpoints.idea.vote,
+      config: {
+        method: "POST",
+        data: JSON.stringify({ data: voteIdea }),
+      },
+    };
+    return await client(req);
+  };
+
+  return useMutation<{ data: { message: string } }, null, IVoteIdea>(voteIdeaFunction, {
+    onSettled: (_a, _b, variables) => {
+      queryClient.invalidateQueries([Endpoints.idea.getIdeasByWorkspaceName]);
+      queryClient.invalidateQueries([Endpoints.idea.main, variables.id]);
+    },
+  });
 };
