@@ -76,10 +76,8 @@ export const FirstIllustration = () => {
       <div className="absolute left-0 top-0 size-full px-5 pt-5 sm:px-6 sm:pt-6 md:px-8 md:pt-8">
         <div className="border-default grid size-full gap-1 rounded-t-lg border border-b-0 p-1">
           {items.map((item, index) => (
-            <>
-              <div
-                key={index}
-                className="bg-item hover:bg-item-hover flex items-start justify-between gap-6 rounded p-4">
+            <div key={index}>
+              <div className="bg-item hover:bg-item-hover flex items-start justify-between gap-6 rounded p-4">
                 <div className="flex w-full items-start justify-normal gap-4">
                   <Avatar className="mt-1 hidden sm:flex" size="xl">
                     <AvatarImage src={item.image} alt={item.name} />
@@ -104,7 +102,7 @@ export const FirstIllustration = () => {
                 />
               </div>
               <Separator />
-            </>
+            </div>
           ))}
         </div>
       </div>
@@ -170,8 +168,8 @@ export const SecondIllustration = () => {
           {items
             .filter((_, index) => index < 2)
             .map((item, index) => (
-              <>
-                <div key={index} className="bg-item hover:bg-item-hover flex items-start gap-2 rounded p-2">
+              <div key={index}>
+                <div className="bg-item hover:bg-item-hover flex items-start gap-2 rounded p-2">
                   <div className="grid w-full gap-1">
                     <Skeleton shape="line" className="h-4 w-full rounded" />
                     <Skeleton shape="line" className="h-4 w-full rounded" />
@@ -184,7 +182,7 @@ export const SecondIllustration = () => {
                   />
                 </div>
                 <Separator />
-              </>
+              </div>
             ))}
         </div>
         <div className="border-default grid size-full gap-1 rounded-t-lg border border-b-0 p-1">
@@ -197,10 +195,8 @@ export const SecondIllustration = () => {
           {items
             .filter((_, index) => index >= 2 && index < 4)
             .map((item, index) => (
-              <>
-                <div
-                  key={index + 2}
-                  className="bg-item hover:bg-item-hover flex items-start gap-2 rounded p-2">
+              <div key={index + 2}>
+                <div className="bg-item hover:bg-item-hover flex items-start gap-2 rounded p-2">
                   <div className="grid w-full gap-1">
                     <Skeleton shape="line" className="h-4 w-full rounded" />
                     <Skeleton shape="line" className="h-4 w-full rounded" />
@@ -213,7 +209,7 @@ export const SecondIllustration = () => {
                   />
                 </div>
                 <Separator />
-              </>
+              </div>
             ))}
         </div>
         <div className="border-default hidden size-full gap-1 rounded-t-lg border border-b-0 p-1 lg:grid">
@@ -226,10 +222,8 @@ export const SecondIllustration = () => {
           {items
             .filter((_, index) => index >= 4)
             .map((item, index) => (
-              <>
-                <div
-                  key={index + 4}
-                  className="bg-item hover:bg-item-hover flex items-start gap-2 rounded p-2">
+              <div key={index + 4}>
+                <div className="bg-item hover:bg-item-hover flex items-start gap-2 rounded p-2">
                   <div className="grid w-full gap-1">
                     <Skeleton shape="line" className="h-4 w-full rounded" />
                     <Skeleton shape="line" className="h-4 w-full rounded" />
@@ -242,7 +236,7 @@ export const SecondIllustration = () => {
                   />
                 </div>
                 <Separator />
-              </>
+              </div>
             ))}
         </div>
       </div>
@@ -304,10 +298,8 @@ export const FourthIllustration = () => {
       <div className="absolute left-0 top-0 size-full px-5 pt-5 sm:px-6 sm:pt-6 md:px-8 md:pt-8">
         <div className="border-default grid size-full gap-1 rounded-t-lg border border-b-0 p-1">
           {items.map((item, index) => (
-            <>
-              <div
-                key={index}
-                className="bg-item hover:bg-item-hover flex items-center justify-between gap-6 rounded p-4">
+            <div key={index}>
+              <div className="bg-item hover:bg-item-hover flex items-center justify-between gap-6 rounded p-4">
                 <div className="flex w-full items-center justify-normal gap-4">
                   <div className="flex size-8 items-center justify-center">
                     <p className="text-heading-subsection">{item.position}</p>
@@ -343,7 +335,7 @@ export const FourthIllustration = () => {
                 <Skeleton shape="line" className="hidden h-6 w-20 rounded sm:flex" />
               </div>
               <Separator />
-            </>
+            </div>
           ))}
         </div>
       </div>
