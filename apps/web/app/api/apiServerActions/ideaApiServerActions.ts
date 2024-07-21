@@ -173,8 +173,16 @@ export const getIdeaById = async ({ ideaId, access_token }: { ideaId: string; ac
       comments: {
         include: {
           author: true,
-          childComments: true,
+          childComments: {
+            include: {
+              author: true,
+              votes: true,
+            },
+          },
           votes: true,
+        },
+        where: {
+          parentId: null,
         },
       },
     },
@@ -185,6 +193,11 @@ export const getIdeaById = async ({ ideaId, access_token }: { ideaId: string; ac
     };
   } else {
     const isVoted = idea.voters.find((voter) => voter.userId === user.id);
+    //Check if comments are upvoted
+    idea.comments = idea.comments.map((comment) => {
+      const isVoted = comment.votes.find((vote) => vote.userId === user.id);
+      return { ...comment, isVoted: !!isVoted };
+    });
     return {
       isSuccess: true,
       data: {

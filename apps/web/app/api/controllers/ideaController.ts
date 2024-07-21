@@ -2,6 +2,7 @@ import { Prisma } from "@prisma/client";
 import client, { FeelyRequest } from "app/api/apiClient";
 import { ICreateIdea, IVoteIdea } from "app/api/apiServerActions/ideaApiServerActions";
 import { Endpoints } from "app/api/endpoints";
+import { Idea } from "app/types/idea";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
 export const useGetIdeasByWorkspaceName = ({ workspaceName }: { workspaceName: string }) => {
@@ -72,38 +73,14 @@ export const useGetIdeaById = ({ id }: { id: string }) => {
   const requestConfig = {
     queryKey: [Endpoints.idea.main, id],
     queryFn: () => client(request),
-    staleTime: 60 * 1000,
+    staleTime: 5 * 1000,
   };
 
   return useQuery<
     {
       data: {
         message: string;
-        idea: Prisma.ideaGetPayload<{
-          include: {
-            author: true;
-            status: true;
-            topic: true;
-            voters: true;
-            comments: {
-              include: {
-                childComments: true;
-                votes: true;
-                author: true;
-              };
-              select: {
-                id: true;
-                childComments: true;
-                votes: true;
-                text: true;
-                author: true;
-                created_at: true;
-              };
-            };
-          };
-        }> & {
-          isVoted: boolean;
-        };
+        idea: Idea;
       };
     },
     null

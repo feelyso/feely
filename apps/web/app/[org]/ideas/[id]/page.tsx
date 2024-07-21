@@ -9,6 +9,7 @@ import { Button } from "@feely/ui/components/button";
 import { useCreateComment } from "app/api/controllers/commentController";
 import { Loader } from "@feely/ui/components/icon";
 import { IconArrowUp } from "@tabler/icons-react";
+import CommentCard from "app/[org]/ideas/[id]/components/comment";
 interface IProps {
   params: {
     org: string;
@@ -58,7 +59,8 @@ const IdeaPage = (props: IProps) => {
           }
         }}>
         {idea ? (
-          <SheetContent style={{ width: "40%", display: "flex", flexDirection: "column", gap: 12 }}>
+          <SheetContent
+            style={{ width: "40%", maxWidth: "40%", display: "flex", flexDirection: "column", gap: 12 }}>
             <SheetHeader>{idea?.title}</SheetHeader>
             <SheetDescription>{idea?.description}</SheetDescription>
             <div className="flex flex-col gap-2">
@@ -111,21 +113,12 @@ const IdeaPage = (props: IProps) => {
             <div className="flex flex-col gap-2">
               <span className="font-semibold text-slate-400">Replies</span>
               {idea.comments?.map((comment) => {
-                return (
-                  <div key={comment.id} className="flex flex-col">
-                    <div className="flex w-full justify-between">
-                      <span>{comment.author.name}</span>
-                      <span>{new Date(comment.created_at).toLocaleString()}</span>
-                    </div>
-                    <span>{comment.text}</span>
-                  </div>
-                );
+                return <CommentCard key={comment.id} comment={comment} />;
               })}
             </div>
-            {/* <NewIdeaForm org={org} /> */}
           </SheetContent>
         ) : (
-          <SheetContent style={{ width: "40%" }}>
+          <SheetContent style={{ width: "40%", maxWidth: "40%" }}>
             <SheetHeader>Idea Not Found</SheetHeader>
           </SheetContent>
         )}

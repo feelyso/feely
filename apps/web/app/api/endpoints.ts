@@ -11,5 +11,7 @@ export const Endpoints = {
   },
   comment: {
     main: "/api/comment",
+    vote: "/api/comment/vote",
+    reply: "/api/comment/reply",
   },
 };
