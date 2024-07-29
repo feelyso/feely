@@ -2,19 +2,26 @@ import { Prisma } from "@prisma/client";
 import client, { FeelyRequest } from "app/api/apiClient";
 import { ICreateIdea, IVoteIdea } from "app/api/apiServerActions/ideaApiServerActions";
 import { Endpoints } from "app/api/endpoints";
+import { IGetIdeasByWorkspaceName } from "app/types/DTO/getIdeasByWorkspaceNameDTO";
 import { Idea } from "app/types/idea";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
-export const useGetIdeasByWorkspaceName = ({ workspaceName }: { workspaceName: string }) => {
+export const useGetIdeasByWorkspaceName = (params: IGetIdeasByWorkspaceName) => {
+  const urlParams = new URLSearchParams({
+    workspaceName: params.workspaceName,
+    ...(params.title ? { title: params.title } : {}),
+    ...(params.statusId ? { statusId: params.statusId.join(",") } : {}),
+    ...(params.topicId ? { topicId: params.topicId.join(",") } : {}),
+    ...(params.orderBy ? { orderBy: params.orderBy } : {}),
+  });
   const request: FeelyRequest = {
-    url: `${Endpoints.idea.getIdeasByWorkspaceName}?workspaceName=${workspaceName}`,
+    url: `${Endpoints.idea.getIdeasByWorkspaceName}?${urlParams.toString()}`,
     config: {
       method: "get",
     },
   };
-
   const requestConfig = {
-    queryKey: [Endpoints.idea.getIdeasByWorkspaceName, workspaceName],
+    queryKey: [Endpoints.idea.getIdeasByWorkspaceName, urlParams.toString()],
     queryFn: () => client(request),
     staleTime: 60 * 1000,
   };

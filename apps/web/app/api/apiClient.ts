@@ -9,10 +9,13 @@ export interface FeelyRequest {
   };
 }
 
+export interface IAccessToken {
+  access_token?: string;
+}
+
 const client = async (req: FeelyRequest) => {
   const supabase = createClient();
   const { data: dataSession } = await supabase.auth.getSession();
-  console.log("Data session", dataSession);
   const { url, config } = req;
   const baseUrl =
     process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"

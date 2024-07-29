@@ -1,7 +1,8 @@
 "use server";
 
 import { getIdeasByWorkspaceName } from "app/api/apiServerActions/ideaApiServerActions";
-import { authenticateUser } from "app/api/apiUtils";
+import { authenticateUser, fromUrlSearchParamsToObject } from "app/api/apiUtils";
+import { IGetIdeasByWorkspaceName } from "app/types/DTO/getIdeasByWorkspaceNameDTO";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -10,11 +11,12 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ message: "Unauthorized user" }, { status: 401 });
   }
   const { searchParams } = new URL(req.url);
+  const paramsObject = fromUrlSearchParamsToObject<IGetIdeasByWorkspaceName>(searchParams);
   const workspaceName = searchParams.get("workspaceName");
   if (!workspaceName) {
     return NextResponse.json({ message: "Workspace name is required" }, { status: 400 });
   }
-  const res = await getIdeasByWorkspaceName({ workspaceName: workspaceName, access_token: user.accessToken });
+  const res = await getIdeasByWorkspaceName({ ...paramsObject, access_token: user.accessToken });
 
   if (res.isSuccess) {
     return NextResponse.json({ message: "Ideas retrieved", ideas: res.data }, { status: 200 });

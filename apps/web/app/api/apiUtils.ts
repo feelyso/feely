@@ -14,3 +14,12 @@ export const authenticateUser = async (req: NextRequest) => {
   }
   return { user: data.user, accessToken, refreshToken };
 };
+
+export const fromUrlSearchParamsToObject = <T>(searchParams: URLSearchParams): T => {
+  const paramsObject: { [key: string]: string } = {};
+
+  searchParams.forEach((value, key) => {
+    paramsObject[key] = value;
+  });
+  return paramsObject as T;
+};

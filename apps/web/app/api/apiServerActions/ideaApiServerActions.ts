@@ -1,7 +1,9 @@
 "use server";
 
 import { createClient } from "@utils/supabase/server";
+import { IAccessToken } from "app/api/apiClient";
 import { getWorkspaceByName } from "app/api/apiServerActions/workspaceApiServerActions";
+import { IGetIdeasByWorkspaceName } from "app/types/DTO/getIdeasByWorkspaceNameDTO";
 import prisma from "prisma/client";
 
 export interface ICreateIdea {
@@ -78,11 +80,12 @@ export const createIdea = async (body: ICreateIdea, access_token?: string) => {
 
 export const getIdeasByWorkspaceName = async ({
   workspaceName,
+  orderBy,
+  statusId,
+  title,
+  topicId,
   access_token,
-}: {
-  workspaceName: string;
-  access_token: string;
-}) => {
+}: IGetIdeasByWorkspaceName & IAccessToken) => {
   const workspace = await getWorkspaceByName(workspaceName);
   if (!workspace) {
     return {
@@ -112,6 +115,15 @@ export const getIdeasByWorkspaceName = async ({
   const ideas = await prisma.idea.findMany({
     where: {
       workspaceId: workspace.id,
+      title: {
+        contains: title,
+      },
+      topicId: {
+        in: topicId,
+      },
+      statusId: {
+        in: statusId,
+      },
     },
     include: {
       author: true,
@@ -126,7 +138,7 @@ export const getIdeasByWorkspaceName = async ({
       isSuccess: false,
     };
   } else {
-    const ideasWithVored = ideas.map((idea) => {
+    const ideasWithVoted = ideas.map((idea) => {
       const isVoted = idea.voters.find((voter) => voter.userId === user.id);
       const { voters, ...ideaWithoutVoters } = idea;
       return {
@@ -136,7 +148,7 @@ export const getIdeasByWorkspaceName = async ({
     });
     return {
       isSuccess: true,
-      data: ideasWithVored,
+      data: ideasWithVoted,
     };
   }
 };

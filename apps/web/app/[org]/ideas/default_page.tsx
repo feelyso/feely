@@ -1,22 +1,27 @@
 "use client";
 
 import { Button } from "@feely/ui/components/button";
+import { Input } from "@feely/ui/components/input";
 import { IconArrowUp } from "@tabler/icons-react";
 import { useGetIdeasByWorkspaceName, useVoteIdea } from "app/api/controllers/ideaController";
+import useDebounce from "app/utils/useDebounce";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 
 interface IProps {
   org: string;
 }
 
 const Ideas = ({ org }: IProps) => {
-  const { data: ideas } = useGetIdeasByWorkspaceName({ workspaceName: org });
-  console.log("Ideas", ideas);
+  const {
+    mainState: mainSearchTitle,
+    slaveState: searchTitleFastRefreshing,
+    setSlaveState: setDebounced,
+  } = useDebounce(1000);
+  const { data: ideas } = useGetIdeasByWorkspaceName({ workspaceName: org, title: mainSearchTitle });
   const router = useRouter();
   const handleClickIdea = (id: string) => {
-    console.log("Clicked idea", id);
     router.push(`/${org}/ideas/${id}`);
   };
 
@@ -33,6 +38,11 @@ const Ideas = ({ org }: IProps) => {
         <Button>New idea</Button>
       </Link>
       <div className="flex size-[500px] flex-col gap-2 overflow-auto bg-red-500 p-2">
+        <Input
+          value={searchTitleFastRefreshing}
+          onChange={(ev) => setDebounced(ev.target.value)}
+          placeholder="Search ideas..."
+        />
         {ideas?.data.ideas.map((idea) => {
           return (
             <div
