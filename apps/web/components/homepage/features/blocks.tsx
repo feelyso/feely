@@ -10,9 +10,11 @@ import WithButton from "@components/homepage/features/with-button";
 import { DoubleCard, SingleCard } from "@components/homepage/features/cards";
 import { GithubIcon } from "@components/homepage/social-icon";
 import {
+  FifthIllustration,
   FirstIllustration,
   FourthIllustration,
   SecondIllustration,
+  SeventhIllustration,
   SixthIllustration,
   ThirdIllustration,
 } from "@components/homepage/features/illustrations";
@@ -101,7 +103,7 @@ export const ThirdBlock = () => {
       <DoubleCard
         firstTitle="Badges for great goals"
         firstDescription="Stimulate people to be an active part of the community and give them bagdes. "
-        firstIllustration={<>Hello</>}
+        firstIllustration={<FifthIllustration />}
         secondTitle="Spread happiness"
         secondDescription="Give your users rewards to show your gratitude."
         secondIllustration={<SixthIllustration />}
@@ -125,7 +127,7 @@ export const FourthBlock = () => {
       <SingleCard
         title="Explore the theming"
         description="Feely can get dressed as you like."
-        illustration={<>Hello</>}
+        illustration={<SeventhIllustration />}
       />
       <Icons
         items={[
