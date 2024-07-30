@@ -10,8 +10,8 @@ export const useGetIdeasByWorkspaceName = (params: IGetIdeasByWorkspaceName) => 
   const urlParams = new URLSearchParams({
     workspaceName: params.workspaceName,
     ...(params.title ? { title: params.title } : {}),
-    ...(params.statusId ? { statusId: params.statusId.join(",") } : {}),
-    ...(params.topicId ? { topicId: params.topicId.join(",") } : {}),
+    ...(params.statusId ? { statusId: params.statusId.sort().join(",") } : {}),
+    ...(params.topicId ? { topicId: params.topicId.sort().join(",") } : {}),
     ...(params.orderBy ? { orderBy: params.orderBy } : {}),
   });
   const request: FeelyRequest = {

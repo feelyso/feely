@@ -1,7 +1,6 @@
 import Ideas from "app/[org]/ideas/default_page";
-import Navbar from "app/[org]/navbar";
-import protectRoute from "app/utils/protectedRoute";
-import { WorkspaceProvider } from "context/workspaceContext";
+import { getStatusesByWorkspaceName } from "app/api/apiServerActions/statusApiServerAction";
+import { getTopicsByWorkspaceName } from "app/api/apiServerActions/topicApiServerActions";
 import React from "react";
 import { Suspense } from "react";
 
@@ -14,9 +13,12 @@ export default async function RootLayout({
     org: string;
   };
 }>) {
+  const topics = await getTopicsByWorkspaceName({ workspaceName: org });
+  const statuses = await getStatusesByWorkspaceName({ workspaceName: org });
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Ideas org={org} />
+      <Ideas org={org} topics={topics.data ?? []} statuses={statuses.data ?? []} />
       {children}
     </Suspense>
   );

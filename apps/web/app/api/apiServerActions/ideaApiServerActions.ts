@@ -125,6 +125,20 @@ export const getIdeasByWorkspaceName = async ({
         in: statusId,
       },
     },
+    orderBy: {
+      ...(orderBy === "least_voted" || orderBy === "most_voted"
+        ? {
+            voters: {
+              _count: orderBy === "most_voted" ? "desc" : "asc",
+            },
+          }
+        : {}),
+      ...(orderBy === "latest" || orderBy === "oldest"
+        ? {
+            created_at: orderBy === "latest" ? "desc" : "asc",
+          }
+        : {}),
+    },
     include: {
       author: true,
       status: true,

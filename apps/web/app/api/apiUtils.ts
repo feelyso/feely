@@ -23,3 +23,8 @@ export const fromUrlSearchParamsToObject = <T>(searchParams: URLSearchParams): T
   });
   return paramsObject as T;
 };
+
+export const ensureArray = (value: string | string[] | undefined): string[] | undefined => {
+  if (value === undefined) return value;
+  return Array.isArray(value) ? value : value.split(",");
+};
