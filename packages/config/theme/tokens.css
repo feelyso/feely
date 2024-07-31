@@ -79,6 +79,7 @@
   --color-text-chart-rose: var(--color-rose-800);
   --color-border-default: var(--color-neutral-200);
   --color-border-hover: var(--color-neutral-400);
+  --color-border-secondary: var(--color-neutral-100);
   --color-border-brand-default: var(--color-brand-600);
   --color-border-brand-hover: var(--color-brand-500);
   --color-border-brand-active: var(--color-brand-700);
@@ -237,6 +238,7 @@
   --color-text-chart-rose: var(--color-rose-300);
   --color-border-default: var(--color-neutral-800);
   --color-border-hover: var(--color-neutral-600);
+  --color-border-secondary: var(--color-neutral-900);
   --color-border-brand-default: var(--color-brand-600);
   --color-border-brand-hover: var(--color-brand-700);
   --color-border-brand-active: var(--color-brand-500);
