@@ -3,7 +3,7 @@ import client, { FeelyRequest } from "app/api/apiClient";
 import { ICreateIdea, IVoteIdea } from "app/api/apiServerActions/ideaApiServerActions";
 import { Endpoints } from "app/api/endpoints";
 import { IGetIdeasByWorkspaceName } from "app/types/DTO/getIdeasByWorkspaceNameDTO";
-import { Idea } from "app/types/idea";
+import { IdeaType } from "app/types/idea";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
 export const useGetIdeasByWorkspaceName = (params: IGetIdeasByWorkspaceName) => {
@@ -30,15 +30,7 @@ export const useGetIdeasByWorkspaceName = (params: IGetIdeasByWorkspaceName) => 
     {
       data: {
         message: string;
-        ideas: (Prisma.ideaGetPayload<{
-          include: {
-            author: true;
-            status: true;
-            topic: true;
-          };
-        }> & {
-          isVoted: boolean;
-        })[];
+        ideas: IdeaType[];
       };
     },
     null
@@ -87,7 +79,7 @@ export const useGetIdeaById = ({ id }: { id: string }) => {
     {
       data: {
         message: string;
-        idea: Idea;
+        idea: IdeaType;
       };
     },
     null

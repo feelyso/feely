@@ -26,12 +26,14 @@ import useDebounce from "app/utils/useDebounce";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { IdeasOrderingOptions, IIdeasOrdering } from "app/types/DTO/getIdeasByWorkspaceNameDTO";
+import {
+  getIdeasOrderingName,
+  IdeasOrderingOptions,
+  IIdeasOrdering,
+} from "app/types/DTO/getIdeasByWorkspaceNameDTO";
 import { Separator } from "@feely/ui/components/separator";
-import { Avatar, AvatarFallback, AvatarImage } from "@feely/ui/components/avatar";
-import { Tag } from "@feely/ui/components/tag";
-import { ChevronUp, HelpCircle } from "@feely/ui/components/icon";
-import { Toggle } from "@feely/ui/components/toggle";
+import { Loader } from "@feely/ui/components/icon";
+import IdeaCard from "@app/[org]/ideas/components/idea";
 
 interface IProps {
   org: string;
@@ -49,25 +51,15 @@ const Ideas = ({ org, topics, statuses }: IProps) => {
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [selectedStatuses, setSelectedStatuses] = useState<string[]>([]);
 
-  const [selectedOrder, setSelectedOrder] = useState<IIdeasOrdering>("Latest");
+  const [selectedOrder, setSelectedOrder] = useState<IIdeasOrdering>("latest");
 
-  const { data: ideas } = useGetIdeasByWorkspaceName({
+  const { data: ideas, isLoading: isLoadingIdeas } = useGetIdeasByWorkspaceName({
     workspaceName: org,
     title: mainSearchTitle,
     topicId: selectedTopics.length === 0 ? undefined : selectedTopics,
     statusId: selectedStatuses.length === 0 ? undefined : selectedStatuses,
     orderBy: selectedOrder,
   });
-  const router = useRouter();
-  const handleClickIdea = (id: string) => {
-    router.push(`/${org}/ideas/${id}`);
-  };
-
-  const { mutate: voteIdea } = useVoteIdea();
-
-  const handleVoteIdea = (id: string, isVoted: boolean) => {
-    voteIdea({ id, isVoted: !isVoted });
-  };
 
   return (
     <div className="flex flex-col space-y-4">
@@ -150,7 +142,7 @@ const Ideas = ({ org, topics, statuses }: IProps) => {
                 {IdeasOrderingOptions.map((order) => {
                   return (
                     <SelectItem key={order} value={order}>
-                      {order}
+                      {getIdeasOrderingName(order)}
                     </SelectItem>
                   );
                 })}
@@ -160,49 +152,19 @@ const Ideas = ({ org, topics, statuses }: IProps) => {
         </div>
       </div>
       <div className="bg-background border-default flex min-h-64 w-full flex-col space-y-1 rounded-lg border p-1">
-        {ideas?.data.ideas.map((idea, index) => {
-          const isLastItem = index === ideas.data.ideas.length - 1;
-          return (
-            <>
-              <div
-                key={idea.id}
-                className="hover:bg-item-hover active:bg-item-selected flex w-full cursor-pointer gap-2 rounded-md p-4"
-                onClick={() => handleClickIdea(idea.id)}>
-                <Avatar size="xl" className="border-default mt-1 border">
-                  <AvatarImage src={idea.author.image_url ?? undefined} alt={idea.author.name ?? undefined} />
-                  <AvatarFallback>{idea.author.name ? idea.author.name[0] : undefined}</AvatarFallback>
-                </Avatar>
-                <div className="flex w-full flex-col space-y-1 pr-4">
-                  <div className="flex items-center justify-between">
-                    <h1 className="text-lg-semibold line-clamp-1 pr-2">{idea.title}</h1>
-                    <Tag color="amber" className="min-w-fit">
-                      <HelpCircle />
-                      In review
-                    </Tag>
-                  </div>
-                  <p className="text-description text-md line-clamp-1">{idea.description}</p>
-                  <div className="pt-2">
-                    <p className="text-description text-sm">
-                      by <Link href="/">{idea.author.name}</Link>
-                    </p>
-                  </div>
-                </div>
-                <Toggle
-                  aria-label="vote"
-                  variant="outline"
-                  className="flex h-14 w-11 flex-col items-center justify-items-center gap-0 space-y-0 p-1"
-                  onClick={(ev) => {
-                    ev.stopPropagation();
-                    handleVoteIdea(idea.id, idea.isVoted);
-                  }}>
-                  <ChevronUp size={24} />
-                  <p className="text-md">27</p>
-                </Toggle>
-              </div>
-              {!isLastItem && <Separator />}
-            </>
-          );
-        })}
+        {isLoadingIdeas ? (
+          <Loader />
+        ) : (
+          ideas?.data.ideas.map((idea, index) => {
+            const isLastItem = index === ideas.data.ideas.length - 1;
+            return (
+              <>
+                <IdeaCard idea={idea} org={org} key={index} />
+                {!isLastItem && <Separator />}
+              </>
+            );
+          })
+        )}
       </div>
     </div>
   );

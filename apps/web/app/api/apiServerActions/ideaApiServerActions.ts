@@ -126,16 +126,16 @@ export const getIdeasByWorkspaceName = async ({
       },
     },
     orderBy: {
-      ...(orderBy === "Least voted" || orderBy === "Most voted"
+      ...(orderBy === "least_voted" || orderBy === "most_voted"
         ? {
             voters: {
-              _count: orderBy === "Most voted" ? "desc" : "asc",
+              _count: orderBy === "most_voted" ? "desc" : "asc",
             },
           }
         : {}),
-      ...(orderBy === "Latest" || orderBy === "Oldest"
+      ...(orderBy === "latest" || orderBy === "oldest"
         ? {
-            created_at: orderBy === "Latest" ? "desc" : "asc",
+            created_at: orderBy === "latest" ? "desc" : "asc",
           }
         : {}),
     },
@@ -143,7 +143,11 @@ export const getIdeasByWorkspaceName = async ({
       author: true,
       status: true,
       topic: true,
-      voters: true,
+      voters: {
+        select: {
+          userId: true,
+        },
+      },
     },
     take: 50,
   });
@@ -158,6 +162,7 @@ export const getIdeasByWorkspaceName = async ({
       return {
         ...ideaWithoutVoters,
         isVoted: !!isVoted,
+        voters: voters,
       };
     });
     return {
