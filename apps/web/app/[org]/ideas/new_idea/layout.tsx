@@ -1,3 +1,4 @@
+import Loading from "@app/[org]/loading";
 import { Suspense } from "react";
 
 export default async function RootLayout({
@@ -5,5 +6,5 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>;
+  return <Suspense fallback={<Loading />}>{children}</Suspense>;
 }

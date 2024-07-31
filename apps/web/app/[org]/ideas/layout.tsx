@@ -1,3 +1,4 @@
+import Loading from "@app/[org]/loading";
 import Ideas from "app/[org]/ideas/default_page";
 import { getStatusesByWorkspaceName } from "app/api/apiServerActions/statusApiServerAction";
 import { getTopicsByWorkspaceName } from "app/api/apiServerActions/topicApiServerActions";
@@ -17,7 +18,7 @@ export default async function RootLayout({
   const statuses = await getStatusesByWorkspaceName({ workspaceName: org });
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <Ideas org={org} topics={topics.data ?? []} statuses={statuses.data ?? []} />
       {children}
     </Suspense>

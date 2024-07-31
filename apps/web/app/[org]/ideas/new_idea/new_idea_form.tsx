@@ -14,7 +14,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { topic } from "@prisma/client";
 import { getTopicsByWorkspaceName } from "app/api/apiServerActions/topicApiServerActions";
 import { useCreateIdea } from "app/api/controllers/ideaController";
-
 interface IProps {
   org: string;
 }
@@ -64,7 +63,7 @@ const NewIdeaForm = ({ org }: IProps) => {
   };
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)} className="flex flex-col  gap-4">
+      <form onSubmit={form.handleSubmit(handleSubmit)} className="flex flex-col gap-4">
         <FormField
           control={form.control}
           name="title"
@@ -72,11 +71,7 @@ const NewIdeaForm = ({ org }: IProps) => {
             <FormItem>
               <Label>Title</Label>
               <FormControl>
-                <Input
-                  placeholder="One sentences that summarizes your idea"
-                  {...field}
-                  className="input-docs"
-                />
+                <Input placeholder="One sentences that summarizes your idea" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -89,11 +84,7 @@ const NewIdeaForm = ({ org }: IProps) => {
             <FormItem>
               <Label>Description</Label>
               <FormControl>
-                <Textarea
-                  placeholder="Why your idea is helpful?"
-                  {...field}
-                  className="input-docs resize-none"
-                />
+                <Textarea placeholder="Why your idea is helpful?" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -122,9 +113,9 @@ const NewIdeaForm = ({ org }: IProps) => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-[120px] self-end">
-          Submit idea
-        </Button>
+        <div className="flex w-full justify-end pt-4">
+          <Button type="submit">Submit idea</Button>
+        </div>
       </form>
     </Form>
   );

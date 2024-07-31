@@ -1,7 +1,8 @@
-import Navbar from "app/[org]/navbar";
-import { checkWorkspaceExistanceServer } from "app/api/apiServerActions/workspaceApiServerActions";
-import protectRoute from "app/utils/protectedRoute";
-import { WorkspaceProvider } from "context/workspaceContext";
+import Loading from "@app/[org]/loading";
+import Navbar from "@app/[org]/navbar";
+import { checkWorkspaceExistanceServer } from "@app/api/apiServerActions/workspaceApiServerActions";
+import protectRoute from "@app/utils/protectedRoute";
+import { WorkspaceProvider } from "@context/workspaceContext";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
@@ -20,10 +21,12 @@ export default async function RootLayout({
     redirect("/");
   } else
     return (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <WorkspaceProvider>
           <Navbar org={org} />
-          {children}
+          <div className="bg-subtle mx-auto flex size-full justify-center">
+            <div className="size-full max-w-screen-xl px-10 pb-10 pt-24">{children}</div>
+          </div>
         </WorkspaceProvider>
       </Suspense>
     );

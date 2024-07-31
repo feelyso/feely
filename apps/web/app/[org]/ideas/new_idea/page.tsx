@@ -15,6 +15,7 @@ import { Button } from "@feely/ui/components/button";
 import { FormField } from "@feely/ui/components/form";
 import NewIdeaForm from "app/[org]/ideas/new_idea/new_idea_form";
 import { IPropsDynamicRoute } from "app/[org]/page";
+import { Separator } from "@feely/ui/components/separator";
 
 const NewIdea = async ({ params: { org } }: IPropsDynamicRoute) => {
   const router = useRouter();
@@ -31,9 +32,12 @@ const NewIdea = async ({ params: { org } }: IPropsDynamicRoute) => {
             handleClose();
           }
         }}>
-        <SheetContent>
-          <SheetHeader>Tell us your idea</SheetHeader>
-          <SheetDescription>Lorem ipsum dolor sit amet cum condipiscitur</SheetDescription>
+        <SheetContent className="flex min-w-[476px] flex-col space-y-4 p-10">
+          <div className="flex flex-col space-y-1">
+            <h2 className="text-heading-body">Tell us your idea</h2>
+            <p className="text-md text-description">Lorem ipsum dolor sit amet cum condipiscitur</p>
+          </div>
+          <Separator />
           <NewIdeaForm org={org} />
         </SheetContent>
       </Sheet>

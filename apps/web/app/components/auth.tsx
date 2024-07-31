@@ -1,5 +1,6 @@
 "use client";
 
+import { FacebookIcon, GithubIcon, GoogleIcon } from "@components/homepage/social-icon";
 import { Button } from "@feely/ui/components/button";
 import { redirect } from "next/navigation";
 import { useSearchParams } from "next/navigation";
@@ -42,7 +43,20 @@ const AuthButtons = () => {
   return (
     <>
       <form onSubmit={handleGoogleLogin}>
-        <Button>LogIn with google</Button>
+        <div className="flex w-full flex-col space-y-2">
+          <Button variant="secondary" className="h-10 w-full">
+            <GoogleIcon />
+            Login with Google
+          </Button>
+          <Button disabled variant="secondary" className="h-10 w-full">
+            <GithubIcon />
+            Login with Github
+          </Button>
+          <Button disabled variant="secondary" className="h-10 w-full">
+            <FacebookIcon />
+            Login with Facebook
+          </Button>
+        </div>
       </form>
       {/* <form onSubmit={handleLoginUserPass} className="mt-4 flex flex-col gap-4">
         <input

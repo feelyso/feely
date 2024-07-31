@@ -1,4 +1,4 @@
-export const IdeasOrderingOptions = ["latest", "oldest", "most_voted", "least_voted"] as const;
+export const IdeasOrderingOptions = ["Latest", "Oldest", "Most voted", "Least voted"] as const;
 
 export type IIdeasOrdering = (typeof IdeasOrderingOptions)[number];
 export interface IGetIdeasByWorkspaceName {

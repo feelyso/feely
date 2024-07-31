@@ -23,7 +23,7 @@ export default function Hero() {
         </div>
         <div className="mt-8">
           <Button asChild className="button-waitlist">
-            <Link href="/waitlist">Join the waitlist</Link>
+            <Link href="/signup">Start for free</Link>
           </Button>
         </div>
         <HeroImg />
