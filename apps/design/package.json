@@ -24,7 +24,8 @@
     "react-hook-form": "^7.48.2",
     "ts-loader": "^9.5.0",
     "webpack": "^5.89.0",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "@vercel/analytics": "^1.3.1"
   },
   "devDependencies": {
     "@feely/config": "*",

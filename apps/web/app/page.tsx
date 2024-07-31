@@ -1,20 +1,21 @@
-"use client";
-
-// Import core
-import Link from "next/link";
-// Import custom
-import { GridBackground } from "@components/waitlist/grid-background";
-import WaitlistForm from "@components/waitlist/waitlist-form";
-import Logo from "@components/waitlist/logo";
+import Navbar from "@components/homepage/navbar";
+import Hero from "@components/homepage/hero";
+import TrustedBy from "@components/homepage/trusted-by";
+import Features from "@components/homepage/features";
+import Banner from "@components/homepage/banner";
+import Footer from "@components/homepage/footer";
 
 export default function Home() {
   return (
-    <main className="h-screen w-screen">
-      <Link href="/" passHref legacyBehavior>
-        <Logo />
-      </Link>
-      <WaitlistForm />
-      <GridBackground />
+    <main>
+      <Navbar />
+      <div className="relative">
+        <Hero />
+        <TrustedBy />
+      </div>
+      <Features />
+      <Banner />
+      <Footer />
     </main>
   );
 }

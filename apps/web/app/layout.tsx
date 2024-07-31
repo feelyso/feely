@@ -17,12 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
-      <head />
+      <head>
+        <script src="https://accounts.google.com/gsi/client" async></script>
+      </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
-          <ToastProvider />
         </ThemeProvider>
+        <ToastProvider />
         <Analytics />
       </body>
     </html>
