@@ -6,11 +6,20 @@ export type IIdeaSelectionObject = {
     author: true;
     status: true;
     topic: true;
-    voters: true;
+    voters: {
+      select: {
+        userId: true;
+      };
+    };
   };
 };
 
 export type IdeaType = Prisma.ideaGetPayload<IIdeaSelectionObject> & {
+  isVoted: boolean;
+  commentsCount: number;
+};
+
+export type IdeaWithCommentsType = Prisma.ideaGetPayload<IIdeaSelectionObject> & {
   isVoted: boolean;
   comments: CommentType[];
 };

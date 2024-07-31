@@ -47,7 +47,8 @@ const IdeaCard = ({ idea, org }: IProps) => {
         <p className="text-description text-md line-clamp-1">{idea.description}</p>
         <div className="pt-2">
           <p className="text-description text-sm">
-            by <Link href="/">{idea.author.name}</Link>
+            by <Link href="/">{idea.author.name}</Link> {new Date(idea.created_at).toLocaleDateString()}{" "}
+            {idea.topic.name} - {idea.commentsCount} comments
           </p>
         </div>
       </div>

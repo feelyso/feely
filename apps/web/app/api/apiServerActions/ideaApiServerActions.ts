@@ -1,5 +1,6 @@
 "use server";
 
+import { IdeaType } from "@app/types/idea";
 import { createClient } from "@utils/supabase/server";
 import { IAccessToken } from "app/api/apiClient";
 import { getWorkspaceByName } from "app/api/apiServerActions/workspaceApiServerActions";
@@ -85,7 +86,11 @@ export const getIdeasByWorkspaceName = async ({
   title,
   topicId,
   access_token,
-}: IGetIdeasByWorkspaceName & IAccessToken) => {
+}: IGetIdeasByWorkspaceName & IAccessToken): Promise<{
+  isSuccess: boolean;
+  error?: string;
+  data?: IdeaType[];
+}> => {
   const workspace = await getWorkspaceByName(workspaceName);
   if (!workspace) {
     return {
@@ -143,6 +148,11 @@ export const getIdeasByWorkspaceName = async ({
       author: true,
       status: true,
       topic: true,
+      _count: {
+        select: {
+          comments: true,
+        },
+      },
       voters: {
         select: {
           userId: true,
@@ -158,11 +168,16 @@ export const getIdeasByWorkspaceName = async ({
   } else {
     const ideasWithVoted = ideas.map((idea) => {
       const isVoted = idea.voters.find((voter) => voter.userId === user.id);
-      const { voters, ...ideaWithoutVoters } = idea;
+      const {
+        voters,
+        _count: { comments },
+        ...ideaWithoutVoters
+      } = idea;
       return {
         ...ideaWithoutVoters,
         isVoted: !!isVoted,
         voters: voters,
+        commentsCount: comments,
       };
     });
     return {
