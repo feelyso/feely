@@ -126,16 +126,16 @@ export const getIdeasByWorkspaceName = async ({
       },
     },
     orderBy: {
-      ...(orderBy === "least_voted" || orderBy === "most_voted"
+      ...(orderBy === "Least voted" || orderBy === "Most voted"
         ? {
             voters: {
-              _count: orderBy === "most_voted" ? "desc" : "asc",
+              _count: orderBy === "Most voted" ? "desc" : "asc",
             },
           }
         : {}),
-      ...(orderBy === "latest" || orderBy === "oldest"
+      ...(orderBy === "Latest" || orderBy === "Oldest"
         ? {
-            created_at: orderBy === "latest" ? "desc" : "asc",
+            created_at: orderBy === "Latest" ? "desc" : "asc",
           }
         : {}),
     },
