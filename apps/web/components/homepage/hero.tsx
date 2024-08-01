@@ -22,7 +22,7 @@ export default function Hero() {
           </p>
         </div>
         <div className="mt-8">
-          <Button asChild className="button-waitlist">
+          <Button asChild className="button-brand">
             <Link href="/signup">Start for free</Link>
           </Button>
         </div>

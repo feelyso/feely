@@ -11,7 +11,7 @@ const SessionButton = async () => {
 
   if (data.session) {
     return (
-      <Button asChild className="button-waitlist">
+      <Button asChild className="button-brand">
         <Link href="/redirect_to_workspace">Go to dashboard</Link>
       </Button>
     );
@@ -21,7 +21,7 @@ const SessionButton = async () => {
         <Button variant="text" asChild className="focus:ring-amber-600">
           <Link href="/login">Login</Link>
         </Button>
-        <Button asChild className="button-waitlist">
+        <Button asChild className="button-brand">
           <Link href="/signup">Start for free</Link>
         </Button>
       </div>

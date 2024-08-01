@@ -33,7 +33,7 @@ import {
 } from "app/types/DTO/getIdeasByWorkspaceNameDTO";
 import { Separator } from "@feely/ui/components/separator";
 import { Loader } from "@feely/ui/components/icon";
-import IdeaCard from "@app/[org]/ideas/components/idea";
+import IdeaCard from "@app/[org]/(pages)/ideas/components/idea";
 
 interface IProps {
   org: string;

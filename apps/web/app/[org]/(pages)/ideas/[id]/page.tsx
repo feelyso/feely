@@ -9,7 +9,7 @@ import { Button } from "@feely/ui/components/button";
 import { useCreateComment } from "app/api/controllers/commentController";
 import { Loader } from "@feely/ui/components/icon";
 import { IconArrowUp } from "@tabler/icons-react";
-import CommentCard from "app/[org]/ideas/[id]/components/comment";
+import CommentCard from "app/[org]/(pages)/ideas/[id]/components/comment";
 interface IProps {
   params: {
     org: string;

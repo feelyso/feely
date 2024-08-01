@@ -1,5 +1,5 @@
 import Loading from "@app/[org]/loading";
-import Ideas from "app/[org]/ideas/default_page";
+import Ideas from "app/[org]/(pages)/ideas/default_page";
 import { getStatusesByWorkspaceName } from "app/api/apiServerActions/statusApiServerAction";
 import { getTopicsByWorkspaceName } from "app/api/apiServerActions/topicApiServerActions";
 import React from "react";

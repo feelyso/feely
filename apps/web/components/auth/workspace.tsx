@@ -44,20 +44,22 @@ const WorkspaceInputField = () => {
   };
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)} className="flex w-[340px] items-center gap-4">
+      <form onSubmit={form.handleSubmit(handleSubmit)} className="flex w-[384px] items-start gap-3">
         <FormField
           control={form.control}
           name="workspaceName"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="w-full">
               <FormControl>
-                <Input placeholder="your workspace" {...field} className="input-docs" />
+                <Input placeholder="your workspace" {...field} className="input-brand w-full" />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Continue</Button>
+        <Button type="submit" className="button-brand">
+          Continue
+        </Button>
       </form>
     </Form>
   );

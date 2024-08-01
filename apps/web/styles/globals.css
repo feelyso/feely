@@ -8,6 +8,7 @@
   .text-brand-gradient {
     @apply inline-block bg-gradient-to-r from-amber-400 via-orange-600 to-amber-500 bg-clip-text text-transparent;
   }
+  @import "./themes.css";
 }
 body {
   @apply h-full;
@@ -21,10 +22,10 @@ b {
 }
 
 @layer utilities {
-  .input-waitlist {
+  .input-brand {
     @apply focus-visible:ring-amber-600 !important;
   }
-  .button-waitlist {
+  .button-brand {
     @apply bg-inverse text-inverse hover:bg-inverse hover:opacity-hover active:bg-inverse active:text-inverse active:opacity-disabled hover:text-inverse focus:ring-amber-600 !important;
   }
 }

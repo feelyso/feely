@@ -16,7 +16,7 @@ export default function Banner() {
           </p>
         </div>
         <div className="mt-8">
-          <Button asChild className="button-waitlist">
+          <Button asChild className="button-brand">
             <Link href="/waitlist">Join the waitlist</Link>
           </Button>
         </div>

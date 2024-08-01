@@ -3,11 +3,11 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { Analytics } from "@vercel/analytics/react";
 // Import custom
-import { ToastProvider } from "@feely/ui/components/toast";
 import { ThemeProvider } from "@components/theme-provider";
+import ReactQueryProvider from "@app/context/queryClient";
 import { metadata } from "@lib/metadata";
+import { ToastProvider } from "@feely/ui/components/toast";
 import "../styles/globals.css";
-import ReactQueryProvider from "app/context/queryClient";
 
 export { metadata };
 

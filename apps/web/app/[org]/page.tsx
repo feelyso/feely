@@ -1,7 +1,6 @@
-import { checkWorkspaceExistanceServer } from "app/api/apiServerActions/workspaceApiServerActions";
-import protectRoute from "app/utils/protectedRoute";
-import { redirect } from "next/navigation";
 import React from "react";
+import { redirect } from "next/navigation";
+import protectRoute from "@app/utils/protectedRoute";
 
 export interface IPropsDynamicRoute {
   params: {

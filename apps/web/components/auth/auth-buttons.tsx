@@ -1,11 +1,11 @@
 "use client";
 
-import { FacebookIcon, GithubIcon, GoogleIcon } from "@components/homepage/social-icon";
-import { Button } from "@feely/ui/components/button";
+import React from "react";
 import { redirect } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-import React from "react";
-import { createClient } from "utils/supabase/client";
+import { FacebookIcon, GithubIcon, GoogleIcon } from "@components/homepage/social-icon";
+import { createClient } from "@utils/supabase/client";
+import { Button } from "@feely/ui/components/button";
 
 const AuthButtons = () => {
   const searchParams = useSearchParams();
@@ -46,15 +46,15 @@ const AuthButtons = () => {
         <div className="flex w-full flex-col space-y-2">
           <Button variant="secondary" className="h-10 w-full">
             <GoogleIcon />
-            Login with Google
+            Continue with Google
           </Button>
           <Button disabled variant="secondary" className="h-10 w-full">
             <GithubIcon />
-            Login with Github
+            Continue with Github
           </Button>
           <Button disabled variant="secondary" className="h-10 w-full">
             <FacebookIcon />
-            Login with Facebook
+            Continue with Facebook
           </Button>
         </div>
       </form>
