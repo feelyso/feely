@@ -13,7 +13,7 @@ import {
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@feely/ui/components/button";
 import { FormField } from "@feely/ui/components/form";
-import NewIdeaForm from "app/[org]/ideas/new_idea/new_idea_form";
+import NewIdeaForm from "@app/[org]/(pages)/ideas/new_idea/new_idea_form";
 import { IPropsDynamicRoute } from "app/[org]/page";
 import { Separator } from "@feely/ui/components/separator";
 
