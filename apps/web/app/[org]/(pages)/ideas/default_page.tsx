@@ -34,14 +34,15 @@ import {
 import { Separator } from "@feely/ui/components/separator";
 import { Loader } from "@feely/ui/components/icon";
 import IdeaCard from "@app/[org]/(pages)/ideas/components/idea";
+import { useWorkspace } from "@context/workspaceContext";
 
 interface IProps {
-  org: string;
   topics: TopicType[];
   statuses: StatusType[];
 }
 
-const Ideas = ({ org, topics, statuses }: IProps) => {
+const Ideas = ({ topics, statuses }: IProps) => {
+  const { org } = useWorkspace();
   const {
     mainState: mainSearchTitle,
     slaveState: searchTitleFastRefreshing,

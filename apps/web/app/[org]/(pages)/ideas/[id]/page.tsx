@@ -10,6 +10,7 @@ import { useCreateComment } from "app/api/controllers/commentController";
 import { Loader } from "@feely/ui/components/icon";
 import { IconArrowUp } from "@tabler/icons-react";
 import CommentCard from "app/[org]/(pages)/ideas/[id]/components/comment";
+import { useAuth } from "@context/authContext";
 interface IProps {
   params: {
     org: string;
@@ -32,6 +33,9 @@ const IdeaPage = (props: IProps) => {
   const [comment, setComment] = useState<string>("");
 
   const { mutateAsync: createComment, isLoading: isLoadingCreateComment } = useCreateComment();
+
+  const { session } = useAuth();
+  console.log("Session", session);
 
   const handleComment = async () => {
     try {

@@ -6,7 +6,7 @@ import { IGetIdeasByWorkspaceName } from "app/types/DTO/getIdeasByWorkspaceNameD
 import { IdeaType, IdeaWithCommentsType } from "app/types/idea";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
-export const useGetIdeasByWorkspaceName = (params: IGetIdeasByWorkspaceName) => {
+export const useGetIdeasByWorkspaceName = (params: IGetIdeasByWorkspaceName, enabled = true) => {
   const urlParams = new URLSearchParams({
     workspaceName: params.workspaceName,
     ...(params.title ? { title: params.title } : {}),
@@ -24,6 +24,7 @@ export const useGetIdeasByWorkspaceName = (params: IGetIdeasByWorkspaceName) => 
     queryKey: [Endpoints.idea.getIdeasByWorkspaceName, urlParams.toString()],
     queryFn: () => client(request),
     staleTime: 60 * 1000,
+    enabled,
   };
 
   return useQuery<

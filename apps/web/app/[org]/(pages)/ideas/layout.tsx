@@ -19,7 +19,7 @@ export default async function RootLayout({
 
   return (
     <Suspense fallback={<Loading />}>
-      <Ideas org={org} topics={topics.data ?? []} statuses={statuses.data ?? []} />
+      <Ideas topics={topics.data ?? []} statuses={statuses.data ?? []} />
       {children}
     </Suspense>
   );
