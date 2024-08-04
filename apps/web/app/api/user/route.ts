@@ -11,7 +11,11 @@ export async function GET(req: NextRequest) {
   }
   const { searchParams } = new URL(req.url);
 
-  const res = await getUser(searchParams.get("org") ?? undefined, user.accessToken);
+  const res = await getUser({
+    current_org: searchParams.get("org") ?? undefined,
+    check_option: "name",
+    access_token: user.accessToken,
+  });
 
   if (res.isSuccess) {
     return NextResponse.json(

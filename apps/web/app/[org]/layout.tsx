@@ -24,8 +24,8 @@ export default async function RootLayout({
     return (
       <Suspense fallback={<Loading />}>
         <WorkspaceProvider org={org}>
-          <AuthProvider userSession={user}>
-            <Navbar org={org} />
+          <AuthProvider>
+            <Navbar />
             <div className="bg-subtle mx-auto flex size-full min-h-screen justify-center">
               <div className="size-full max-w-screen-xl px-10 pb-10 pt-24">{children}</div>
             </div>

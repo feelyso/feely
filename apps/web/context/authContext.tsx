@@ -15,9 +15,7 @@ const AuthContext = createContext<IAuthContext | undefined>(undefined);
 
 AuthContext.displayName = "AuthContext";
 
-export const AuthProvider = ({ children, userSession }: { children: ReactNode; userSession: User }) => {
-  const isAdmin = !!userSession.role;
-
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const { org } = useWorkspace();
 
   const { data } = useGetUser({

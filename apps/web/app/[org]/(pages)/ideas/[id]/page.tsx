@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader } from "@feely/ui/components/sheet";
 import { usePathname, useRouter } from "next/navigation";
-import { useGetIdeaById, useVoteIdea } from "app/api/controllers/ideaController";
+import { useGetIdeaById, usePatchIdea, useVoteIdea } from "app/api/controllers/ideaController";
 import { Input } from "@feely/ui/components/input";
 import { Button } from "@feely/ui/components/button";
 import { useCreateComment } from "app/api/controllers/commentController";
@@ -12,6 +12,11 @@ import { IconArrowUp } from "@tabler/icons-react";
 import CommentCard from "app/[org]/(pages)/ideas/[id]/components/comment";
 import { useAuth } from "@context/authContext";
 import { Avatar, AvatarImage } from "@feely/ui/components/avatar";
+import { SelectTrigger, SelectValue, SelectContent, SelectItem, Select } from "@feely/ui/components/select";
+import { TopicType } from "@app/types/topic";
+import { useWorkspace } from "@context/workspaceContext";
+import { getStatusesByWorkspaceName } from "@app/api/apiServerActions/statusApiServerAction";
+
 interface IProps {
   params: {
     org: string;
@@ -35,7 +40,9 @@ const IdeaPage = (props: IProps) => {
 
   const { mutateAsync: createComment, isLoading: isLoadingCreateComment } = useCreateComment();
 
-  const { user: session } = useAuth();
+  const { isAdmin } = useAuth();
+
+  const { org } = useWorkspace();
 
   const handleComment = async () => {
     try {
@@ -51,6 +58,29 @@ const IdeaPage = (props: IProps) => {
 
   const handleVoteIdea = (isVoted: boolean) => {
     voteIdea({ id, isVoted: !isVoted });
+  };
+
+  const [status, setStatus] = useState<TopicType[]>([]);
+
+  useEffect(() => {
+    //This is probably bad, a handler should be used
+    const getStatuses = async () => {
+      const res = await getStatusesByWorkspaceName({ workspaceName: org });
+      const data = res.data;
+      if (!data) return console.error("No statuses found");
+      setStatus(data);
+    };
+    getStatuses();
+  }, []);
+
+  const { mutate: patchIdea, isLoading: isLoadingPatchIdea } = usePatchIdea();
+
+  const handleChangeStatus = (statusId: string) => {
+    if (!idea) return;
+    patchIdea({
+      ideaId: idea?.id,
+      statusId: statusId,
+    });
   };
 
   return (
@@ -76,7 +106,20 @@ const IdeaPage = (props: IProps) => {
               </div>
               <div className="flex gap-2">
                 <span className="w-[100px] text-slate-400">Status</span>
-                <span>{idea.status.name}</span>
+                {isAdmin ? (
+                  <Select defaultValue={idea.statusId} onValueChange={(ev) => handleChangeStatus(ev)}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Chose one topic" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {status?.map((topic) => {
+                        return <SelectItem value={topic.id}>{topic.name}</SelectItem>;
+                      })}
+                    </SelectContent>
+                  </Select>
+                ) : (
+                  <span>{idea.status.name}</span>
+                )}
               </div>
               <div className="flex gap-2">
                 <span className="w-[100px] text-slate-400">Topic</span>

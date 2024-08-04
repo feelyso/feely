@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 import client, { FeelyRequest } from "app/api/apiClient";
-import { ICreateIdea, IVoteIdea } from "app/api/apiServerActions/ideaApiServerActions";
+import { ICreateIdea, IPatchIdea, IVoteIdea } from "app/api/apiServerActions/ideaApiServerActions";
 import { Endpoints } from "app/api/endpoints";
 import { IGetIdeasByWorkspaceName } from "app/types/DTO/getIdeasByWorkspaceNameDTO";
 import { IdeaType, IdeaWithCommentsType } from "app/types/idea";
@@ -104,6 +104,27 @@ export const useVoteIdea = () => {
     onSettled: (_a, _b, variables) => {
       queryClient.invalidateQueries([Endpoints.idea.getIdeasByWorkspaceName]);
       queryClient.invalidateQueries([Endpoints.idea.main, variables.id]);
+    },
+  });
+};
+
+export const usePatchIdea = () => {
+  const queryClient = useQueryClient();
+  const patchIdeaFunction = async (patchIdeaBody: IPatchIdea) => {
+    const req: FeelyRequest = {
+      url: Endpoints.idea.main,
+      config: {
+        method: "PATCH",
+        data: JSON.stringify({ data: patchIdeaBody }),
+      },
+    };
+    return await client(req);
+  };
+
+  return useMutation<{ data: { message: string } }, null, IPatchIdea>(patchIdeaFunction, {
+    onSettled: (_a, _b, variables) => {
+      queryClient.invalidateQueries([Endpoints.idea.getIdeasByWorkspaceName]);
+      queryClient.invalidateQueries([Endpoints.idea.main, variables.ideaId]);
     },
   });
 };

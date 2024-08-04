@@ -1,6 +1,8 @@
 "use server";
 
+import { isAdmin } from "@app/api/apiServerActions/userApiServerActions";
 import { IdeaType } from "@app/types/idea";
+import { Prisma } from "@prisma/client";
 import { createClient } from "@utils/supabase/server";
 import { IAccessToken } from "app/api/apiClient";
 import { getWorkspaceByName } from "app/api/apiServerActions/workspaceApiServerActions";
@@ -318,4 +320,87 @@ export const voteIdea = async (body: IVoteIdea, access_token?: string) => {
   return {
     isSuccess: true,
   };
+};
+
+export interface IPatchIdea {
+  ideaId: string;
+  statusId?: string | null;
+  topicId?: string | null;
+}
+
+export const patchIdea = async ({ ideaId, statusId, topicId, access_token }: IPatchIdea & IAccessToken) => {
+  const supabase = createClient();
+  const currentUser = await supabase.auth.getUser(access_token);
+  if (!currentUser.data.user) {
+    return {
+      isSuccess: false,
+      error: "Session not found",
+    };
+  }
+  const idea = await prisma.idea.findFirst({
+    where: {
+      id: ideaId,
+    },
+  });
+  if (!idea) {
+    return {
+      isSuccess: false,
+      error: "Idea not found",
+    };
+  }
+  const checkUser = await isAdmin({ current_org: idea.workspaceId, check_option: "id", access_token });
+
+  if (!checkUser?.isSuccess) {
+    return {
+      isSuccess: false,
+      error: "Unauthorized user",
+    };
+  }
+  //Check if statusId and topicId are valid
+  if (statusId) {
+    const status = await prisma.status.findFirst({
+      where: {
+        id: statusId,
+        workspaceId: idea?.workspaceId,
+      },
+    });
+    if (!status) {
+      return {
+        isSuccess: false,
+        error: "Status not found",
+      };
+    }
+  }
+  if (topicId) {
+    const topic = await prisma.topic.findFirst({
+      where: {
+        id: topicId,
+        workspaceId: idea?.workspaceId,
+      },
+    });
+    if (!topic) {
+      return {
+        isSuccess: false,
+        error: "Topic not found",
+      };
+    }
+  }
+  const _ideaUpdated = await prisma.idea.update({
+    where: {
+      id: ideaId,
+    },
+    data: {
+      statusId: statusId ? statusId : undefined,
+      topicId: topicId ? topicId : undefined,
+    },
+  });
+  if (!idea) {
+    return {
+      isSuccess: false,
+    };
+  } else {
+    return {
+      isSuccess: true,
+    };
+  }
 };

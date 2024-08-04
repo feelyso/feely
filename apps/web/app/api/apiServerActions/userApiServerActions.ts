@@ -1,5 +1,6 @@
 "use server";
 
+import { IAccessToken } from "@app/api/apiClient";
 import { redirect } from "next/navigation";
 import prisma from "prisma/client";
 import { createClient } from "utils/supabase/server";
@@ -13,7 +14,16 @@ export const logoutUser = async () => {
   redirect("/");
 };
 
-export const getUser = async (current_org?: string, access_token?: string) => {
+interface IGetUserDTO {
+  check_option?: "id" | "name";
+  current_org?: string;
+}
+
+export const getUser = async ({
+  check_option = "name",
+  current_org,
+  access_token,
+}: IGetUserDTO & IAccessToken) => {
   const supabase = createClient();
   const currentUser = await supabase.auth.getUser(access_token);
   if (!currentUser.data.user) {
@@ -43,7 +53,8 @@ export const getUser = async (current_org?: string, access_token?: string) => {
   if (current_org) {
     const userWorkspace = await prisma.workspace.findFirst({
       where: {
-        name: current_org,
+        name: check_option === "name" ? current_org : undefined,
+        id: check_option === "id" ? current_org : undefined,
         ownerId: user.id,
       },
     });
@@ -60,12 +71,15 @@ export const getUser = async (current_org?: string, access_token?: string) => {
   };
 };
 
-export const isAdmin = async (current_org: string, access_token?: string) => {
-  const user = await getUser(current_org, access_token);
+export const isAdmin = async (body: IGetUserDTO & IAccessToken) => {
+  const user = await getUser(body);
   if (!user.data?.isAdmin) {
     return {
       isSuccess: false,
       error: "User is not an admin",
     };
   }
+  return {
+    isSuccess: true,
+  };
 };

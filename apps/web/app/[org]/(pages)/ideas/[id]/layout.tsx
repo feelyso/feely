@@ -1,4 +1,5 @@
 import Loading from "@app/[org]/loading";
+import { getTopicsByWorkspaceName } from "@app/api/apiServerActions/topicApiServerActions";
 import { Suspense } from "react";
 
 export default async function RootLayout({

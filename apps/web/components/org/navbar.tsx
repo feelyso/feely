@@ -23,12 +23,10 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { BookText, HelpCircle, LogOut, Settings, User } from "@feely/ui/components/icon";
 import { useAuth } from "@context/authContext";
+import { useWorkspace } from "@context/workspaceContext";
 
-interface IProps {
-  org: string;
-}
-
-const Navbar = ({ org }: IProps) => {
+const Navbar = () => {
+  const { org } = useWorkspace();
   const pathname = usePathname();
   const orgLetter = org[0];
   // Function to check if the route is active
