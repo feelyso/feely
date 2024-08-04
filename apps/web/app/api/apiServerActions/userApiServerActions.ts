@@ -59,3 +59,13 @@ export const getUser = async (current_org?: string, access_token?: string) => {
     },
   };
 };
+
+export const isAdmin = async (current_org: string, access_token?: string) => {
+  const user = await getUser(current_org, access_token);
+  if (!user.data?.isAdmin) {
+    return {
+      isSuccess: false,
+      error: "User is not an admin",
+    };
+  }
+};

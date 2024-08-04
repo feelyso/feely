@@ -11,6 +11,7 @@ import { Loader } from "@feely/ui/components/icon";
 import { IconArrowUp } from "@tabler/icons-react";
 import CommentCard from "app/[org]/(pages)/ideas/[id]/components/comment";
 import { useAuth } from "@context/authContext";
+import { Avatar, AvatarImage } from "@feely/ui/components/avatar";
 interface IProps {
   params: {
     org: string;
@@ -27,15 +28,14 @@ const IdeaPage = (props: IProps) => {
   const handleClose = () => {
     router.push(pathName.substring(0, pathName.lastIndexOf("/")));
   };
-  const { data: ideaData } = useGetIdeaById({ id });
+  const { data: ideaData, isLoading: isLoadingGetIdea } = useGetIdeaById({ id });
   const idea = ideaData?.data.idea;
 
   const [comment, setComment] = useState<string>("");
 
   const { mutateAsync: createComment, isLoading: isLoadingCreateComment } = useCreateComment();
 
-  const { userSession: session } = useAuth();
-  console.log("Session", session);
+  const { user: session } = useAuth();
 
   const handleComment = async () => {
     try {
@@ -62,7 +62,9 @@ const IdeaPage = (props: IProps) => {
             handleClose();
           }
         }}>
-        {idea ? (
+        {isLoadingGetIdea ? (
+          <Loader />
+        ) : idea ? (
           <SheetContent
             style={{ width: "40%", maxWidth: "40%", display: "flex", flexDirection: "column", gap: 12 }}>
             <SheetHeader>{idea?.title}</SheetHeader>
@@ -86,7 +88,17 @@ const IdeaPage = (props: IProps) => {
               </div>
               <div className="flex gap-2">
                 <span className="w-[100px] text-slate-400">Voters</span>
-                <span>{idea.voters.length}</span>
+                <span>
+                  {idea.voters.length} -{" "}
+                  {idea.voters.map((voter) => (
+                    <Avatar>
+                      <AvatarImage
+                        src={voter.user.image_url ?? undefined}
+                        alt={voter.user.name ?? undefined}
+                      />
+                    </Avatar>
+                  ))}
+                </span>
               </div>
             </div>
             <div className="flex flex-col items-end gap-2">

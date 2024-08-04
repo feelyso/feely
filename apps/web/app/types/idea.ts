@@ -10,6 +10,16 @@ export type IIdeaSelectionObject = {
       select: {
         userId: true;
       };
+      include: {
+        user: {
+          select: {
+            id: true;
+            image_url: true;
+            name: true;
+            email: true;
+          };
+        };
+      };
     };
   };
 };

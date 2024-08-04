@@ -1,5 +1,6 @@
+import { isAdmin } from "@app/api/apiServerActions/userApiServerActions";
 import { createClient } from "@utils/supabase/server";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export const authenticateUser = async (req: NextRequest) => {
   const supabase = createClient();

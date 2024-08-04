@@ -154,8 +154,15 @@ export const getIdeasByWorkspaceName = async ({
         },
       },
       voters: {
-        select: {
-          userId: true,
+        include: {
+          user: {
+            select: {
+              id: true,
+              image_url: true,
+              name: true,
+              email: true,
+            },
+          },
         },
       },
     },
@@ -215,7 +222,18 @@ export const getIdeaById = async ({ ideaId, access_token }: { ideaId: string; ac
       author: true,
       status: true,
       topic: true,
-      voters: true,
+      voters: {
+        include: {
+          user: {
+            select: {
+              id: true,
+              image_url: true,
+              name: true,
+              email: true,
+            },
+          },
+        },
+      },
       comments: {
         include: {
           author: true,
