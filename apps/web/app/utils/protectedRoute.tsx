@@ -4,12 +4,12 @@ import { createClient } from "utils/supabase/server";
 const protectRoute = async (redirectNext: string = "") => {
   const supabase = createClient();
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
+    data: { user },
+  } = await supabase.auth.getUser();
 
-  if (!session) {
+  if (!user) {
     return redirect(`/login${redirectNext ? `?next=${redirectNext}` : ""}`);
   }
-  return session;
+  return user;
 };
 export default protectRoute;

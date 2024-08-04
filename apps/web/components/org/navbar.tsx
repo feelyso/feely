@@ -22,6 +22,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { BookText, HelpCircle, LogOut, Settings, User } from "@feely/ui/components/icon";
+import { useAuth } from "@context/authContext";
 
 interface IProps {
   org: string;
@@ -34,6 +35,7 @@ const Navbar = ({ org }: IProps) => {
   const isActive = (route: string) => {
     return pathname.split("/")[2] === route;
   };
+  const { user } = useAuth();
   return (
     <div className="bg-elevated border-default fixed z-50 flex h-14 w-full items-center justify-center border-b">
       <div className="mx-auto flex w-full max-w-screen-xl items-center justify-between px-10">
@@ -65,16 +67,13 @@ const Navbar = ({ org }: IProps) => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Avatar size="lg" className="border-default border hover:cursor-pointer">
-                <AvatarImage
-                  src="https://avatars.githubusercontent.com/u/70836137?s=400&v=4"
-                  alt="@kkratterf"
-                />
-                <AvatarFallback>FK</AvatarFallback>
+                <AvatarImage src={user?.image_url ?? undefined} alt="@kkratterf" />
+                <AvatarFallback>{user?.name?.slice(0, 2) ?? "Us"}</AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel className="text h-7 pb-0">Federico Kratter Thaler</DropdownMenuLabel>
-              <DropdownMenuLabel className="text-md h-7 pt-0">kkratterf@gmail.com</DropdownMenuLabel>
+              <DropdownMenuLabel className="text h-7 pb-0">{user?.name}</DropdownMenuLabel>
+              <DropdownMenuLabel className="text-md h-7 pt-0">{user?.email}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem>

@@ -1,11 +1,13 @@
 "use client";
-import { Session } from "@supabase/supabase-js";
-import { createClient } from "@utils/supabase/client";
+import { useGetUser } from "@app/api/controllers/userController";
+import { UserType } from "@app/types/user";
+import { useWorkspace } from "@context/workspaceContext";
+import { User } from "@supabase/supabase-js";
 import { createContext, ReactNode, useContext, useState } from "react";
 
 interface IAuthContext {
   isAdmin: boolean;
-  session: Session;
+  user: UserType | null;
 }
 
 // Create the AuthContext with default values
@@ -13,9 +15,22 @@ const AuthContext = createContext<IAuthContext | undefined>(undefined);
 
 AuthContext.displayName = "AuthContext";
 
-export const AuthProvider = ({ children, session }: { children: ReactNode; session: Session }) => {
-  const isAdmin = !!session.user.role;
-  return <AuthContext.Provider value={{ isAdmin, session }}>{children}</AuthContext.Provider>;
+export const AuthProvider = ({ children, userSession }: { children: ReactNode; userSession: User }) => {
+  const isAdmin = !!userSession.role;
+
+  const { org } = useWorkspace();
+
+  const { data } = useGetUser({
+    current_org: org,
+  });
+
+  //Get the user from the server
+
+  return (
+    <AuthContext.Provider value={{ isAdmin: data?.data.isAdmin ?? false, user: data?.data.user ?? null }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 // Custom hook for using the AuthContext

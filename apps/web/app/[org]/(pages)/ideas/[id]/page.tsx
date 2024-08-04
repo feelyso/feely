@@ -34,7 +34,7 @@ const IdeaPage = (props: IProps) => {
 
   const { mutateAsync: createComment, isLoading: isLoadingCreateComment } = useCreateComment();
 
-  const { session } = useAuth();
+  const { userSession: session } = useAuth();
   console.log("Session", session);
 
   const handleComment = async () => {

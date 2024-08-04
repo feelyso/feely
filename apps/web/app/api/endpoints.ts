@@ -14,4 +14,7 @@ export const Endpoints = {
     vote: "/api/comment/vote",
     reply: "/api/comment/reply",
   },
+  user: {
+    main: "/api/user",
+  },
 };

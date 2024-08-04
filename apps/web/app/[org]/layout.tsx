@@ -16,7 +16,7 @@ export default async function RootLayout({
     org: string;
   };
 }>) {
-  const session = await protectRoute(`/${org}`);
+  const user = await protectRoute(`/${org}`);
   const exists = await checkWorkspaceExistanceServer(org);
   if (!exists) {
     redirect("/");
@@ -24,7 +24,7 @@ export default async function RootLayout({
     return (
       <Suspense fallback={<Loading />}>
         <WorkspaceProvider org={org}>
-          <AuthProvider session={session}>
+          <AuthProvider userSession={user}>
             <Navbar org={org} />
             <div className="bg-subtle mx-auto flex size-full min-h-screen justify-center">
               <div className="size-full max-w-screen-xl px-10 pb-10 pt-24">{children}</div>
